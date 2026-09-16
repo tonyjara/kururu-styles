@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "kind": "pack",
+  "id": "campfire",
+  "name": "Campfire",
+  "version": "1.0.0",
+  "description": "Gruvbox, rounded off, with a bear lumbering through the sidebar. Warm and slow.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "theme": "gruvbox-dark",
+  "skin": "bubblegum",
+  "mascot": "bear"
+}

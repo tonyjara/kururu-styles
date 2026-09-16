@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "kind": "pack",
+  "id": "green-screen",
+  "name": "Green Screen",
+  "version": "1.0.0",
+  "description": "Dracula's greens on a square monospace chrome, with a rabbit. The most terminal thing here.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "theme": "dracula",
+  "skin": "teletype",
+  "mascot": "rabbit"
+}

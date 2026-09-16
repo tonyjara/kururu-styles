@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "deer",
+  "name": "Deer",
+  "version": "1.0.0",
+  "description": "Walks while it works, and stands very still otherwise.",
+  "author": "ScratchIO",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/animated-wild-animals",
+  "sheet": "sheet.png",
+  "frame": 67,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 67
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 8,
+    "cycle": 880
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 10,
+    "cycle": 2400
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "fox",
+  "name": "Fox",
+  "version": "1.0.0",
+  "description": "Trots while it works, sits and looks about while it waits.",
+  "author": "ScratchIO",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/animated-wild-animals",
+  "sheet": "sheet.png",
+  "frame": 49,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 49
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 8,
+    "cycle": 760
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 6,
+    "cycle": 1800
+  }
+}

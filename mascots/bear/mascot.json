@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "bear",
+  "name": "Bear",
+  "version": "1.0.0",
+  "description": "Lumbers along while it works, and breathes very slowly while it does not.",
+  "author": "ScratchIO",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/animated-wild-animals",
+  "sheet": "sheet.png",
+  "frame": 58,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 58
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 8,
+    "cycle": 880
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 12,
+    "cycle": 2400
+  }
+}

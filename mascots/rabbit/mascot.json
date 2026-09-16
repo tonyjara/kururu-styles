@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "rabbit",
+  "name": "Rabbit",
+  "version": "1.0.0",
+  "description": "Hops while it works, twitches while it waits. The smallest sheet here and the one that reads best at 16px.",
+  "author": "ScratchIO",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/animated-wild-animals",
+  "sheet": "sheet.png",
+  "frame": 31,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 31
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 10,
+    "cycle": 700
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 10,
+    "cycle": 2200
+  }
+}

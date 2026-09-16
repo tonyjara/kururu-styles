@@ -1,0 +1,610 @@
+{
+  "schema": 1,
+  "entries": [
+    {
+      "kind": "theme",
+      "id": "dracula",
+      "name": "Dracula",
+      "version": "1.0.0",
+      "description": "The purple one. Published palette, verbatim, including its ANSI set.",
+      "author": "Dracula Theme",
+      "licence": "MIT",
+      "homepage": "https://draculatheme.com",
+      "path": "themes/dracula",
+      "manifest": "theme.json",
+      "digest": "sha256-71df6622d4fc0ca0f6008d245820c3b1b2cf2e84e8567712a260a71fe3fc59c1",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1678,
+          "digest": "sha256-ccc780e842f5049589c6c94a006f9e782c9267e0c707e4e2a178e0cb8ed48926"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#282a36",
+        "chrome": "#21222c",
+        "line": "#44475a",
+        "text": "#f8f8f2",
+        "accent": "#50fa7b",
+        "working": "#ffb86c",
+        "blocked": "#f1fa8c",
+        "done": "#8be9fd"
+      }
+    },
+    {
+      "kind": "theme",
+      "id": "gruvbox-dark",
+      "name": "Gruvbox Dark",
+      "version": "1.0.0",
+      "description": "Retro groove, dark medium. Warm greys and the brightest status marks here.",
+      "author": "Pavel Pertsev",
+      "licence": "MIT",
+      "homepage": "https://github.com/morhetz/gruvbox",
+      "path": "themes/gruvbox-dark",
+      "manifest": "theme.json",
+      "digest": "sha256-6ecfb0f8a5e3d9a7b528c4f804e94bd2e1fb2b53c761bb2b1299496e6f603cf6",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1704,
+          "digest": "sha256-aa29df05d9164e9b2d5b4997a394ec7a63dbbc4f4598ad9cba3eb61ce5b0380f"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#282828",
+        "chrome": "#1d2021",
+        "line": "#3c3836",
+        "text": "#ebdbb2",
+        "accent": "#b8bb26",
+        "working": "#fe8019",
+        "blocked": "#fabd2f",
+        "done": "#83a598"
+      }
+    },
+    {
+      "kind": "theme",
+      "id": "nord",
+      "name": "Nord",
+      "version": "1.0.0",
+      "description": "Arctic, north-bluish, and the lowest-contrast thing in this list. Sixteen published colours and no more.",
+      "author": "Arctic Ice Studio",
+      "licence": "MIT",
+      "homepage": "https://www.nordtheme.com",
+      "path": "themes/nord",
+      "manifest": "theme.json",
+      "digest": "sha256-4b80373521e11e9771f26edd74b525f348f932cc30a353acb4f2754cc2cee94e",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1713,
+          "digest": "sha256-f73c14af1e0a5d4b4422991b897e2a3230f41b29076732bf05aaeed8f7313ea7"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#2e3440",
+        "chrome": "#272c36",
+        "line": "#3b4252",
+        "text": "#e5e9f0",
+        "accent": "#a3be8c",
+        "working": "#d08770",
+        "blocked": "#ebcb8b",
+        "done": "#88c0d0"
+      }
+    },
+    {
+      "kind": "theme",
+      "id": "one-dark",
+      "name": "One Dark",
+      "version": "1.0.0",
+      "description": "Atom's, and the one most people have already been looking at for ten years.",
+      "author": "Atom (GitHub)",
+      "licence": "MIT",
+      "homepage": "https://github.com/atom/atom/tree/master/packages/one-dark-ui",
+      "path": "themes/one-dark",
+      "manifest": "theme.json",
+      "digest": "sha256-b6f5550dd5f4e05bb33c9a880d867e51d7e99fabe21888ff7178b3985910ce3a",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1724,
+          "digest": "sha256-eeef3c22b2902d171a31c8e549edc6994618dbb5309411031e19858db515170c"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#282c34",
+        "chrome": "#21252b",
+        "line": "#3e4451",
+        "text": "#abb2bf",
+        "accent": "#98c379",
+        "working": "#d19a66",
+        "blocked": "#e5c07b",
+        "done": "#61afef"
+      }
+    },
+    {
+      "kind": "theme",
+      "id": "tokyo-night",
+      "name": "Tokyo Night",
+      "version": "1.0.0",
+      "description": "Folke's night flavour — deep indigo, and the one here with the quietest chrome.",
+      "author": "Folke Lemaitre",
+      "licence": "Apache-2.0",
+      "homepage": "https://github.com/folke/tokyonight.nvim",
+      "path": "themes/tokyo-night",
+      "manifest": "theme.json",
+      "digest": "sha256-562113cda2bfde3b5414081d985ec5af34b7bb9dcf796c97f7819477aebed058",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1726,
+          "digest": "sha256-9de4394a4397dc6548d7f22ccb6036e2d61fae6218c51ec2fb8388c2ff5277a1"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#1a1b26",
+        "chrome": "#16161e",
+        "line": "#3b4261",
+        "text": "#c0caf5",
+        "accent": "#9ece6a",
+        "working": "#ff9e64",
+        "blocked": "#e0af68",
+        "done": "#7aa2f7"
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "blueprint",
+      "name": "Blueprint",
+      "version": "1.0.0",
+      "description": "Hairlines, wide tracking and a 24px grid over the whole window. A drafting sheet you happen to be running agents on.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/blueprint",
+      "manifest": "skin.json",
+      "digest": "sha256-3f97710879e10ef686ac61f2d00a32b79dd2fda6ced46fa5ebe5c6987eaaebfb",
+      "files": [
+        {
+          "name": "skin.json",
+          "size": 1235,
+          "digest": "sha256-a34a1dee8fc2951ee2d30e0a994a49a0e8ca4e57c673234bcc48c365ba6094fc"
+        }
+      ],
+      "preview": {
+        "radiusLg": "2px",
+        "radiusXl": "2px",
+        "border": "1px",
+        "ui": "\"Helvetica Neue\", Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+        "fsXs": "9px",
+        "fsLg": "12px",
+        "uiLineHeight": "1.45",
+        "uiLetterSpacing": "0.06em",
+        "frame": "inset 0 0 0 1px var(--line)",
+        "run": "▷",
+        "fonts": []
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "bubblegum",
+      "name": "Bubblegum",
+      "version": "1.0.0",
+      "description": "Everything rounded off, Nunito, and shadows that behave like light. The friendliest thing you can do to a multiplexer.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/bubblegum",
+      "manifest": "skin.json",
+      "digest": "sha256-07001dd79aa6c5bf1f5d11b9db88c25f90c54aa2e402f5d0e79bb7c0532531f1",
+      "files": [
+        {
+          "name": "OFL.txt",
+          "size": 4385,
+          "digest": "sha256-580df76c95a1ec5ab878ceb25bb3d85c6a076804e9c970c8c6972aea775fdf65"
+        },
+        {
+          "name": "nunito-variable.woff2",
+          "size": 39152,
+          "digest": "sha256-20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798"
+        },
+        {
+          "name": "skin.json",
+          "size": 1211,
+          "digest": "sha256-84c8dc26e4b7f577e25d63ab07cd94d0dd92b7327f728ef05e66aaa726749b5f"
+        }
+      ],
+      "preview": {
+        "radiusLg": "12px",
+        "radiusXl": "16px",
+        "ui": "\"Nunito\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+        "fsXs": "10px",
+        "fsLg": "14px",
+        "uiLineHeight": "1.5",
+        "frame": "0 2px 12px var(--shadow)",
+        "run": "▶",
+        "fonts": [
+          "Nunito"
+        ]
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "teletype",
+      "name": "Teletype",
+      "version": "1.0.0",
+      "description": "Square corners, Space Mono everywhere, and a scanline you can just about see. The chrome pretends it is part of the terminal.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/teletype",
+      "manifest": "skin.json",
+      "digest": "sha256-2eca026418676bbb192aa073c6c6dc9b8f60707f9648a5f63cd881c6846c1b52",
+      "files": [
+        {
+          "name": "OFL.txt",
+          "size": 4392,
+          "digest": "sha256-8e4ee42b2553e1e01504e61cb0d46d148cd8c9e5eacaa3622a7df2d4f2955b9f"
+        },
+        {
+          "name": "skin.json",
+          "size": 1431,
+          "digest": "sha256-58271a1d218a44eea057c8da11446fc23cc385b02700c53d6e6ea75b228603b2"
+        },
+        {
+          "name": "space-mono-400.woff2",
+          "size": 9464,
+          "digest": "sha256-e0c8e616bda27642f4c3cebaecff6525d901e73afc8a227cbbb0f2af4810f300"
+        },
+        {
+          "name": "space-mono-700.woff2",
+          "size": 9552,
+          "digest": "sha256-af7cf6d2b897ec453acdcdacde4e9bcc8410718af5914de865b453e09f10eebc"
+        }
+      ],
+      "preview": {
+        "radiusLg": "0",
+        "radiusXl": "0",
+        "ui": "\"Space Mono\", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+        "fsXs": "9px",
+        "fsLg": "12px",
+        "uiLineHeight": "1.5",
+        "uiLetterSpacing": "0.01em",
+        "frame": "inset 0 0 0 1px var(--chrome-high)",
+        "run": ">",
+        "fonts": [
+          "Space Mono",
+          "Space Mono"
+        ]
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "bear",
+      "name": "Bear",
+      "version": "1.0.0",
+      "description": "Lumbers along while it works, and breathes very slowly while it does not.",
+      "author": "ScratchIO",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/animated-wild-animals",
+      "path": "mascots/bear",
+      "manifest": "mascot.json",
+      "digest": "sha256-abdba6a8d9fdc093c0d0e01af313fb2a8cf7855dc79391c820f8cca0c0709142",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1210,
+          "digest": "sha256-7efe995662de1c528b55fc77ac4dc12b17a3c73b20ef44c930029532c3702e0a"
+        },
+        {
+          "name": "mascot.json",
+          "size": 562,
+          "digest": "sha256-891637c2fbc423bab422405dcd643db6a73dd2850f7f17e76cb2410a39ecb3d3"
+        },
+        {
+          "name": "sheet.png",
+          "size": 4705,
+          "digest": "sha256-384b7622e40bd60d48a7f511eafb4687ac002dd5f809673ffccc9972d20fc7f6"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 58,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 58
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 8,
+          "cycle": 880
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 12,
+          "cycle": 2400
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "deer",
+      "name": "Deer",
+      "version": "1.0.0",
+      "description": "Walks while it works, and stands very still otherwise.",
+      "author": "ScratchIO",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/animated-wild-animals",
+      "path": "mascots/deer",
+      "manifest": "mascot.json",
+      "digest": "sha256-c5824487fc9a4c5e83b337ea076a3b67377fa86c4baa7a0bbe52f0e4ba850593",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1210,
+          "digest": "sha256-7efe995662de1c528b55fc77ac4dc12b17a3c73b20ef44c930029532c3702e0a"
+        },
+        {
+          "name": "mascot.json",
+          "size": 543,
+          "digest": "sha256-48f6ffb2baeb8a6f99f2e6a3fd2e40e7eb2ea16df6dd0b87a467b44b6b213aab"
+        },
+        {
+          "name": "sheet.png",
+          "size": 5511,
+          "digest": "sha256-631c6907e74c1a30a990757a3d147727fd5fe8df67e88b1fca37f77f9674e120"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 67,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 67
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 8,
+          "cycle": 880
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 10,
+          "cycle": 2400
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "fox",
+      "name": "Fox",
+      "version": "1.0.0",
+      "description": "Trots while it works, sits and looks about while it waits.",
+      "author": "ScratchIO",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/animated-wild-animals",
+      "path": "mascots/fox",
+      "manifest": "mascot.json",
+      "digest": "sha256-74c844f7c98e9245471e7d09adb01984f69301957d3920522ecbfcfa8bd14416",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1210,
+          "digest": "sha256-7efe995662de1c528b55fc77ac4dc12b17a3c73b20ef44c930029532c3702e0a"
+        },
+        {
+          "name": "mascot.json",
+          "size": 544,
+          "digest": "sha256-496e865c9e979f0f9763aa4c9fd0c272542e3eb50b0a031d5262835e3ecceadb"
+        },
+        {
+          "name": "sheet.png",
+          "size": 3275,
+          "digest": "sha256-04cdfea56a3e49284c8bcc411bae8a4eb181b66c97a2ec00ce6dca599471670c"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 49,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 49
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 8,
+          "cycle": 760
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 6,
+          "cycle": 1800
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "rabbit",
+      "name": "Rabbit",
+      "version": "1.0.0",
+      "description": "Hops while it works, twitches while it waits. The smallest sheet here and the one that reads best at 16px.",
+      "author": "ScratchIO",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/animated-wild-animals",
+      "path": "mascots/rabbit",
+      "manifest": "mascot.json",
+      "digest": "sha256-3868eb4cfb25d81c5e2e8058cd46d4237c042cfb188cb4faa6803e682eefc92f",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1210,
+          "digest": "sha256-7efe995662de1c528b55fc77ac4dc12b17a3c73b20ef44c930029532c3702e0a"
+        },
+        {
+          "name": "mascot.json",
+          "size": 600,
+          "digest": "sha256-f83eb6009b6b912b2d7a5272fce634223b9df8360fca26fbb565b812e291a874"
+        },
+        {
+          "name": "sheet.png",
+          "size": 2253,
+          "digest": "sha256-616d1b41ca74f75bb0e05df02ce8886728b8671396b85752d9b9785817da3fd5"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 31,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 31
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 10,
+          "cycle": 700
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 10,
+          "cycle": 2200
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "wolf",
+      "name": "Wolf",
+      "version": "1.0.0",
+      "description": "Runs flat out while it works. Howls at nothing while it waits.",
+      "author": "ScratchIO",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/animated-wild-animals",
+      "path": "mascots/wolf",
+      "manifest": "mascot.json",
+      "digest": "sha256-2376fa133c4c2ee421a4df70c88730d62da61c575bc5f79d2e2f811e268c4401",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1210,
+          "digest": "sha256-7efe995662de1c528b55fc77ac4dc12b17a3c73b20ef44c930029532c3702e0a"
+        },
+        {
+          "name": "mascot.json",
+          "size": 551,
+          "digest": "sha256-7c7e7a49aacdc362a1d761de0f83e47a1cd18e974fd1a03868ae55512f507690"
+        },
+        {
+          "name": "sheet.png",
+          "size": 3641,
+          "digest": "sha256-123ec11aabb0ca4cdca6b1fb8b5c2c9a4c3898a4b6523251218116ba828aaf60"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 54,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 54
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 6,
+          "cycle": 600
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 10,
+          "cycle": 2600
+        }
+      }
+    },
+    {
+      "kind": "pack",
+      "id": "campfire",
+      "name": "Campfire",
+      "version": "1.0.0",
+      "description": "Gruvbox, rounded off, with a bear lumbering through the sidebar. Warm and slow.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "packs/campfire",
+      "manifest": "pack.json",
+      "digest": "sha256-710d8076d7d3bca66d9af1c88ad1849458e3c6d1af416cdc29d7534c9e1990ae",
+      "files": [
+        {
+          "name": "pack.json",
+          "size": 323,
+          "digest": "sha256-655ffde7d2d1f406bbd64a8daf8ec889d01a91247736798a94021733bd1e28cf"
+        }
+      ],
+      "preview": {
+        "theme": "gruvbox-dark",
+        "skin": "bubblegum",
+        "mascot": "bear"
+      }
+    },
+    {
+      "kind": "pack",
+      "id": "green-screen",
+      "name": "Green Screen",
+      "version": "1.0.0",
+      "description": "Dracula's greens on a square monospace chrome, with a rabbit. The most terminal thing here.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "packs/green-screen",
+      "manifest": "pack.json",
+      "digest": "sha256-0da1d01bb27a006994056055d25a39ae8f9f646b113769702460f12075d73b58",
+      "files": [
+        {
+          "name": "pack.json",
+          "size": 339,
+          "digest": "sha256-876e2c56ccb2cc2e86ca8558f1acbcbe33b657d100333015ddb7392c3f80f769"
+        }
+      ],
+      "preview": {
+        "theme": "dracula",
+        "skin": "teletype",
+        "mascot": "rabbit"
+      }
+    },
+    {
+      "kind": "pack",
+      "id": "night-shift",
+      "name": "Night Shift",
+      "version": "1.0.0",
+      "description": "Tokyo Night under a drafting grid, with a wolf. What a late one looks like.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "packs/night-shift",
+      "manifest": "pack.json",
+      "digest": "sha256-05d9f2bc39cc0673be454611e81871465411ec61546988c3cf0c3f8c30aba240",
+      "files": [
+        {
+          "name": "pack.json",
+          "size": 324,
+          "digest": "sha256-9f57475fd8ad768fba4e0b3d37f223e558cd288fe0135fc97fb1a5e14f708c40"
+        }
+      ],
+      "preview": {
+        "theme": "tokyo-night",
+        "skin": "blueprint",
+        "mascot": "wolf"
+      }
+    }
+  ]
+}

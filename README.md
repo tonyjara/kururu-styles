@@ -1,1 +1,216 @@
-# Kururu styles
+# kururu-styles
+
+Themes, skins and mascots for [kururu](https://github.com/tonyjara/kururu), in
+one place so that other people can add to them.
+
+This repository is **data, not code**. Nothing here is built, imported or
+installed by a package manager. Kururu reaches it over HTTPS when somebody opens
+*Settings → Styles*, and what they pick it copies into `~/.config/kururu`. A
+style you publish here is available to everybody running kururu the moment it is
+merged — no release, no npm, no marketplace account.
+
+Kururu ships its own defaults and does not need this repository to start. That is
+deliberate and load-bearing: a machine with no network, a GitHub outage and a
+first run before anybody has explored are all the same case, and in all three the
+window comes up in Catppuccin Mocha with the Soft skin and the frog. What is here
+is everything *beyond* the defaults.
+
+**Contributing?** [CONTRIBUTING.md](CONTRIBUTING.md) is the step-by-step, with a
+template for each kind. If you are an agent doing it on somebody's behalf,
+[AGENTS.md](AGENTS.md) is written for you.
+
+---
+
+## What is in here
+
+| | | |
+|---|---|---|
+| **Themes** | Dracula · Gruvbox Dark · Nord · One Dark · Tokyo Night | five palettes most people have already spent a decade looking at |
+| **Skins** | Blueprint · Bubblegum · Teletype | three shapes of window, none of which is a palette |
+| **Mascots** | Bear · Deer · Fox · Rabbit · Wolf | [ScratchIO's CC0 wild animals](https://opengameart.org/content/animated-wild-animals), cut to kururu's sheet shape |
+| **Packs** | Campfire · Green Screen · Night Shift | one of each, chosen to go together |
+
+## The three things, and the fourth that is a list of them
+
+| | answers | lives in | example |
+|---|---|---|---|
+| **theme** | what colour | `themes/<id>/` | Tokyo Night |
+| **skin** | what shape | `skins/<id>/` | Blueprint |
+| **mascot** | what moves when an agent is working | `mascots/<id>/` | a fox |
+| **pack** | *a theme, a skin and a mascot that go together* | `packs/<id>/` | Night Shift |
+
+A theme and a skin are genuinely orthogonal and kururu keeps them that way — a
+theme is a flat record of colours, a skin is a flat record of radii, line
+weights, type sizes, icon glyphs and effects, and neither mentions the other. The
+test of it is that both crossings are things somebody wants: a drafting-grid
+chrome in Dracula, and rounded chrome in Gruvbox.
+
+**A pack is a reference, never a copy.** It names one of each by id and nothing
+else. That is what lets somebody install a whole coherent look in one click and
+still take just the mascot from it, and it means a pack never goes stale when one
+of its parts is improved. A pack that inlined its theme would be a fork of that
+theme with nobody watching it.
+
+## A theme is complete; a skin is a difference
+
+This is the one asymmetry in the format and it is worth a paragraph, because on
+the face of it "write only what you change" ought to apply to both.
+
+A **skin** is merged onto kururu's base, so it writes only the tokens it means to
+move. That is right because the tokens compose: a skin that says "square corners"
+and nothing else genuinely means *kururu, with square corners*, and if kururu
+later improves its elevation shadow the skin should get the improvement. A skin
+that restated all twenty-six tokens would silently keep whatever the base said
+the day it was written and drift out of the window around it two releases later.
+
+A **theme** is complete, every token, no merge. That is right for the opposite
+reason: a palette is not composable. A Dracula missing `blocked` would draw
+Catppuccin's yellow — a colour from a different palette, chosen against a
+different background, and near enough right that nobody would file it. What you
+would have is a theme that is *nearly* the thing on the tin, which is exactly
+what a port is supposed to not be.
+
+Forward compatibility is handled at the other end instead: when kururu adds a
+token, every already-published theme is missing it, and kururu fills the gap from
+its own default theme rather than refusing to load. So an old theme stays
+drawable, and the *next* version of this repository's schema is where it gets a
+real answer.
+
+## Versions, and how an update reaches anybody
+
+Every manifest carries a semver `version`. **CI refuses a pull request that
+changes an entry's files without bumping it.** That check is the load-bearing one
+and it exists because the failure it prevents is completely silent: somebody
+fixes a colour, the files change, kururu compares `1.0.0` against `1.0.0` and
+tells every person running it that they are up to date, forever.
+
+- **patch** — a fix nobody asked for. A wrong hex, a typo in a description.
+- **minor** — anything somebody would notice. A retuned palette, a new font, an
+  extra animation.
+- **major** — something moved. A renamed file, a dropped clip: an install that
+  lands on it has to be able to tell.
+
+Alongside that, `index.json` carries a **sha256 digest** per file and one over
+each entry as a whole, computed by CI from the directories. Kururu pins both the
+version and the digest when it installs. They do different jobs and neither
+replaces the other: the version is what *"update available"* is computed from —
+it is a sentence for a person — and the digest is what verifies that the bytes
+which arrived are the bytes this repository has. That second one is npm's
+`integrity` field doing npm's job, and the failure it catches is the boring one,
+which is a download cut in half over a phone connection leaving a torn sprite
+sheet in somebody's config directory.
+
+**Installing is a copy, and it pins.** Picking something copies its files into
+`~/.config/kururu/styles/` and records the version it came from. It does not link
+to this repository at runtime. Three reasons, each sufficient on its own: a style
+that changed under you mid-session would be a window that redrew itself while you
+were reading it; kururu has to work with no network; and *Check for updates* only
+means something if there is a pinned version to compare against. An update is
+therefore always something somebody pressed.
+
+<details>
+<summary>How other projects do this, and why this is the shape that fits</summary>
+
+- **Obsidian community plugins** — one data repository, a JSON manifest fetched
+  from `raw.githubusercontent.com`, a `version` per entry, install by copying
+  into the vault. This is the closest relative and most of the model is borrowed
+  from it. What it does not do is enforce the bump, which is the failure that
+  costs the most here.
+- **npm** — the `integrity` hash is where the digest comes from. The registry
+  half is not, because a registry is a service that has to be up, and kururu
+  would then have a dependency that can be down while somebody is choosing a
+  colour.
+- **Homebrew taps** — a git repository is the registry, `brew update` is `git
+  pull`. Same instinct as this, and the reason the version is not simply the
+  commit is that `a3f91c2` is not a sentence you can put in a Settings dialog.
+- **VS Code / Open VSX** — publisher accounts, signing, a marketplace. Correct
+  for executable extensions, and enormous overhead for a file that says what
+  colour a border is. Nothing here executes.
+- **base16 / tinted-theming** — pure data, no versions at all, you re-pull the
+  whole scheme repository. Lovely and the right call at that scale; it has no
+  answer for "this one theme I installed has been improved".
+- **tldr-pages** — CI is the review. That is where `tools/validate.mjs` being
+  runnable locally with zero dependencies comes from: the check a maintainer runs
+  and the check you run are the same command.
+
+</details>
+
+## What kururu asks for
+
+One generated file at the root, and then whatever it names:
+
+```
+index.json                  every entry, its version, its digest, and where its files are
+themes/<id>/theme.json
+skins/<id>/skin.json        + any .woff2 or .css it references, and the font's licence
+mascots/<id>/mascot.json    + sheet.png
+packs/<id>/pack.json
+schema/tokens.json          the token vocabulary kururu answers for at schema 1
+```
+
+`index.json` is **generated by CI from the directories** — never hand-edited. A
+contributor adds a folder and opens a pull request; the index is rebuilt on
+merge. Hand-maintaining it would mean every pull request conflicting with every
+other one on the same three lines.
+
+Kururu fetches it from `raw.githubusercontent.com` on the default branch. No API,
+no auth, no rate limit anybody will hit. **The server fetches it, never the
+browser** — a phone on the tailnet has no business reaching GitHub directly, the
+server is the only thing that can write to `~/.config/kururu`, and it sidesteps
+CORS entirely.
+
+`schema/tokens.json` is the one file here that is a copy of something in kururu,
+and it is a copy on purpose: this repository has to be able to check a pull
+request without depending on a particular version of kururu being checked out
+next to it. It is generated from kururu's own `shared/theme.ts` and
+`shared/skin.ts`, and it is versioned by the `schema` number that every manifest
+declares. Adding a token to kururu means publishing a new schema here; it does
+not mean every existing entry stops working, because of the fill-in rule above.
+
+## The two rules that get a pull request sent back
+
+**Assets are files in your own directory, never URLs.** A `border-image`, an
+`@font-face` or a background that names `https://…` is a window that phones home
+every time it paints, and tells whoever owns that URL when the person using it is
+working. Kururu is a window somebody leaves open all day. Ship the file; kururu
+installs it locally and serves it from its own origin. `@import` and remote
+`url()` are refused by CI and refused again by kururu at install time. The only
+URLs allowed in a manifest are `homepage` and `source`, which are credits — links
+a person clicks, never something the window fetches.
+
+**Fonts need a licence that permits redistribution,** and the licence file goes
+in the directory beside the font. SIL OFL is the usual answer; CI checks that a
+directory shipping a `.woff2` has a licence file in it.
+
+A skin *may* ship a stylesheet for things the token set cannot express, and it is
+scoped by `[data-skin="<your-id>"]` so that two installed skins can never fight
+over one window. Prefer tokens where tokens will do — a skin built out of them
+keeps working when kururu renames a class, and a stylesheet does not. None of the
+three skins here needs one, which is the intended result rather than a
+coincidence: the token surface was widened until they did not.
+
+## Checking your own work
+
+```sh
+node tools/validate.mjs        # the whole review, and what CI runs
+node tools/build-index.mjs     # regenerate index.json (CI does this on merge)
+```
+
+No `npm install`. Plain Node, no dependencies, because a validator behind an
+install step is a validator only CI ever runs — which is exactly when the
+feedback is least useful.
+
+## Licence
+
+The tooling and the manifests written for this repository are CC0. Each entry
+declares its own `licence` and, where the work is somebody else's, a `source`
+and a licence file beside it:
+
+- the five **themes** are ports of published palettes — Dracula (MIT), Tokyo
+  Night (Apache-2.0), Nord (MIT), Gruvbox (MIT), One Dark (MIT) — mapped onto
+  kururu's tokens, each linking its home.
+- the five **mascots** are cut from [Animated Wild Animals by
+  ScratchIO](https://opengameart.org/content/animated-wild-animals), CC0. No
+  attribution is required and it is in every directory anyway.
+- **Teletype** ships Space Mono and **Bubblegum** ships Nunito, both SIL OFL 1.1,
+  with the licence beside the font.

@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "wolf",
+  "name": "Wolf",
+  "version": "1.0.0",
+  "description": "Runs flat out while it works. Howls at nothing while it waits.",
+  "author": "ScratchIO",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/animated-wild-animals",
+  "sheet": "sheet.png",
+  "frame": 54,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 54
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 6,
+    "cycle": 600
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 10,
+    "cycle": 2600
+  }
+}

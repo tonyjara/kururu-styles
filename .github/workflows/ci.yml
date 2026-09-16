@@ -1,0 +1,81 @@
+# What happens to a pull request, and what happens when it lands.
+#
+# Two jobs, and the split between them is the whole publishing model. `check`
+# runs on everything and never writes: it is the review a contributor gets, and
+# it is the same command they can run themselves (`node tools/validate.mjs`), so
+# a green tick here means nothing that a local run would not have said first.
+# `publish` runs only on `main` and does one thing — regenerate `index.json` and
+# commit it if it moved.
+#
+# The index is regenerated *after* the merge rather than being carried in the
+# pull request, because a generated file in a branch conflicts with every other
+# branch that touched the same three lines, and a contributor adding a theme
+# should never have to resolve a merge conflict in a digest.
+#
+# There is no release step and no artifact. Kururu fetches `index.json` from
+# `raw.githubusercontent.com` on this branch, so a merged pull request is
+# available to everybody the moment this job pushes — which is the only part of
+# the pipeline that has to be up for anybody's Settings dialog to work.
+
+name: styles
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # No `npm install`. The tools are plain Node with no dependencies, which is
+      # what lets a contributor run the identical check on a machine that has
+      # never installed anything — see the header of tools/validate.mjs.
+      - name: Validate every entry
+        run: node tools/validate.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+
+      # On a pull request this is advisory: the index is rebuilt on merge, so a
+      # branch is *expected* to be behind it. It runs anyway because the diff it
+      # prints is the clearest possible answer to "what will this change".
+      - name: What the index would become
+        if: github.event_name == 'pull_request'
+        run: |
+          node tools/build-index.mjs
+          git --no-pager diff --stat -- index.json | tee -a "$GITHUB_STEP_SUMMARY"
+
+  publish:
+    if: github.event_name == 'push'
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Rebuild the index
+        run: node tools/build-index.mjs
+
+      # `git diff --quiet` rather than an unconditional commit: a job that
+      # commits every run fills the history with no-ops and makes "when did this
+      # entry actually change" unanswerable by looking. The index carries no
+      # timestamp for the same reason — see the foot of tools/build-index.mjs.
+      - name: Commit it if it moved
+        run: |
+          if git diff --quiet -- index.json; then
+            echo "index.json is already current" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.json
+          git commit -m "index: rebuild"
+          git push

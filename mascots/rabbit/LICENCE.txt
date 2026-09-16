@@ -1,0 +1,27 @@
+These sprites are from "Animated Wild Animals" by ScratchIO, published on
+OpenGameArt under CC0 1.0 (public domain dedication):
+
+    https://opengameart.org/content/animated-wild-animals
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+No attribution is required. It is here anyway, because knowing where a picture
+came from is worth more than the two lines it costs, and because somebody who
+likes this one should be able to find the other five.
+
+WHAT WAS CHANGED
+
+The original ships one PNG per animation, each a horizontal strip of frames at
+that animal's own cell width. Kururu wants a single sheet with a square cell,
+one clip per row, so `sheet.png` here is the pack's idle strip and its walk (or
+run, or hop) strip laid into a two-row grid:
+
+  row 0   idle
+  row 1   working
+
+Every frame is cropped to the *union* bounding box of both clips rather than to
+its own, and then centred in a square cell. That is load-bearing rather than
+tidy: a frame trimmed to its own content loses where the animal sits in its cell,
+which is how a sheet draws a hop — trim each frame separately and every one of
+them lands on the floor.
+
+Nothing else was touched. No pixel was redrawn and no colour was changed.
