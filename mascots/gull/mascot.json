@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "gull",
+  "name": "Gull",
+  "version": "1.0.0",
+  "description": "Beats its wings while it works and glides while it waits \u2014 the same five frames, slowed to a quarter speed.",
+  "author": "MoikMellah",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/animated-birds-32x32",
+  "sheet": "sheet.png",
+  "frame": 32,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 32
+  },
+  "working": {
+    "row": 0,
+    "col": 0,
+    "count": 5,
+    "cycle": 520
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 5,
+    "cycle": 2400
+  }
+}

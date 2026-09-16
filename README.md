@@ -28,6 +28,8 @@ template for each kind. If you are an agent doing it on somebody's behalf,
 | **Themes** | Dracula · Gruvbox Dark · Nord · One Dark · Tokyo Night | five palettes most people have already spent a decade looking at |
 | **Skins** | Blueprint · Bubblegum · Teletype | three shapes of window, none of which is a palette |
 | **Mascots** | Bear · Deer · Fox · Rabbit · Wolf | [ScratchIO's CC0 wild animals](https://opengameart.org/content/animated-wild-animals), cut to kururu's sheet shape |
+| | Gull · Hawk · Songbird | three birds, from two CC0 sheets |
+| | Fish · Whale | and two things that swim |
 | **Packs** | Campfire · Green Screen · Night Shift | one of each, chosen to go together |
 
 ## The three things, and the fourth that is a list of them
@@ -209,8 +211,18 @@ and a licence file beside it:
 - the five **themes** are ports of published palettes — Dracula (MIT), Tokyo
   Night (Apache-2.0), Nord (MIT), Gruvbox (MIT), One Dark (MIT) — mapped onto
   kururu's tokens, each linking its home.
-- the five **mascots** are cut from [Animated Wild Animals by
-  ScratchIO](https://opengameart.org/content/animated-wild-animals), CC0. No
-  attribution is required and it is in every directory anyway.
+- the **mascots** come from four packs, each credited in its own directory with
+  a `LICENCE.txt` saying exactly what was changed:
+  [Animated Wild Animals](https://opengameart.org/content/animated-wild-animals)
+  by ScratchIO (CC0) for the bear, deer, fox, rabbit and wolf;
+  [Bird](https://opengameart.org/content/bird-2) by rmazanek (CC0) for the
+  songbird; [Animated Birds
+  (32x32)](https://opengameart.org/content/animated-birds-32x32) by MoikMellah
+  (CC0) for the gull and the hawk; [Swimming
+  Whale](https://opengameart.org/content/swimming-whale) by Mepavi @ You're
+  Perfect Studio (CC0); and [Cute Fish
+  Sprites](https://opengameart.org/content/cute-fish-sprites) by chips8688,
+  which is **OGA-BY 3.0** and the one entry here that genuinely requires
+  attribution rather than merely deserving it.
 - **Teletype** ships Space Mono and **Bubblegum** ships Nunito, both SIL OFL 1.1,
   with the licence beside the font.

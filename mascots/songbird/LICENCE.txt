@@ -1,0 +1,21 @@
+These sprites are from "Bird" by rmazanek, published on OpenGameArt under
+CC0 1.0 (public domain dedication):
+
+    https://opengameart.org/content/bird-2
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+No attribution is required. It is here anyway, because knowing where a picture
+came from is worth more than the two lines it costs.
+
+WHAT WAS CHANGED
+
+The original is an eleven-by-eight grid of 48x32 cells holding eight animations —
+death, idle hop, idle stand, idle peck, hop, take off, fly and land. Kururu wants
+a square cell, so `sheet.png` here is two of those rows re-gridded:
+
+  row 0   idle peck   (8 frames, row 3 of the original)
+  row 1   fly         (9 frames, row 6 of the original)
+
+Every frame is cropped to the union bounding box of both clips and centred in a
+square cell, which is what keeps the standing bird standing and the flying bird
+at its own height. Nothing was redrawn and no colour was changed.

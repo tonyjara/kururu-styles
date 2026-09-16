@@ -1,0 +1,21 @@
+These sprites are from "Cute Fish Sprites" by chips8688, published on OpenGameArt under
+the OpenGameArt Attribution License 3.0 (OGA-BY 3.0):
+
+    https://opengameart.org/content/cute-fish-sprites
+    https://opengameart.org/content/oga-by-30-faq
+
+Attribution IS required by this licence. The author and the source above are it;
+kururu shows both on the row that offers this mascot, and this file travels with
+the sheet wherever it is installed.
+
+WHAT WAS CHANGED
+
+The sheet is the artist's, unmodified: a 32x32 grid of twelve colours, each with
+eight animations. This entry points at the orange one — idle on row 8, swim on
+row 9, columns 8 to 11 — and the other eleven colours are still there, which is
+the whole reason the full sheet ships rather than a crop of it. Re-cutting to the
+teal one is a drag in Settings.
+
+This is the one entry here that is **not** CC0. OGA-BY 3.0 permits
+redistribution and modification and asks for attribution, which is what the
+`author` and `source` fields above are for. Keep them with the file.

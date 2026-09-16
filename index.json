@@ -383,6 +383,57 @@
     },
     {
       "kind": "mascot",
+      "id": "fish",
+      "name": "Fish",
+      "version": "1.0.0",
+      "description": "Swims while it works and blows bubbles while it waits. The sheet holds twelve colours — Settings can re-cut it to any of them.",
+      "author": "chips8688",
+      "licence": "OGA-BY-3.0",
+      "source": "https://opengameart.org/content/cute-fish-sprites",
+      "path": "mascots/fish",
+      "manifest": "mascot.json",
+      "digest": "sha256-34fc1740238c16cf5d9ad979938d6dcd36b9dfd2dad7f325c1254f78fdda757d",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1036,
+          "digest": "sha256-3d279c96938b9867062701f1a29f51f0dfdee347b786fab6fd7bda1682fb9229"
+        },
+        {
+          "name": "mascot.json",
+          "size": 618,
+          "digest": "sha256-c538ff8dbae6d569722b2a6bd496d845cc273216596a9e5558882302ef8d40a1"
+        },
+        {
+          "name": "sheet.png",
+          "size": 35906,
+          "digest": "sha256-c9ed7d37ddd50221ce8760ba1fbbc14908d86435e3fecc6e3d74db9452fe5986"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 32,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 32
+        },
+        "working": {
+          "row": 9,
+          "col": 8,
+          "count": 4,
+          "cycle": 640
+        },
+        "idle": {
+          "row": 8,
+          "col": 8,
+          "count": 4,
+          "cycle": 1900
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "fox",
       "name": "Fox",
       "version": "1.0.0",
@@ -429,6 +480,108 @@
           "col": 0,
           "count": 6,
           "cycle": 1800
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "gull",
+      "name": "Gull",
+      "version": "1.0.0",
+      "description": "Beats its wings while it works and glides while it waits — the same five frames, slowed to a quarter speed.",
+      "author": "MoikMellah",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/animated-birds-32x32",
+      "path": "mascots/gull",
+      "manifest": "mascot.json",
+      "digest": "sha256-03604e14998c7dede9be08e12e5c26c05649eec054f0f97ba1851642c3a64cca",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 941,
+          "digest": "sha256-1a6cadeda77f064bee359e3863ea2f887a08f6c6b52f98bf67fc2a5a32681926"
+        },
+        {
+          "name": "mascot.json",
+          "size": 600,
+          "digest": "sha256-51ab38fc650ed332400899d83465f1b8da436f3c5ac3012de5e5aef8629f3f5e"
+        },
+        {
+          "name": "sheet.png",
+          "size": 2125,
+          "digest": "sha256-9ed8cd1392c64dad78c880481daa7cbf7db6974a908b40b3e7b9ed979e16b258"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 32,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 32
+        },
+        "working": {
+          "row": 0,
+          "col": 0,
+          "count": 5,
+          "cycle": 520
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 5,
+          "cycle": 2400
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "hawk",
+      "name": "Hawk",
+      "version": "1.0.0",
+      "description": "The gull's brown neighbour on the same sheet. Beats hard while it works, circles while it waits.",
+      "author": "MoikMellah",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/animated-birds-32x32",
+      "path": "mascots/hawk",
+      "manifest": "mascot.json",
+      "digest": "sha256-42689f026fb94d30bd0c52cdc08c06f5e5a2af0f9c51626382579ce49ce55b47",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 596,
+          "digest": "sha256-e2ba1247f34d04e69d23e18762caa8d33483019cd6fabe0a5223d1abacceb3b4"
+        },
+        {
+          "name": "mascot.json",
+          "size": 584,
+          "digest": "sha256-9dfb26eefc7017e189da59b15d218c60ba70b8a71d5990b1085c43e2f1a5d138"
+        },
+        {
+          "name": "sheet.png",
+          "size": 2125,
+          "digest": "sha256-9ed8cd1392c64dad78c880481daa7cbf7db6974a908b40b3e7b9ed979e16b258"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 32,
+        "trim": {
+          "x": 3,
+          "y": 0,
+          "size": 29
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 5,
+          "cycle": 560
+        },
+        "idle": {
+          "row": 1,
+          "col": 0,
+          "count": 5,
+          "cycle": 2600
         }
       }
     },
@@ -481,6 +634,103 @@
           "count": 10,
           "cycle": 2200
         }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "songbird",
+      "name": "Songbird",
+      "version": "1.0.0",
+      "description": "Flies while it works and pecks at the ground while it waits. The sheet holds eight animations; Settings can re-cut it.",
+      "author": "rmazanek",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/bird-2",
+      "path": "mascots/songbird",
+      "manifest": "mascot.json",
+      "digest": "sha256-591f7f1d3323c76f029292533ba8ca72ef842926461844e2707440d35c7ce38c",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 935,
+          "digest": "sha256-3bcfb87bacb81e56fd3551557750ebd85d7e6bf97522b5251a344474282028d3"
+        },
+        {
+          "name": "mascot.json",
+          "size": 598,
+          "digest": "sha256-255e08d78001b4332e0e20c835103e7bd5956931f7c93da1bccf339f13f2ea18"
+        },
+        {
+          "name": "sheet.png",
+          "size": 4138,
+          "digest": "sha256-ada40953c403125e091217a0a1c000f9e75e4791b8d49c3b2051cfa94d86de44"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 47,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 47
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 9,
+          "cycle": 700
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 8,
+          "cycle": 2000
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "whale",
+      "name": "Whale",
+      "version": "1.0.0",
+      "description": "Swims while it works, and hands the badge back to the dot when it stops. The trim is a window on its head — an orca does not fit in a square.",
+      "author": "Mepavi @ You're Perfect Studio",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/swimming-whale",
+      "path": "mascots/whale",
+      "manifest": "mascot.json",
+      "digest": "sha256-db5082790990c03f1fbb2d354dab42cb78999a73267254c18d7fe0dca636bf7c",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1374,
+          "digest": "sha256-e8664467f0002dc82a08c6034a05435806f5c03ec3abf2754e02a4cb718fd557"
+        },
+        {
+          "name": "mascot.json",
+          "size": 591,
+          "digest": "sha256-3f1dc3123b45ccd66f16bb6c72b58c40705b17aa351acec6ea7607ba7475aeba"
+        },
+        {
+          "name": "sheet.png",
+          "size": 4355,
+          "digest": "sha256-e3c09151d06fccca810b52bc69c47c8f8e5d7f63a0498ae73206693d609b181f"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 105,
+        "trim": {
+          "x": 11,
+          "y": 35,
+          "size": 32
+        },
+        "working": {
+          "row": 0,
+          "col": 0,
+          "count": 7,
+          "cycle": 1100
+        },
+        "idle": null
       }
     },
     {

@@ -1,0 +1,28 @@
+These sprites are from "Swimming Whale" by Mepavi @ You're Perfect Studio, published on OpenGameArt under
+CC0 1.0 (public domain dedication):
+
+    https://opengameart.org/content/swimming-whale
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+No attribution is required. It is here anyway, because knowing where a picture
+came from is worth more than the two lines it costs.
+
+WHAT WAS CHANGED
+
+The original is not a grid at all: three animations laid out on one 400x400 sheet
+at arbitrary offsets. `sheet.png` here is two of them re-gridded into square
+cells, every frame cropped to the union bounding box of all of them:
+
+  row 0   swim    (7 frames)
+  row 1   breach  (5 frames)
+
+**The trim is deliberately not the whole animal**, and this entry is the clearest
+demonstration in the repository of what `trim` is for. An orca is nearly four
+times as long as it is tall, so a square box around all of it renders a 16px
+badge four pixels high — a dark smudge. The trim is a 32px window over its head
+instead, so what the badge shows is an eye patch and a mouth line, bobbing. The
+rest of the animal is still in the cell and Settings can widen the window.
+
+`idle` is null, which is a plain dot. The breach on row 1 leaves the window when
+the whale curls, and a mascot that disappears while its agent is *idle* would
+lose the one distinction the badge exists to draw.

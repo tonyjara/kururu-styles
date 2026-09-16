@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "songbird",
+  "name": "Songbird",
+  "version": "1.0.0",
+  "description": "Flies while it works and pecks at the ground while it waits. The sheet holds eight animations; Settings can re-cut it.",
+  "author": "rmazanek",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/bird-2",
+  "sheet": "sheet.png",
+  "frame": 47,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 47
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 9,
+    "cycle": 700
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 8,
+    "cycle": 2000
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "hawk",
+  "name": "Hawk",
+  "version": "1.0.0",
+  "description": "The gull's brown neighbour on the same sheet. Beats hard while it works, circles while it waits.",
+  "author": "MoikMellah",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/animated-birds-32x32",
+  "sheet": "sheet.png",
+  "frame": 32,
+  "trim": {
+    "x": 3,
+    "y": 0,
+    "size": 29
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 5,
+    "cycle": 560
+  },
+  "idle": {
+    "row": 1,
+    "col": 0,
+    "count": 5,
+    "cycle": 2600
+  }
+}

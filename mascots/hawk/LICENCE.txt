@@ -1,0 +1,14 @@
+These sprites are from "Animated Birds (32x32)" by MoikMellah, published on OpenGameArt under
+CC0 1.0 (public domain dedication):
+
+    https://opengameart.org/content/animated-birds-32x32
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+No attribution is required. It is here anyway, because knowing where a picture
+came from is worth more than the two lines it costs.
+
+WHAT WAS CHANGED
+
+The other bird from the same sheet — see the Gull's note. The magenta key colour
+was turned into transparency and nothing else was touched; this entry points at
+row 1 where the Gull points at row 0.

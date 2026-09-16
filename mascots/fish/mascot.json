@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "fish",
+  "name": "Fish",
+  "version": "1.0.0",
+  "description": "Swims while it works and blows bubbles while it waits. The sheet holds twelve colours \u2014 Settings can re-cut it to any of them.",
+  "author": "chips8688",
+  "licence": "OGA-BY-3.0",
+  "source": "https://opengameart.org/content/cute-fish-sprites",
+  "sheet": "sheet.png",
+  "frame": 32,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 32
+  },
+  "working": {
+    "row": 9,
+    "col": 8,
+    "count": 4,
+    "cycle": 640
+  },
+  "idle": {
+    "row": 8,
+    "col": 8,
+    "count": 4,
+    "cycle": 1900
+  }
+}

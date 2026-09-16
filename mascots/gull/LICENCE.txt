@@ -1,0 +1,20 @@
+These sprites are from "Animated Birds (32x32)" by MoikMellah, published on OpenGameArt under
+CC0 1.0 (public domain dedication):
+
+    https://opengameart.org/content/animated-birds-32x32
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+No attribution is required. It is here anyway, because knowing where a picture
+came from is worth more than the two lines it costs.
+
+WHAT WAS CHANGED
+
+The original is a 32x32 grid holding two birds of five frames each, on a magenta
+key colour. The only change made here is that the magenta was turned into
+transparency; the grid is the artist's own and both birds are still on the sheet,
+so Settings can re-cut it to the brown one on row 1.
+
+Idle and working are the *same* five frames at different speeds, which is not a
+shortcut so much as what a gliding bird is: there is no second animation on the
+sheet worth having, and a bird frozen on one frame says exactly what the dot it
+replaced said.

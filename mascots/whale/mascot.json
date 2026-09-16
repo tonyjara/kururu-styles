@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "whale",
+  "name": "Whale",
+  "version": "1.0.0",
+  "description": "Swims while it works, and hands the badge back to the dot when it stops. The trim is a window on its head \u2014 an orca does not fit in a square.",
+  "author": "Mepavi @ You're Perfect Studio",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/swimming-whale",
+  "sheet": "sheet.png",
+  "frame": 105,
+  "trim": {
+    "x": 11,
+    "y": 35,
+    "size": 32
+  },
+  "working": {
+    "row": 0,
+    "col": 0,
+    "count": 7,
+    "cycle": 1100
+  },
+  "idle": null
+}
