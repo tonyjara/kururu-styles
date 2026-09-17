@@ -35,6 +35,7 @@ import {
   entries,
   filesOf,
   ID,
+  PACK_PARTS,
   pngSize,
   readJson,
   ROOT,
@@ -42,6 +43,7 @@ import {
   SEMVER,
   sizeOf,
   VOCAB,
+  wavMs,
 } from "./lib.mjs";
 
 const problems = [];
@@ -57,6 +59,17 @@ const fail = (where, message) => problems.push(`${where}: ${message}`);
  * has always used is fifteen kilobytes.
  */
 const MAX_ASSET = 1024 * 1024;
+
+/**
+ * And a quarter of that for a sound, with a length cap beside it.
+ *
+ * Two limits rather than one because they catch different mistakes. The size
+ * catches a WAV nobody downsampled — a stereo 48kHz blip is four times the mono
+ * 22kHz one and sounds identical through a laptop speaker. The length catches
+ * the thing somebody actually wants to contribute, which is a tune they like.
+ */
+const MAX_SOUND = 256 * 1024;
+const MAX_SOUND_MS = 2000;
 
 /** Hex, `rgb()`/`rgba()`, or `hsl()`/`hsla()`. A colour, and nothing that could be a function call. */
 const COLOUR = /^(#[0-9a-fA-F]{3,8}|rgba?\([\d\s.,%/]+\)|hsla?\([\d\s.,%/deg]+\))$/;
@@ -122,6 +135,7 @@ for (const e of entries()) {
   if (e.kind === "theme") validateTheme(where, m);
   if (e.kind === "skin") validateSkin(where, m, e.dir, files);
   if (e.kind === "mascot") validateMascot(where, m, e.dir, files);
+  if (e.kind === "sound") validateSound(where, m, e.dir, files);
 
   found.set(`${e.kind}/${e.id}`, { entry: e, manifest: m, files });
 }
@@ -129,8 +143,11 @@ for (const e of entries()) {
 // Packs point at other entries, so they are checked once everything is known.
 for (const [key, { entry, manifest }] of found) {
   if (entry.kind !== "pack") continue;
-  for (const kind of ["theme", "skin", "mascot"]) {
+  for (const { kind, required } of PACK_PARTS) {
     const id = manifest[kind];
+    // An absent optional part is a pack with no opinion about that half of the
+    // look, which is a real thing for a pack to be — see `PACK_PARTS`.
+    if (id === undefined && !required) continue;
     if (typeof id !== "string" || !ID.test(id)) {
       fail(entry.dir, `"${kind}" must be the id of a ${kind} in this repository`);
     } else if (!found.has(`${kind}/${id}`)) {
@@ -308,6 +325,43 @@ function picture(where, field, name, dir, files) {
   const size = pngSize(join(ROOT, dir, name));
   if (!size) fail(where, `"${field}": ${name} is not a PNG`);
   return size;
+}
+
+/**
+ * A sound is one file, so almost everything here is about that file.
+ *
+ * **The format list is kururu's, not this repository's.** It comes out of
+ * `schema/tokens.json` like every other vocabulary, and it is shorter than the
+ * list of things a browser can play for a reason worth restating: kururu will
+ * transcode the machine's own alert sounds on the way out, and it cannot do that
+ * for a registry entry — a Linux box has no `afconvert`. An entry in a format
+ * that needed one would be silence on half the machines that installed it, with
+ * nothing anywhere saying so.
+ *
+ * **And it is short.** A notification sound is a thing you hear thirty times a
+ * day and it plays from a phone in somebody's pocket, so this refuses a track
+ * where it wants a blip. Two seconds is generous — kururu's own croak is under
+ * one — and it is only checkable for WAV, which is the format this repository's
+ * own sounds are in and the one `wavMs` can read without a decoder.
+ */
+function validateSound(where, m, dir, files) {
+  if (typeof m.file !== "string" || !files.includes(m.file)) {
+    fail(where, `"file" must name an audio file in this directory`);
+    return;
+  }
+  const ext = m.file.slice(m.file.lastIndexOf(".")).toLowerCase();
+  if (!VOCAB.sound.formats.includes(ext)) {
+    fail(where, `${m.file} is ${ext}, and kururu plays ${VOCAB.sound.formats.join(", ")} — see the header of tools/validate.mjs`);
+    return;
+  }
+  if (sizeOf(dir, m.file) > MAX_SOUND) {
+    fail(where, `${m.file} is over ${Math.round(MAX_SOUND / 1024)}KB. A notification is a blip, and it is fetched by a phone.`);
+  }
+  const ms = ext === ".wav" ? wavMs(join(ROOT, dir, m.file)) : null;
+  if (ms === null && ext === ".wav") fail(where, `${m.file} is not a WAV this can read`);
+  else if (ms !== null && ms > MAX_SOUND_MS) {
+    fail(where, `${m.file} is ${(ms / 1000).toFixed(1)}s. A notification sound is at most ${MAX_SOUND_MS / 1000}s — this is a sound you hear thirty times a day.`);
+  }
 }
 
 function validateMascot(where, m, dir, files) {

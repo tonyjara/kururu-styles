@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "kind": "sound",
+  "id": "knock",
+  "name": "Knock",
+  "version": "1.0.0",
+  "description": "A block set down: a sine bent down fourteen semitones with a little grit on the front. The one to pick to be told without being interrupted.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "file": "knock.wav"
+}

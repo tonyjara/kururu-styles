@@ -3,11 +3,12 @@
   "kind": "pack",
   "id": "quest",
   "name": "Quest",
-  "version": "1.0.0",
-  "description": "Blue stone walls, a black HUD with three hearts, an 8-bit palette on navy, and a deer in the lost woods.",
+  "version": "1.1.0",
+  "description": "Blue stone walls, a black HUD with three hearts, an 8-bit palette on navy, somebody small with a sword, and four notes up a major chord.",
   "author": "kururu-styles",
   "licence": "CC0-1.0",
   "theme": "dungeon",
   "skin": "quest",
-  "mascot": "deer"
+  "mascot": "hero",
+  "sound": "fanfare"
 }

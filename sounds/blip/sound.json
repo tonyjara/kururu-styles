@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "kind": "sound",
+  "id": "blip",
+  "name": "Blip",
+  "version": "1.0.0",
+  "description": "A two-note menu blip on a thin square wave, over in a fifth of a second. The quietest way a device can say something.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "file": "blip.wav"
+}

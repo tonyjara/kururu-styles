@@ -891,8 +891,286 @@ function world11() {
   write("world-1-1", "dialog.png", dialog);
 }
 
+
+// ---------------------------------------------------------------------------
+// The people — sprite sheets for the packs that are homages
+// ---------------------------------------------------------------------------
+
+/**
+ * Four little figures, so a pack that dresses the window in bricks and blue sky
+ * has somebody in it rather than a fox.
+ *
+ * The same argument the skins above make, twice over. **Drawn from the idea of a
+ * kind of character rather than from anybody's sprite** — a person in a cap, a
+ * person in a pointed hat with a sword, a person in a helmet, a person with a
+ * pick — because those are silhouettes, and a silhouette at sixteen pixels is
+ * not a thing anybody owns. Nothing here was traced, ripped or recoloured from a
+ * game's files, and none of them is named after a character.
+ *
+ * And **drawn by code so they can be changed**: the bodies below are ASCII, one
+ * character per pixel, which is the same `sprite()` the picture skins use. A
+ * contributor who wants the cap a pixel taller edits a row of text.
+ *
+ * ## The sheet shape, which is kururu's and is strict
+ *
+ * One PNG, square cells, one clip per row:
+ *
+ *     row 0   idle      2 frames
+ *     row 1   working   4 frames
+ *
+ * Sixteen-pixel cells, because sixteen pixels is what the badge beside a working
+ * agent actually is — `docs/styles.md` in kururu is emphatic that a sheet has to
+ * be checked at the size it is drawn at, and drawing these at the badge's own
+ * size sidesteps the question. Six frames of 16×16 is a 96×32 picture and about
+ * four hundred bytes.
+ *
+ * ## Why the walk is a bounce
+ *
+ * Four frames: legs apart, legs together and the whole body up a pixel, legs
+ * further apart, together and up again. That is a *bounce*, not a walk cycle,
+ * and it is deliberate — a real cycle needs the arms to swing opposite the legs
+ * to read, the arms here are two pixels each, and two pixels cannot swing. What
+ * survives at this size is vertical motion, so that is what these do. The
+ * animals in `mascots/` have six and eight frames because they were photographed
+ * sprites with the room for them.
+ *
+ * The trim is **computed from the finished sheet**, never typed: it is the union
+ * bounding box over every frame of both clips, which is the rule kururu states
+ * and the one that keeps a bobbing figure from being rescaled per frame.
+ */
+const FIGURE_LEGS = {
+  /** Standing: both feet down, a gap between them. */
+  stand: ["....oppppppo....", "....opo..opo....", "...obbo..obbo..."],
+  /** Mid-stride. */
+  step: ["....oppppppo....", "...opo...opo....", "..obbo...obbo..."],
+  /**
+   * Pushing off: the same shins, on wider feet.
+   *
+   * The first cut moved the *legs* further apart and it read as the splits
+   * rather than as a stride — at three rows of leg there is no knee to bend, so
+   * separation past a couple of pixels stops looking like walking and starts
+   * looking like an injury. Lengthening the feet says the same thing and stays
+   * inside the silhouette.
+   */
+  stride: ["....oppppppo....", "...opo...opo....", "..obbbo..obbbo.."],
+  /** Passing: feet together under the body. */
+  pass: ["....oppppppo....", "......oppo......", ".....obbbbo....."],
+};
+
+/**
+ * A torso in the plumber's cut — sleeves, two gloved hands, a bib — which three
+ * of the four wear. Only the colours differ, which is the whole reason it is one
+ * block of text rather than three.
+ */
+const TORSO_SLEEVED = ["...ottTTTTtto...", "..ogtTTTTTTtgo..", "...oTTTTTTTTo...", "....oTTTTTTo...."];
+
+/** Bare arms, for the one in a tunic. */
+const TORSO_BARE = ["...osttttttso...", "..osttttttttso..", "...otttttttto...", "....owwwwwwo...."];
+
+const FIGURES = [
+  {
+    id: "plumber",
+    name: "Plumber",
+    description: "A short person in a red cap and blue overalls, bouncing along. For a window made of bricks and blue sky.",
+    head: [
+      "......oooo......",
+      ".....occccoo....",
+      "....occccccooo..",
+      "....ossesesso...",
+      "....oshhhhhso...",
+      ".....osssso.....",
+    ],
+    torso: TORSO_SLEEVED,
+    palette: {
+      o: "#1a1008", c: "#d22b2b", s: "#f0b088", e: "#241a12", h: "#5a3a18",
+      t: "#d22b2b", T: "#2b58c4", g: "#f4f0e8", p: "#2b58c4", b: "#6b4420",
+    },
+  },
+  {
+    id: "hero",
+    name: "Hero",
+    description: "A small person in a green tunic and a pointed cap, with a sword out. For a window made of dungeon walls.",
+    head: [
+      "........oo......",
+      "......occco.....",
+      "....occccccoo...",
+      "....ossesesso...",
+      "....osssssso....",
+      ".....osssso.....",
+    ],
+    torso: TORSO_BARE,
+    palette: {
+      o: "#101808", c: "#3aa03a", s: "#f0c090", e: "#201810", t: "#3aa03a",
+      w: "#7a4a1c", p: "#e8d8b0", b: "#7a4a1c", m: "#d8e4ec", M: "#8c9aa6",
+    },
+    prop: "sword",
+  },
+  {
+    id: "knight",
+    name: "Knight",
+    description: "A figure in a full steel helm with the visor down, sword drawn. For the riveted window, and for anybody who wants to be looked at sternly.",
+    head: [
+      "......oooo......",
+      ".....oCCCCo.....",
+      "....occccccoo...",
+      "....oceeeecoo...",
+      "....occccccoo...",
+      ".....occcco.....",
+    ],
+    torso: TORSO_SLEEVED,
+    palette: {
+      // Light pauldrons over a darker breastplate, not the other way round: the
+      // first cut had the chest lighter than the sleeves and the whole figure
+      // read as one grey blob at sixteen pixels.
+      o: "#0c0e10", c: "#6d757d", C: "#a7b0b8", e: "#14171a", t: "#9aa2aa",
+      T: "#4a5157", g: "#c2cad2", p: "#3a4047", b: "#1c2024", m: "#d8e4ec", M: "#8c9aa6",
+    },
+    prop: "sword",
+  },
+  {
+    id: "miner",
+    name: "Miner",
+    description: "A bearded person in a hard hat with the lamp lit, carrying a pick. For the inventory-screen window.",
+    head: [
+      "......oooo......",
+      ".....occccoo....",
+      "...loccccccoo...",
+      "....ossesesso...",
+      "....oshhhhhso...",
+      ".....osssso.....",
+    ],
+    torso: TORSO_SLEEVED,
+    palette: {
+      o: "#14100c", c: "#b8860b", l: "#ffe066", s: "#e0a878", e: "#201810",
+      h: "#4a3520", t: "#2f6aa8", T: "#24547f", g: "#8a6a3a", p: "#5a4028", b: "#2e2218",
+      m: "#9aa4ac", w: "#6b4420",
+    },
+    prop: "pick",
+  },
+];
+
+/**
+ * A prop in the figure's right hand.
+ *
+ * Drawn after the body and *not* included in the bob, which is the one thing
+ * here that is a decision rather than a drawing: a sword that rose and fell with
+ * the shoulder would read as being waved, and what is wanted is somebody walking
+ * while holding one. It sits still and the person bounces past it, which is also
+ * what carrying something looks like.
+ */
+function prop(img, ox, oy, kind, key) {
+  if (kind === "sword") {
+    // Blade up the right edge, a crossguard at the hand, one pixel of shine.
+    for (let y = 3; y <= 8; y++) put(img, ox + 13, oy + y, key.m);
+    for (let y = 3; y <= 8; y++) put(img, ox + 14, oy + y, key.M);
+    put(img, ox + 13, oy + 2, key.o);
+    rect(img, ox + 12, oy + 9, 3, 1, key.o);
+    put(img, ox + 13, oy + 10, key.o);
+  }
+  if (kind === "pick") {
+    // A haft over the shoulder and a head across the top of it.
+    for (let y = 4; y <= 10; y++) put(img, ox + 13, oy + y, key.w);
+    rect(img, ox + 11, oy + 3, 4, 1, key.m);
+    put(img, ox + 11, oy + 4, key.m);
+    put(img, ox + 14, oy + 4, key.m);
+  }
+}
+
+/** One 16px cell: head, torso, legs, prop, all shifted down by the bounce. */
+function figure(img, ox, oy, spec, { legs, bob }) {
+  const key = spec.palette;
+  const top = oy + 1 - bob;
+  sprite(img, ox, top, spec.head, key);
+  sprite(img, ox, top + 6, spec.torso, key);
+  sprite(img, ox, top + 10, FIGURE_LEGS[legs], key);
+  if (spec.prop) prop(img, ox, oy, spec.prop, key);
+}
+
+/**
+ * The union bounding box of every non-transparent pixel in the sheet, expressed
+ * as the square kururu's `trim` wants.
+ *
+ * Computed rather than typed, and over the *whole sheet* rather than per frame,
+ * for the reason kururu's docs give and this script would otherwise get wrong on
+ * its own output: the bounce is a figure sitting one pixel higher in its cell,
+ * and a trim measured per frame would cancel exactly the motion the frames were
+ * drawn for.
+ */
+function sheetTrim(img, cell) {
+  let x0 = cell;
+  let y0 = cell;
+  let x1 = -1;
+  let y1 = -1;
+  for (let y = 0; y < img.height; y++) {
+    for (let x = 0; x < img.width; x++) {
+      if (img.data[(y * img.width + x) * 4 + 3] === 0) continue;
+      const cx = x % cell;
+      const cy = y % cell;
+      if (cx < x0) x0 = cx;
+      if (cy < y0) y0 = cy;
+      if (cx > x1) x1 = cx;
+      if (cy > y1) y1 = cy;
+    }
+  }
+  // Square, because a cell is square and a badge scales one number. The larger
+  // of the two sides wins and is centred on the other axis, which is what keeps
+  // a tall figure from being squashed to its own width.
+  const size = Math.max(x1 - x0 + 1, y1 - y0 + 1);
+  return {
+    x: Math.max(0, Math.min(cell - size, x0 - Math.floor((size - (x1 - x0 + 1)) / 2))),
+    y: Math.max(0, Math.min(cell - size, y0 - Math.floor((size - (y1 - y0 + 1)) / 2))),
+    size,
+  };
+}
+
+const CELL = 16;
+
+/** Row 0 is the idle clip and row 1 is the walk — see the header for the poses. */
+const IDLE = [
+  { legs: "stand", bob: 0 },
+  { legs: "stand", bob: 1 },
+];
+const WALK = [
+  { legs: "step", bob: 0 },
+  { legs: "pass", bob: 1 },
+  { legs: "stride", bob: 0 },
+  { legs: "pass", bob: 1 },
+];
+
+function people() {
+  for (const spec of FIGURES) {
+    const img = image(CELL * Math.max(IDLE.length, WALK.length), CELL * 2);
+    IDLE.forEach((pose, i) => figure(img, i * CELL, 0, spec, pose));
+    WALK.forEach((pose, i) => figure(img, i * CELL, CELL, spec, pose));
+
+    const dir = join(ROOT, "mascots", spec.id);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "sheet.png"), encodePng(img));
+    const trim = sheetTrim(img, CELL);
+    const manifest = {
+      schema: 1,
+      kind: "mascot",
+      id: spec.id,
+      name: spec.name,
+      version: "1.0.0",
+      description: spec.description,
+      author: "kururu-styles",
+      licence: "CC0-1.0",
+      sheet: "sheet.png",
+      frame: CELL,
+      trim,
+      working: { row: 1, col: 0, count: WALK.length, cycle: 640 },
+      idle: { row: 0, col: 0, count: IDLE.length, cycle: 1600 },
+    };
+    writeFileSync(join(dir, "mascot.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+    console.log(`  mascots/${spec.id}/sheet.png ${img.width}×${img.height}  trim ${trim.x},${trim.y} ${trim.size}px`);
+  }
+}
+
 ironclad();
 handheld();
 cobble();
 quest();
 world11();
+console.log("mascots:");
+people();

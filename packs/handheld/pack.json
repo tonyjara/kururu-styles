@@ -3,11 +3,12 @@
   "kind": "pack",
   "id": "handheld",
   "name": "Handheld",
-  "version": "1.0.0",
-  "description": "Grey plastic, four greens, and a rabbit. Your agents in a screen you can hold in two hands.",
+  "version": "1.1.0",
+  "description": "Grey plastic, four greens, a rabbit, and the two-note blip a menu makes. Your agents in a screen you can hold in two hands.",
   "author": "kururu-styles",
   "licence": "CC0-1.0",
   "theme": "pea-soup",
   "skin": "handheld",
-  "mascot": "rabbit"
+  "mascot": "rabbit",
+  "sound": "blip"
 }

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "kind": "sound",
+  "id": "anvil",
+  "name": "Anvil",
+  "version": "1.0.0",
+  "description": "Struck steel \u2014 a transient and two inharmonic partials ringing on. For Ironclad, and for anybody who wants to be told firmly.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "file": "anvil.wav"
+}

@@ -22,18 +22,39 @@ import { fileURLToPath } from "node:url";
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 /**
- * The four kinds, and where each one lives.
+ * The five kinds, and where each one lives.
  *
  * A directory per kind rather than one flat namespace, because an id only has to
  * be unique within its kind: there is a `fox` mascot and there could be a `fox`
  * theme, and making those collide would be a rule that exists only because of
  * how the files happen to be laid out.
+ *
+ * `pack` is last because a pack names the others and is checked once they are
+ * all known — see the second loop in `validate.mjs`.
  */
 export const KINDS = [
   { kind: "theme", dir: "themes", manifest: "theme.json" },
   { kind: "skin", dir: "skins", manifest: "skin.json" },
   { kind: "mascot", dir: "mascots", manifest: "mascot.json" },
+  { kind: "sound", dir: "sounds", manifest: "sound.json" },
   { kind: "pack", dir: "packs", manifest: "pack.json" },
+];
+
+/**
+ * The parts a pack may name, and whether it has to.
+ *
+ * `sound` is optional and the other three are not, which is the one place this
+ * format has a shrug in it. The reason is that a pack was three ids before it
+ * was four: every pack already published names a theme, a skin and a mascot,
+ * and making the fourth mandatory would break each of them on the day it was
+ * added — for a field whose honest answer, for a pack about a colour scheme, is
+ * that it has no opinion about what a notification sounds like.
+ */
+export const PACK_PARTS = [
+  { kind: "theme", required: true },
+  { kind: "skin", required: true },
+  { kind: "mascot", required: true },
+  { kind: "sound", required: false },
 ];
 
 /** What kururu answers for at this schema. See the README on why it is a file. */
@@ -142,6 +163,45 @@ export function pngSize(path) {
   const magic = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
   if (fd.length < 24 || !fd.subarray(0, 8).equals(magic)) return null;
   return { width: fd.readUInt32BE(16), height: fd.readUInt32BE(20) };
+}
+
+/**
+ * How long a WAV is, in milliseconds, out of its header. Null for anything else.
+ *
+ * The same trade `pngSize` makes and for the same reason: the one question worth
+ * asking of a notification sound is whether it is a *blip* or somebody's
+ * favourite song, and that is a division of two integers out of the `fmt ` and
+ * `data` chunks. Only WAV, because that is the only one of the three formats
+ * whose length is arithmetic rather than a decoder — an MP3 is frames and an M4A
+ * is an atom tree, and a validator that needed either would be a validator with
+ * a dependency.
+ */
+export function wavMs(path) {
+  const b = readFileSync(path);
+  if (b.length < 44 || b.toString("ascii", 0, 4) !== "RIFF" || b.toString("ascii", 8, 12) !== "WAVE") return null;
+  let at = 12;
+  let rate = 0;
+  let channels = 0;
+  let bits = 0;
+  while (at + 8 <= b.length) {
+    const id = b.toString("ascii", at, at + 4);
+    const size = b.readUInt32LE(at + 4);
+    if (id === "fmt " && at + 24 <= b.length) {
+      channels = b.readUInt16LE(at + 10);
+      rate = b.readUInt32LE(at + 12);
+      bits = b.readUInt16LE(at + 22);
+    }
+    if (id === "data") {
+      const bytesPerFrame = (channels * bits) / 8;
+      if (!rate || !bytesPerFrame) return null;
+      return Math.round((size / bytesPerFrame / rate) * 1000);
+    }
+    // Chunks are word-aligned: an odd size is followed by a pad byte, and a
+    // walk that ignored it lands one byte into the next chunk's id and reads
+    // the rest of the file as garbage.
+    at += 8 + size + (size % 2);
+  }
+  return null;
 }
 
 export function sizeOf(dir, name) {

@@ -3,11 +3,12 @@
   "kind": "pack",
   "id": "world-1-1",
   "name": "World 1-1",
-  "version": "1.0.0",
-  "description": "Bricks in a blue sky over a black underground terminal, and a fish, because there is always a fish.",
+  "version": "1.1.0",
+  "description": "Bricks in a blue sky over a black underground terminal, a plumber in a red cap, and the noise a coin makes.",
   "author": "kururu-styles",
   "licence": "CC0-1.0",
   "theme": "underground",
   "skin": "world-1-1",
-  "mascot": "fish"
+  "mascot": "plumber",
+  "sound": "coin"
 }

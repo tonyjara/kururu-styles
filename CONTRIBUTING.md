@@ -345,9 +345,55 @@ half height. Squint at it before you open the pull request.
 
 ---
 
+## A sound
+
+`sounds/<your-id>/sound.json`, and the file it names. This is the shortest entry
+in the repository:
+
+```json
+{
+  "schema": 1,
+  "kind": "sound",
+  "id": "my-sound",
+  "name": "My Sound",
+  "version": "1.0.0",
+  "description": "One line on what it sounds like and when you would want it.",
+  "author": "you",
+  "licence": "CC0-1.0",
+  "file": "my-sound.wav"
+}
+```
+
+Three rules, and the first is the one that catches people out.
+
+**The format is `wav`, `mp3` or `m4a`, and nothing else.** Not Ogg, not Opus, not
+FLAC, and emphatically not AIFF. Kururu offers your machine's own alert sounds
+too, and it transcodes those on the way out — but it cannot do that for a file
+from here, because the machine installing it might be a Linux box with no
+converter and a phone at the other end of it. A format outside the three would be
+an entry that is silence for half the people who install it, working perfectly
+for you.
+
+**It is a blip.** 256KB and two seconds, both refused above that. This is a noise
+somebody will hear thirty times a day out of a phone in their pocket, not a
+track. Mono at 22050Hz and 16 bits is plenty; kururu's own croak is 5KB.
+
+**It has to be yours.** A game's actual coin, jingle or alert belongs to whoever
+made that game, and three hundred milliseconds does not change that. What is
+entirely fine is the *idiom* — a rising two-note blip, an ascending arpeggio, a
+struck bell — written yourself. `tools/sfx.mjs` is how the five already here were
+made, out of a square wave and a frequency table in about two hundred lines of
+plain Node; copy a function in it and change the notes.
+
+```sh
+node tools/sfx.mjs
+```
+
+---
+
 ## A pack
 
-`packs/<your-id>/pack.json`. Three ids and nothing else.
+`packs/<your-id>/pack.json`. Ids and nothing else.
 
 ```json
 {
@@ -356,18 +402,28 @@ half height. Squint at it before you open the pull request.
   "id": "my-pack",
   "name": "My Pack",
   "version": "1.0.0",
-  "description": "One line on why these three go together.",
+  "description": "One line on why these go together.",
   "author": "you",
   "licence": "CC0-1.0",
   "theme": "dungeon",
   "skin": "quest",
-  "mascot": "deer"
+  "mascot": "hero",
+  "sound": "fanfare"
 }
 ```
 
-All three must already exist in this repository — CI checks. A pack is a
-reference and never a copy, so improving one of its parts improves the pack, and
-somebody can install the pack and then keep only the mascot.
+The theme, the skin and the mascot are required; **`sound` is optional**, because
+a pack about a colour scheme may honestly have no opinion about what a
+notification sounds like — and because every pack published before sounds existed
+would otherwise have broken on the day they arrived.
+
+Everything it names must already exist in this repository — CI checks. A pack is
+a reference and never a copy, so improving one of its parts improves the pack,
+and somebody can install the pack and then keep only the mascot.
+
+Installing a pack puts its sound in kururu's notification settings. It does not
+switch notifications *on*: whether to be interrupted is the user's decision and
+not a style's.
 
 ---
 

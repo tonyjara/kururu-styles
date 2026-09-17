@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "kind": "sound",
+  "id": "coin",
+  "name": "Coin",
+  "version": "1.0.0",
+  "description": "The two-note blip a coin makes, up a fifth and held. For a window made of bricks and blue sky.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "file": "coin.wav"
+}

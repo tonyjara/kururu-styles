@@ -32,16 +32,19 @@ template for each kind. If you are an agent doing it on somebody's behalf,
 | | Gull · Hawk · Songbird | three birds, from two CC0 sheets |
 | | Fish · Whale | and two things that swim |
 | | Cat · Dog · Horse | and three that live with people. The dog carries all three of its pups on one sheet |
-| **Packs** | Ironclad · Handheld · Cobble · Quest · World 1-1 | each picture skin with the palette it was drawn against, and a mascot that fits |
+| | Plumber · Hero · Knight · Miner | four people, drawn by `tools/art.mjs` at the sixteen pixels the badge actually is |
+| **Sounds** | Coin · Fanfare · Anvil · Blip · Knock | the noise a notification makes — every one synthesised by `tools/sfx.mjs`, none sampled from anything |
+| **Packs** | Ironclad · Handheld · Cobble · Quest · World 1-1 | each picture skin with the palette it was drawn against, a sprite that fits, and the noise it makes |
 
-## The three things, and the fourth that is a list of them
+## The four things, and the fifth that is a list of them
 
 | | answers | lives in | example |
 |---|---|---|---|
 | **theme** | what colour | `themes/<id>/` | Tokyo Night |
 | **skin** | what shape | `skins/<id>/` | Ironclad |
 | **mascot** | what moves when an agent is working | `mascots/<id>/` | a fox |
-| **pack** | *a theme, a skin and a mascot that go together* | `packs/<id>/` | Quest |
+| **sound** | what it sounds like when one wants you | `sounds/<id>/` | a coin |
+| **pack** | *the ones above, chosen to go together* | `packs/<id>/` | Quest |
 
 A theme and a skin are orthogonal *by default* — a theme is a flat record of
 colours, a skin is radii, line weights, type sizes, icons and effects, and a skin
@@ -57,7 +60,7 @@ readable against its own art — never the terminal's, which stay the theme's.
 That is the line, and it is why a picture skin ships with its palette as a pack.
 
 **A pack is a reference, never a copy.** It names one of each by id and nothing
-else. That is what lets somebody install a whole coherent look in one click and
+else — a theme, a skin and a mascot, and a sound if it has an opinion about one. That is what lets somebody install a whole coherent look in one click and
 still take just the mascot from it, and it means a pack never goes stale when one
 of its parts is improved. A pack that inlined its theme would be a fork of that
 theme with nobody watching it.
@@ -73,6 +76,14 @@ and nothing else genuinely means *kururu, with square corners*, and if kururu
 later improves its elevation shadow the skin should get the improvement. A skin
 that restated all twenty-six tokens would silently keep whatever the base said
 the day it was written and drift out of the window around it two releases later.
+
+A **sound** is neither, and is the shortest entry here: an id, a name and one
+short file. It is a style rather than a setting because it is part of a look —
+the window made of bricks wants the coin — and it lands in kururu's notification
+settings rather than its appearance ones, because a noise is not a colour.
+Kururu will not take a format it would have to transcode: wav, mp3 or m4a, since
+an entry here is downloaded to every machine kururu runs on and not all of them
+have a converter. See `sound.formats` in `schema/tokens.json`.
 
 A **theme** is complete, every token, no merge. That is right for the opposite
 reason: a palette is not composable. A Dracula missing `blocked` would draw

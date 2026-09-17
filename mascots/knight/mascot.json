@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "knight",
+  "name": "Knight",
+  "version": "1.0.0",
+  "description": "A figure in a full steel helm with the visor down, sword drawn. For the riveted window, and for anybody who wants to be looked at sternly.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "sheet": "sheet.png",
+  "frame": 16,
+  "trim": {
+    "x": 2,
+    "y": 0,
+    "size": 14
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 4,
+    "cycle": 640
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 2,
+    "cycle": 1600
+  }
+}

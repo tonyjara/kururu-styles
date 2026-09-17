@@ -41,11 +41,13 @@ import {
   digestOf,
   entries,
   filesOf,
+  PACK_PARTS,
   readJson,
   ROOT,
   SCHEMA,
   sha256,
   sizeOf,
+  wavMs,
 } from "./lib.mjs";
 import { readFileSync } from "node:fs";
 
@@ -87,7 +89,8 @@ for (const e of entries()) {
  * them look identical. A skin's is the shape of a card: its radius, its line
  * weight, its face and two steps of its type ramp, so that the option can be
  * drawn *in itself* rather than described. A mascot's is the geometry, so the
- * sheet can be cut and animated straight from the picker.
+ * sheet can be cut and animated straight from the picker. A sound's is the name
+ * of its file, because the only preview of a noise is the noise.
  */
 function preview(kind, m, files) {
   if (kind === "theme") {
@@ -130,7 +133,26 @@ function preview(kind, m, files) {
       idle: m.idle ?? null,
     };
   }
-  return { theme: m.theme, skin: m.skin, mascot: m.mascot };
+  /**
+   * A sound's preview is the name of its file and how long it is.
+   *
+   * The file name is what the Styles tab appends to `/api/styles/preview` to
+   * play the thing before installing it, which is the whole of that card — a
+   * sound described in words is a sound you have to install to hear. The
+   * duration is there so a row can say how long it is beside the button: it is
+   * the one fact about a notification sound somebody wants before pressing
+   * play, and it costs two integers out of a header.
+   */
+  if (kind === "sound") {
+    const ms = String(m.file).toLowerCase().endsWith(".wav") ? wavMs(join(ROOT, "sounds", m.id, m.file)) : null;
+    return { file: m.file, ...(ms === null ? {} : { ms }) };
+  }
+  // A pack is its parts, and the optional one is left out rather than written
+  // as null — an absent key is a pack with no opinion, which is what the
+  // manifest said.
+  const p = {};
+  for (const { kind: part } of PACK_PARTS) if (m[part] !== undefined) p[part] = m[part];
+  return p;
 }
 
 /**

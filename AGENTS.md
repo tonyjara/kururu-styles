@@ -10,7 +10,7 @@ bite you.
 
 ## What this repository is
 
-Data, not code. Four kinds of entry, one directory each, one JSON manifest each.
+Data, not code. Five kinds of entry, one directory each, one JSON manifest each.
 Nothing here is built, imported, or executed. Kururu fetches `index.json` from
 `raw.githubusercontent.com` and copies what somebody picks into
 `~/.config/kururu/styles/`.
@@ -19,7 +19,8 @@ Nothing here is built, imported, or executed. Kururu fetches `index.json` from
 themes/<id>/theme.json      a complete palette
 skins/<id>/skin.json        a difference from kururu's base shape
 mascots/<id>/mascot.json    + sheet.png
-packs/<id>/pack.json        three ids
+sounds/<id>/sound.json      + one short audio file
+packs/<id>/pack.json        three ids, and optionally a fourth
 index.json                  GENERATED — do not edit
 schema/tokens.json          the token vocabulary. Read it; do not invent tokens
 ```
@@ -53,7 +54,7 @@ of digests to find the one line you meant.
    write what kind of thing this is, not that it is a theme.
 5. `node tools/validate.mjs`
 6. One entry per pull request unless they genuinely belong together (a pack and
-   the three things it names is one pull request).
+   the things it names is one pull request).
 
 ## The rules you will trip over
 
@@ -99,10 +100,36 @@ things that go wrong:
   it; without one the card falls back to a box drawn from the tokens, which for
   a picture skin says nothing.
 - **Do not hand-draw what `tools/art.mjs` generates.** `skins/ironclad` and
-  `skins/handheld` are code; change the script and rerun it.
+  `skins/handheld` are code, and so are the four people in `mascots/`; change
+  the script and rerun it.
 
 The fastest route is kururu's own *Settings → Skin studio*, which writes this
 exact format to `~/.config/kururu/styles/skins/<id>/`. Copy the folder in.
+
+## Sounds specifically
+
+The thinnest kind: an id, a name, and one file. What goes wrong:
+
+- **The format list is kururu's, and it is shorter than "what plays".**
+  `schema/tokens.json` has it under `sound.formats` — wav, mp3, m4a. Ogg, Opus,
+  FLAC and AIFF are all refused, and the reason is not fussiness: kururu
+  transcodes the machine's *own* alert sounds on the way out with `afconvert`,
+  and it cannot do that for an entry from here, because a Linux box has no
+  `afconvert`. A file in a format that needed one would be silence on half the
+  machines that installed it while playing perfectly on the Mac that contributed
+  it, with nothing anywhere saying so.
+- **It is a blip, not a track.** 256KB and two seconds, both refused above.
+  This is a noise somebody hears thirty times a day, out of a phone in their
+  pocket. Mono, 22050Hz, 16-bit is plenty and is what `tools/sfx.mjs` writes.
+- **Do not synthesise by hand what `tools/sfx.mjs` generates.** The five in
+  `sounds/` are code — a square wave, a frequency and an envelope — for the same
+  reason the picture skins are: a registry of other people's files needs entries
+  anybody can regenerate and change by editing a number.
+- **Licence matters here the way it does for sprites, and more.** A game's
+  actual coin, jingle or alert is that game's, and no amount of "it is only
+  300 milliseconds" changes it. What is fine is the *idiom* — a rising two-note
+  blip, an ascending arpeggio — synthesised yourself. If what you have is a file
+  you found, do not add it.
 
 ## Mascots specifically
 

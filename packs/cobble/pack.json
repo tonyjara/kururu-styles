@@ -3,11 +3,12 @@
   "kind": "pack",
   "id": "cobble",
   "name": "Cobble",
-  "version": "1.0.0",
-  "description": "An inventory screen around a chat-coloured terminal, with a fox. Blocks.",
+  "version": "1.1.0",
+  "description": "An inventory screen around a chat-coloured terminal, a miner with a pick, and a block being set down. Blocks.",
   "author": "kururu-styles",
   "licence": "CC0-1.0",
   "theme": "deepslate",
   "skin": "cobble",
-  "mascot": "fox"
+  "mascot": "miner",
+  "sound": "knock"
 }

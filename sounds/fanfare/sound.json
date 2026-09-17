@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "kind": "sound",
+  "id": "fanfare",
+  "name": "Fanfare",
+  "version": "1.0.0",
+  "description": "Four notes up a major chord, square over triangle: the noise a thing being found makes. For Quest.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "file": "fanfare.wav"
+}
