@@ -86,7 +86,7 @@ stop catching the mistake.
 A skin's `parts` name PNGs in its own directory and say how each is cut. The
 things that go wrong:
 
-- **A part name is one of twelve** — `schema/tokens.json` lists them under
+- **A part name is one of thirteen** — `schema/tokens.json` lists them under
   `skin.parts`. It names a region of the window (`statusbar`), never a class.
 - **A slice has to leave a middle.** Top plus bottom no more than the picture's
   height, left plus right no more than its width. The validator checks this

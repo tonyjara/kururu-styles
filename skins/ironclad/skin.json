@@ -3,7 +3,7 @@
   "kind": "skin",
   "id": "ironclad",
   "name": "Ironclad",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Riveted steel around every pane, a HUD along the bottom, and a red line for the one you are in. Pixel art at 3x — the terminals get smaller and that is the idea.",
   "author": "kururu-styles",
   "licence": "CC0-1.0",
@@ -42,6 +42,12 @@
       "image": "sidebar.png",
       "mode": "tile",
       "scale": 3
+    },
+    "panel": {
+      "image": "panel.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
     },
     "well": {
       "image": "well.png",

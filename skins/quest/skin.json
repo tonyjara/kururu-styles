@@ -3,7 +3,7 @@
   "kind": "skin",
   "id": "quest",
   "name": "Quest",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An 8-bit dungeon: blue stone walls around every pane, item boxes for tabs, a black HUD with a map and three hearts, gold on what you picked. Wear it with Dungeon.",
   "author": "kururu-styles",
   "licence": "CC0-1.0",
@@ -43,6 +43,12 @@
       "image": "sidebar.png",
       "mode": "tile",
       "scale": 3
+    },
+    "panel": {
+      "image": "panel.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
     },
     "well": {
       "image": "well.png",

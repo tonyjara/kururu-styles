@@ -142,6 +142,7 @@ stylesheet under you:
 | `tool` | the small icon buttons: split, close, run, the cog |
 | `button` | the filled buttons in dialogs |
 | `row-on` | the selected workspace and agent in the sidebar |
+| `panel` | the three boxes in the sidebar: workspaces, agents, dev servers — what keeps the rows readable on a busy sidebar picture |
 | `statusbar` | the bar along the bottom |
 | `dialog` | every popup: Settings, prompts, menus |
 

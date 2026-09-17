@@ -3,7 +3,7 @@
   "kind": "skin",
   "id": "handheld",
   "name": "Handheld",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Grey plastic, a dark screen bezel around every pane with a power light in the corner, magenta buttons and a speaker grille. Wear it with Pea Soup and the terminals are the screen.",
   "author": "kururu-styles",
   "licence": "CC0-1.0",
@@ -43,6 +43,12 @@
       "image": "sidebar.png",
       "mode": "tile",
       "scale": 3
+    },
+    "panel": {
+      "image": "panel.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
     },
     "well": {
       "image": "well.png",

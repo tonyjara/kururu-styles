@@ -3,7 +3,7 @@
   "kind": "skin",
   "id": "world-1-1",
   "name": "World 1-1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Brick blocks in a blue sky. The pane you are in is a gold block with four dots, the tab strip a pipe, every dialog a cloud, the ground along the bottom. Wear it with Underground.",
   "author": "kururu-styles",
   "licence": "CC0-1.0",
@@ -43,6 +43,12 @@
       "image": "sidebar.png",
       "mode": "tile",
       "scale": 3
+    },
+    "panel": {
+      "image": "panel.png",
+      "mode": "nine",
+      "slice": 5,
+      "scale": 2
     },
     "well": {
       "image": "well.png",

@@ -274,6 +274,14 @@ function ironclad() {
   put(row, 1, 1, IRON.redL);
   write("ironclad", "row-on.png", row);
 
+  // The boxes the rows sit in: a plate recessed into the steel, bevelled the
+  // other way round from the raised row, so the selected row stands out of it.
+  const panel = image(12, 12);
+  ring(panel, 0, 0, 12, 12, IRON.edge);
+  rect(panel, 1, 1, 10, 10, IRON.dark);
+  bevel(panel, 1, 1, 10, 10, IRON.rivetD, IRON.light);
+  write("ironclad", "panel.png", panel);
+
   // The HUD. Rivets live in the 8px end slices so they land at the bar's ends;
   // the middle repeats a plain riveted-steel stripe across the width.
   const bar = image(32, 16);
@@ -387,6 +395,14 @@ function handheld() {
   bevel(row, 0, 0, 12, 12, SHELL.dark, SHELL.light);
   round(row, 2);
   write("handheld", "row-on.png", row);
+
+  // The boxes the rows sit in: a lighter inset in the shell, so the groove of
+  // the selected row still reads as a groove.
+  const panel = image(12, 12);
+  rect(panel, 0, 0, 12, 12, "#cdc9c1");
+  bevel(panel, 0, 0, 12, 12, SHELL.dark, SHELL.light);
+  round(panel, 2);
+  write("handheld", "panel.png", panel);
 
   // The bottom of the shell: a highlight along the top edge, a groove along the
   // bottom, and the speaker grille in the right-hand slice — six slanted slots,
@@ -611,6 +627,11 @@ function cobble() {
   ring(row, 2, 2, 8, 8, GUI.dark);
   write("cobble", "row-on.png", row);
 
+  // The boxes the rows sit in are plates on the sand, like any inventory.
+  const panel = image(12, 12);
+  plate(panel, 0, 0, 12, 12);
+  write("cobble", "panel.png", panel);
+
   // The status bar is a plate with the experience bar along its top edge: green
   // between two black lines, notched every eight pixels.
   const bar = image(32, 12);
@@ -705,6 +726,12 @@ function quest() {
   ring(row, 0, 0, 12, 12, NES.gold);
   ring(row, 1, 1, 10, 10, NES.goldD);
   write("quest", "row-on.png", row);
+
+  // The boxes the rows sit in are HUD boxes: black, outlined in blue.
+  const panel = image(12, 12);
+  rect(panel, 0, 0, 12, 12, NES.black);
+  ring(panel, 0, 0, 12, 12, NES.blue);
+  write("quest", "panel.png", panel);
 
   // The HUD. Its top slice is seven pixels so the corners can hold the map on
   // the left and the hearts on the right — corners never stretch, which is what
@@ -829,6 +856,15 @@ function world11() {
   write("world-1-1", "button.png", button);
 
   write("world-1-1", "row-on.png", goldBlock(12, { at: 2, size: 2 }, 0));
+
+  // The boxes the rows sit in are white, outlined and shaded like the cloud
+  // dialog, so the clouds behind the sidebar stay behind it.
+  const panel = pill(16, 16, 4, SKY.black);
+  const panelFace = pill(14, 14, 3, SKY.cloud);
+  rect(panelFace, 0, 12, 14, 2, SKY.cloudShade);
+  round(panelFace, 3);
+  blit(panel, panelFace, 1, 1);
+  write("world-1-1", "panel.png", panel);
 
   // The ground. Its surface is the top slice — a black line and a highlight —
   // and the rounded stones are in the bottom slice, under the text, because a
