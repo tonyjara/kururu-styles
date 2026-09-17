@@ -358,9 +358,9 @@ half height. Squint at it before you open the pull request.
   "description": "One line on why these three go together.",
   "author": "you",
   "licence": "CC0-1.0",
-  "theme": "tokyo-night",
-  "skin": "blueprint",
-  "mascot": "wolf"
+  "theme": "dungeon",
+  "skin": "quest",
+  "mascot": "deer"
 }
 ```
 

@@ -1,0 +1,39 @@
+These sprites are from "Cat sprites" by Shepardskin, published on OpenGameArt
+under CC0 1.0 (public domain dedication):
+
+    https://opengameart.org/content/cat-sprites
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+The author adds: "No attribution necessary, unless you want to. Just credit
+Shepardskin and/or a link to my twitter." Which is what this file, the manifest
+and the row in kururu's Settings all do.
+
+WHAT WAS CHANGED
+
+More than any other mascot in here, because the source is not a sheet in the
+sense kururu means. It ships a static PNG of every pose packed at irregular
+offsets, and two animated GIFs at 2x. The static sheet is the wrong thing to cut
+from: its frames are *packed*, not placed, so the spacing between them is the
+artist saving room rather than the cat moving, and its top row is a sheet of
+poses — a front view, a side view, a sit — rather than a loop.
+
+So the frames come from the GIFs, where a fixed canvas means every frame is
+already aligned to every other, which is the thing that has to survive. Each was
+halved back to its drawn size (the 2x is a clean nearest-neighbour double; this
+was checked rather than assumed) and the flat purple matte keyed out.
+
+  row 0   walk    (6 frames)
+  row 1   run     (6 frames)
+
+The two GIFs have different canvases — 18x15 and 20x17 — so there is no common
+origin to inherit, and one had to be chosen. They are placed on the floor they
+stand on and on a shared horizontal centre, then both cropped to the union
+bounding box of all twelve frames and centred in a square 20px cell. Within a
+clip every frame keeps its offset, which is where the walk actually lives.
+
+`idle` is null, which is a plain dot. There is no idle animation to have: the
+only other loop is the run, and a cat that sprints while its agent is *idle*
+would say the opposite of the one thing the badge exists to say.
+
+No pixel was redrawn. The only colour touched is the background matte, which was
+made transparent.

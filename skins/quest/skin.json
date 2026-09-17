@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "kind": "skin",
+  "id": "quest",
+  "name": "Quest",
+  "version": "1.0.0",
+  "description": "An 8-bit dungeon: blue stone walls around every pane, item boxes for tabs, a black HUD with a map and three hearts, gold on what you picked. Wear it with Dungeon.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "tokens": {
+    "radiusXs": "0",
+    "radiusSm": "0",
+    "radiusMd": "0",
+    "radiusLg": "0",
+    "radiusXl": "0",
+    "border": "2px",
+    "borderThick": "3px",
+    "gutter": "8px",
+    "uiLetterSpacing": "0.04em",
+    "outlineOn": "none",
+    "elevDialog": "0 0 0 2px var(--shadow)",
+    "elevMenu": "0 0 0 2px var(--shadow)"
+  },
+  "colors": {
+    "chrome": "#0a1020",
+    "chromeHigh": "#1a2c50",
+    "line": "#2c4c8c",
+    "lineHigh": "#3cbcfc",
+    "text": "#fcfcfc",
+    "textStrong": "#ffffff",
+    "dim": "#bcbcbc",
+    "dimmer": "#7c7c7c",
+    "accent": "#f8b800",
+    "onAccent": "#000000",
+    "danger": "#f87858",
+    "dangerBg": "#a81000",
+    "onDanger": "#fcfcfc",
+    "scrim": "rgba(0, 0, 0, 0.7)",
+    "shadow": "rgba(0, 0, 0, 0.8)"
+  },
+  "parts": {
+    "sidebar": {
+      "image": "sidebar.png",
+      "mode": "tile",
+      "scale": 3
+    },
+    "well": {
+      "image": "well.png",
+      "mode": "tile",
+      "scale": 3
+    },
+    "pane": {
+      "image": "pane.png",
+      "mode": "nine",
+      "slice": 8,
+      "scale": 3,
+      "repeat": "repeat"
+    },
+    "pane-on": {
+      "image": "pane-on.png",
+      "mode": "nine",
+      "slice": 8,
+      "scale": 3,
+      "repeat": "repeat"
+    },
+    "tabstrip": {
+      "image": "tabstrip.png",
+      "mode": "nine",
+      "slice": 1,
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "tab": {
+      "image": "tab.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "tab-on": {
+      "image": "tab-on.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "button": {
+      "image": "button.png",
+      "mode": "nine",
+      "slice": 4,
+      "scale": 2
+    },
+    "row-on": {
+      "image": "row-on.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "statusbar": {
+      "image": "statusbar.png",
+      "mode": "nine",
+      "slice": [
+        7,
+        26,
+        3,
+        16
+      ],
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "dialog": {
+      "image": "dialog.png",
+      "mode": "nine",
+      "slice": 6,
+      "scale": 3
+    }
+  },
+  "icons": {
+    "close": "x",
+    "run": ">",
+    "caret": "v",
+    "add": "+"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "kind": "skin",
+  "id": "world-1-1",
+  "name": "World 1-1",
+  "version": "1.0.0",
+  "description": "Brick blocks in a blue sky. The pane you are in is a gold block with four dots, the tab strip a pipe, every dialog a cloud, the ground along the bottom. Wear it with Underground.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "tokens": {
+    "radiusXs": "0",
+    "radiusSm": "0",
+    "radiusMd": "0",
+    "radiusLg": "0",
+    "radiusXl": "0",
+    "border": "2px",
+    "borderThick": "3px",
+    "gutter": "12px",
+    "uiLetterSpacing": "0.03em",
+    "outlineOn": "none",
+    "elevDialog": "0 4px 0 var(--shadow)",
+    "elevMenu": "0 3px 0 var(--shadow)"
+  },
+  "colors": {
+    "chrome": "#fcfcfc",
+    "chromeHigh": "#dcecff",
+    "line": "#1c2c58",
+    "lineHigh": "#d82800",
+    "text": "#0a1a4a",
+    "textStrong": "#000000",
+    "dim": "#223a7a",
+    "dimmer": "#3c5494",
+    "accent": "#d82800",
+    "onAccent": "#fcfcfc",
+    "danger": "#d82800",
+    "dangerBg": "#a81000",
+    "onDanger": "#fcfcfc",
+    "scrim": "rgba(0, 0, 0, 0.45)",
+    "shadow": "rgba(0, 0, 0, 0.5)"
+  },
+  "parts": {
+    "sidebar": {
+      "image": "sidebar.png",
+      "mode": "tile",
+      "scale": 3
+    },
+    "well": {
+      "image": "well.png",
+      "mode": "tile",
+      "scale": 3
+    },
+    "pane": {
+      "image": "pane.png",
+      "mode": "nine",
+      "slice": 8,
+      "scale": 3,
+      "repeat": "repeat"
+    },
+    "pane-on": {
+      "image": "pane-on.png",
+      "mode": "nine",
+      "slice": 8,
+      "scale": 3
+    },
+    "tabstrip": {
+      "image": "tabstrip.png",
+      "mode": "nine",
+      "slice": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "tab": {
+      "image": "tab.png",
+      "mode": "nine",
+      "slice": 2,
+      "scale": 2
+    },
+    "tab-on": {
+      "image": "tab-on.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "button": {
+      "image": "button.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "row-on": {
+      "image": "row-on.png",
+      "mode": "nine",
+      "slice": 4,
+      "scale": 2
+    },
+    "statusbar": {
+      "image": "statusbar.png",
+      "mode": "nine",
+      "slice": [
+        2,
+        1,
+        5,
+        1
+      ],
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "dialog": {
+      "image": "dialog.png",
+      "mode": "nine",
+      "slice": 8,
+      "scale": 3
+    }
+  },
+  "icons": {
+    "close": "x",
+    "run": ">",
+    "caret": "v",
+    "add": "+"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "dog",
+  "name": "Dog",
+  "version": "1.0.0",
+  "description": "A small pup that scurries while it works and stands wagging while it waits. Three of them on the sheet — the other two are a row away.",
+  "author": "Jason of GDN",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/dog-spritesheets",
+  "sheet": "sheet.png",
+  "frame": 16,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 16
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 6,
+    "cycle": 660
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 6,
+    "cycle": 1800
+  }
+}

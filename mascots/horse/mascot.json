@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "horse",
+  "name": "Horse",
+  "version": "1.0.0",
+  "description": "Walks while it works. Its idle is thirteen frames long, which is the slowest thing in here and reads as breathing.",
+  "author": "ScratchIO",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/farming-set-pixel-art",
+  "sheet": "sheet.png",
+  "frame": 53,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 53
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 8,
+    "cycle": 900
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 13,
+    "cycle": 2800
+  }
+}

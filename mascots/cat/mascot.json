@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "cat",
+  "name": "Cat",
+  "version": "1.0.0",
+  "description": "Pads across the badge while it works, and hands it back to the dot when it stops. A black cat, so it is a silhouette with one green eye.",
+  "author": "Shepardskin",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/cat-sprites",
+  "sheet": "sheet.png",
+  "frame": 20,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 20
+  },
+  "working": {
+    "row": 0,
+    "col": 0,
+    "count": 6,
+    "cycle": 720
+  },
+  "idle": null
+}

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "kind": "pack",
+  "id": "cobble",
+  "name": "Cobble",
+  "version": "1.0.0",
+  "description": "An inventory screen around a chat-coloured terminal, with a fox. Blocks.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "theme": "deepslate",
+  "skin": "cobble",
+  "mascot": "fox"
+}

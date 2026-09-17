@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "boar",
+  "name": "Boar",
+  "version": "1.0.0",
+  "description": "Trots head-down and unbothered while it works, and stands there breathing while it waits.",
+  "author": "ScratchIO",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/animated-wild-animals",
+  "sheet": "sheet.png",
+  "frame": 44,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 44
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 8,
+    "cycle": 840
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 8,
+    "cycle": 2000
+  }
+}

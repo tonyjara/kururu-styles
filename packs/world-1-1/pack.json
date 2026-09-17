@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "kind": "pack",
+  "id": "world-1-1",
+  "name": "World 1-1",
+  "version": "1.0.0",
+  "description": "Bricks in a blue sky over a black underground terminal, and a fish, because there is always a fish.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "theme": "underground",
+  "skin": "world-1-1",
+  "mascot": "fish"
+}

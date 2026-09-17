@@ -1,0 +1,30 @@
+These sprites are from "Animated Wild Animals" by ScratchIO, published on
+OpenGameArt under CC0 1.0 (public domain dedication):
+
+    https://opengameart.org/content/animated-wild-animals
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+No attribution is required. It is here anyway, because knowing where a picture
+came from is worth more than the two lines it costs.
+
+WHAT WAS CHANGED
+
+The same conversion the fox, wolf, bear, deer and rabbit in this repository got,
+because this is the sixth animal in the pack they came from. The original ships
+one PNG per animation, each a horizontal strip of frames at the animal's own
+cell width; kururu wants a single sheet with a square cell and one clip per row:
+
+  row 0   idle    (8 frames)
+  row 1   walk    (8 frames)
+
+Every frame is cropped to the *union* bounding box of both clips rather than to
+its own, and then centred in a square 44px cell. That is load-bearing rather
+than tidy: a frame trimmed to its own content loses where the animal sits in its
+cell, which is how a sheet draws a gait — trim each frame separately and every
+one of them lands on the floor.
+
+The pack's run strip is not carried, for the same reason it is not carried for
+the other five: two clips are what the badge has, and a third is weight on every
+page load that nothing asks for.
+
+Nothing else was touched. No pixel was redrawn and no colour was changed.
