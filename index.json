@@ -310,13 +310,13 @@
       "kind": "skin",
       "id": "cobble",
       "name": "Cobble",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "An inventory screen: grey plates around every pane, slots for tabs, a stone button, experience along the bottom, sand and cobblestone behind. Wear it with Deepslate.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "skins/cobble",
       "manifest": "skin.json",
-      "digest": "sha256-0afa7181af2b797380b4f8bf6ec1e34764d33b8cab647f055ae47485777a3ddb",
+      "digest": "sha256-37d875081a17c7be855182ce8a3a4ca51189bf09c87f2f2f9e2a4db76fe306de",
       "files": [
         {
           "name": "button.png",
@@ -339,14 +339,19 @@
           "digest": "sha256-b105a6c60bde63b8deee5c31c41a703d9b7a83eb4e6dd23f4f206b8147bb8926"
         },
         {
+          "name": "panel.png",
+          "size": 98,
+          "digest": "sha256-0e29a382c8ae12b2abbeed1714f5ebd4a04cbb5b19d8a682df285a42d2df6767"
+        },
+        {
           "name": "row-on.png",
           "size": 92,
           "digest": "sha256-dfc9db8b270006e10cb75956b0a647014f365cf7bc6987b9650ad98ab08bf53e"
         },
         {
           "name": "shot.png",
-          "size": 51961,
-          "digest": "sha256-b6e0552dbaf61ed25e8038c7f6e1855c61b10760994629e53501aebde25698b6"
+          "size": 45512,
+          "digest": "sha256-4449d3889758fdc639e2d63fd74aedd95a212fee6c8d31448d09212c10bfe021"
         },
         {
           "name": "sidebar.png",
@@ -355,8 +360,8 @@
         },
         {
           "name": "skin.json",
-          "size": 2463,
-          "digest": "sha256-9f769620391530c35db2f0be0b64d37a75f89ac069cb1f08fc3e2b3df8a238c3"
+          "size": 2570,
+          "digest": "sha256-f2441765736148bf97c01df9ac71d234582b52b37bec151ec90a7c0d7d41e4a7"
         },
         {
           "name": "statusbar.png",
@@ -393,6 +398,7 @@
         "fonts": [],
         "parts": [
           "sidebar",
+          "panel",
           "well",
           "pane",
           "pane-on",
@@ -411,13 +417,13 @@
       "kind": "skin",
       "id": "handheld",
       "name": "Handheld",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "Grey plastic, a dark screen bezel around every pane with a power light in the corner, magenta buttons and a speaker grille. Wear it with Pea Soup and the terminals are the screen.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "skins/handheld",
       "manifest": "skin.json",
-      "digest": "sha256-cd34d55458ec78e023bc60f4473da210c9ffff231f5547fb13af6779e51f408e",
+      "digest": "sha256-b440e480260911ccc7259cae9386e1d5f01f4ad99c81b2050bbadb8e834f5cb4",
       "files": [
         {
           "name": "button.png",
@@ -440,14 +446,19 @@
           "digest": "sha256-3d667c126e10d987d34e1f8040d2e7eef88e34e748e383df92d6e217fd393623"
         },
         {
+          "name": "panel.png",
+          "size": 93,
+          "digest": "sha256-4de82f63a51282f6010abb5ec4a4d19ebe2c0b4d73224651f2d0924f4467b397"
+        },
+        {
           "name": "row-on.png",
           "size": 93,
           "digest": "sha256-bafe31aab7b18ad47437e617822cc12a249324cbb25d10202016cf99121c3b7d"
         },
         {
           "name": "shot.png",
-          "size": 31749,
-          "digest": "sha256-90020a574f6bef0846bc262e42c1a1a2cb18067daff0c1cf5bfbfb499a941848"
+          "size": 42213,
+          "digest": "sha256-6734a516f2fd9b4bdb318046863c531c5642a827769c620a2d4463df1f762bfa"
         },
         {
           "name": "sidebar.png",
@@ -456,8 +467,8 @@
         },
         {
           "name": "skin.json",
-          "size": 2407,
-          "digest": "sha256-d304a8a93c193466773e7d4ff2de395252bed22567768a0726ed60e5a980a02e"
+          "size": 2514,
+          "digest": "sha256-cf3c15f828c4fd489c4c65b576ea301a2f00ba44cc0224e8212bc4fbcc7748ed"
         },
         {
           "name": "statusbar.png",
@@ -494,6 +505,7 @@
         "fonts": [],
         "parts": [
           "sidebar",
+          "panel",
           "well",
           "pane",
           "pane-on",
@@ -512,13 +524,13 @@
       "kind": "skin",
       "id": "ironclad",
       "name": "Ironclad",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "Riveted steel around every pane, a HUD along the bottom, and a red line for the one you are in. Pixel art at 3x — the terminals get smaller and that is the idea.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "skins/ironclad",
       "manifest": "skin.json",
-      "digest": "sha256-e283d1d785676144c5cff7bb3b8a8da99c24b9425269456f293e2d5519011690",
+      "digest": "sha256-935df96508989c827b5096f3c906dda04ef1db97ac9bbbf1d497306b29ee890c",
       "files": [
         {
           "name": "button.png",
@@ -541,14 +553,19 @@
           "digest": "sha256-7827302b35300aef2dc8381268b4941e2ef16196d2b67d2491a8331edb28cf69"
         },
         {
+          "name": "panel.png",
+          "size": 101,
+          "digest": "sha256-580f02b9102042d2e78311f81df196f62c2de2aac5d24ded1483025dd238b3a6"
+        },
+        {
           "name": "row-on.png",
           "size": 113,
           "digest": "sha256-96347133de37d0050f8886cd575b34193975e485e22de6a315ebaf75798be166"
         },
         {
           "name": "shot.png",
-          "size": 36698,
-          "digest": "sha256-14660b00e073abcf76c250a153b950919ed2ced07b1da271c995d239f6c3192c"
+          "size": 47326,
+          "digest": "sha256-46b261464b4b200601d3de04416ab5028ba21faab94d36f416e7f214ff987249"
         },
         {
           "name": "sidebar.png",
@@ -557,8 +574,8 @@
         },
         {
           "name": "skin.json",
-          "size": 2482,
-          "digest": "sha256-0a3aa28b11b88337ac491799f5bcb104441d5deeecb1bfddc04d29e1f36b04de"
+          "size": 2589,
+          "digest": "sha256-4520d138a924ef5532611e3b5941064b6eb541ade9e005eeb2f9bcb869491133"
         },
         {
           "name": "statusbar.png",
@@ -595,6 +612,7 @@
         "fonts": [],
         "parts": [
           "sidebar",
+          "panel",
           "well",
           "pane",
           "pane-on",
@@ -613,13 +631,13 @@
       "kind": "skin",
       "id": "quest",
       "name": "Quest",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "An 8-bit dungeon: blue stone walls around every pane, item boxes for tabs, a black HUD with a map and three hearts, gold on what you picked. Wear it with Dungeon.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "skins/quest",
       "manifest": "skin.json",
-      "digest": "sha256-3757cf768634536de8a1c4f37fea9d16b1217ac5e43ddcb29582034667189a4f",
+      "digest": "sha256-8141bac15e4bd46fd739a81e1fba4750ff08a3a438be0a5e80f3dac5424f46ff",
       "files": [
         {
           "name": "button.png",
@@ -642,14 +660,19 @@
           "digest": "sha256-65ac40d3d3e7062b52db2faf764477b20cfda57de1f1574aceed3af42a42cd16"
         },
         {
+          "name": "panel.png",
+          "size": 83,
+          "digest": "sha256-2f934c44762beaccbd48847453cb0283b8ead620e2d930f808b8ca48374b71ec"
+        },
+        {
           "name": "row-on.png",
           "size": 95,
           "digest": "sha256-7a2d41c8e4c2e54b8aa8ef63d2d526186672dfaaf2dcfb386df82d9b119c0c05"
         },
         {
           "name": "shot.png",
-          "size": 37820,
-          "digest": "sha256-b2258521d64d478496ff5b58a73f0c9cb6f4d2478f5b2fad68026f8b84afce16"
+          "size": 36583,
+          "digest": "sha256-cdc184ef4dc663b0995cab4229c21fcfdd6ea44dc7c103238ae7a07c15f68f0e"
         },
         {
           "name": "sidebar.png",
@@ -658,8 +681,8 @@
         },
         {
           "name": "skin.json",
-          "size": 2512,
-          "digest": "sha256-56d3f5a1500a90f9a2496ba7d96438f2fc450654b2420605e0daa937f3d2dd4e"
+          "size": 2619,
+          "digest": "sha256-9d21c2d9dba2d40d23444379b0c47f4baddb051dc9ee6cf9f8cb162a52914a3f"
         },
         {
           "name": "statusbar.png",
@@ -696,6 +719,7 @@
         "fonts": [],
         "parts": [
           "sidebar",
+          "panel",
           "well",
           "pane",
           "pane-on",
@@ -714,13 +738,13 @@
       "kind": "skin",
       "id": "world-1-1",
       "name": "World 1-1",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "Brick blocks in a blue sky. The pane you are in is a gold block with four dots, the tab strip a pipe, every dialog a cloud, the ground along the bottom. Wear it with Underground.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "skins/world-1-1",
       "manifest": "skin.json",
-      "digest": "sha256-97f1ebb9c98c3abe919c5ef2fbbf746f46881fb934c1fdd02921ff3548c59383",
+      "digest": "sha256-1c6bf16835446458c5b946cc01d38e63af61c9ba442b23a57d4e717568e6896c",
       "files": [
         {
           "name": "button.png",
@@ -743,14 +767,19 @@
           "digest": "sha256-11cb37657e1f58c702f97eaea8006925986d46e1a104806d46ec40e5dff3f1cb"
         },
         {
+          "name": "panel.png",
+          "size": 107,
+          "digest": "sha256-1e248cf25187e3546d208f2f33a17256f1856b7e03ba3f9431e2520fc8884188"
+        },
+        {
           "name": "row-on.png",
           "size": 112,
           "digest": "sha256-caf1b9407222ce969e8e01d35d52046d419ae49619c2d9bd6203083ba0166c92"
         },
         {
           "name": "shot.png",
-          "size": 33762,
-          "digest": "sha256-bc5d84d325eb742f72a2f20a5c99fff6ff169398caf974d08dfa3c70a6c658cb"
+          "size": 33540,
+          "digest": "sha256-927a97f3a20ca4fc8c400cd0a982f28e106742338796d69d6dc0983150b63648"
         },
         {
           "name": "sidebar.png",
@@ -759,8 +788,8 @@
         },
         {
           "name": "skin.json",
-          "size": 2557,
-          "digest": "sha256-32202fcb66b66a115a8675fd947f169344cbf451733ca7f18ab9131265a87a10"
+          "size": 2664,
+          "digest": "sha256-71cd2e7f5e71378a6e1c6e52fcdd7d65ceee0589f0555e2e381049050db93dd2"
         },
         {
           "name": "statusbar.png",
@@ -797,6 +826,7 @@
         "fonts": [],
         "parts": [
           "sidebar",
+          "panel",
           "well",
           "pane",
           "pane-on",
