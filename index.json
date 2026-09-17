@@ -1297,6 +1297,51 @@
     },
     {
       "kind": "mascot",
+      "id": "hero",
+      "name": "Hero",
+      "version": "1.0.0",
+      "description": "A small person in a green tunic and a pointed cap, with a sword out. For a window made of dungeon walls.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/hero",
+      "manifest": "mascot.json",
+      "digest": "sha256-1ff770e6ab3107b375c6f9d3220737167e365558fa6f66eeee2f85452e7b7eda",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 527,
+          "digest": "sha256-8838186e34caf418ab95a162eb0c0a09e6ef96e7f5e3086905afb1d4091b35c7"
+        },
+        {
+          "name": "sheet.png",
+          "size": 365,
+          "digest": "sha256-1430c4d5ecce52ab15ad08203deb71e61015a5e0af0d881a103b39656590acbb"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 2,
+          "y": 0,
+          "size": 14
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 640
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 2,
+          "cycle": 1600
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "horse",
       "name": "Horse",
       "version": "1.0.0",
@@ -1343,6 +1388,141 @@
           "col": 0,
           "count": 13,
           "cycle": 2800
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "knight",
+      "name": "Knight",
+      "version": "1.0.0",
+      "description": "A figure in a full steel helm with the visor down, sword drawn. For the riveted window, and for anybody who wants to be looked at sternly.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/knight",
+      "manifest": "mascot.json",
+      "digest": "sha256-4a654fa763f66a7c2b124e8b676c0800c76e9caef579c5b373974872d268fea6",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 565,
+          "digest": "sha256-9afc6848e01d8b322be741ac3e541e217be8fbc028e6a30107702efa883f1ec3"
+        },
+        {
+          "name": "sheet.png",
+          "size": 375,
+          "digest": "sha256-72a723fd152f6e62b754cf3363cfcbf93edb8f992f13c6fd126816105f79528f"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 2,
+          "y": 0,
+          "size": 14
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 640
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 2,
+          "cycle": 1600
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "miner",
+      "name": "Miner",
+      "version": "1.0.0",
+      "description": "A bearded person in a hard hat with the lamp lit, carrying a pick. For the inventory-screen window.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/miner",
+      "manifest": "mascot.json",
+      "digest": "sha256-5ba8ade0f82196578df6cccdc76d29142fa33710730b54064c421b2d9e423a00",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 524,
+          "digest": "sha256-83fb22d8932e29cc84168b7f253b8fe89426aec4110b4c657458b729e8c09206"
+        },
+        {
+          "name": "sheet.png",
+          "size": 392,
+          "digest": "sha256-d519cb32f8f1f794545fa7d931e09ecb58d215bb3f5f3897fab004e5417b0836"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 2,
+          "y": 0,
+          "size": 14
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 640
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 2,
+          "cycle": 1600
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "plumber",
+      "name": "Plumber",
+      "version": "1.0.0",
+      "description": "A short person in a red cap and blue overalls, bouncing along. For a window made of bricks and blue sky.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/plumber",
+      "manifest": "mascot.json",
+      "digest": "sha256-2199d690d4685791747bac8b791f26b5eb01a9e4dccd30071f91ff32c2d07668",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 533,
+          "digest": "sha256-26e7e7967c2354326f058d1186610d0d164d9295ee807eec3b76b6b17c6d996d"
+        },
+        {
+          "name": "sheet.png",
+          "size": 344,
+          "digest": "sha256-b8bae5f24cf882c2ce32b9d168dd7194124ebf17dafe67e8d9193d26485c1532"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 1,
+          "y": 0,
+          "size": 14
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 640
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 2,
+          "cycle": 1600
         }
       }
     },
@@ -1546,123 +1726,268 @@
       }
     },
     {
+      "kind": "sound",
+      "id": "anvil",
+      "name": "Anvil",
+      "version": "1.0.0",
+      "description": "Struck steel — a transient and two inharmonic partials ringing on. For Ironclad, and for anybody who wants to be told firmly.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "sounds/anvil",
+      "manifest": "sound.json",
+      "digest": "sha256-f5d3cf0b9df66ff57ec2fc6c3c4bbc42dc57c8d15eeef86196ec3f666c965065",
+      "files": [
+        {
+          "name": "anvil.wav",
+          "size": 30914,
+          "digest": "sha256-e7541ba7bed549775d0549ace2167bd8ddc172fd1e29acb6159fc605ca6fb75e"
+        },
+        {
+          "name": "sound.json",
+          "size": 322,
+          "digest": "sha256-e62077e6c4bc14a107b7a6f9faa7cc4f28f5eafdab89777440aadbf40168e1f1"
+        }
+      ],
+      "preview": {
+        "file": "anvil.wav",
+        "ms": 700
+      }
+    },
+    {
+      "kind": "sound",
+      "id": "blip",
+      "name": "Blip",
+      "version": "1.0.0",
+      "description": "A two-note menu blip on a thin square wave, over in a fifth of a second. The quietest way a device can say something.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "sounds/blip",
+      "manifest": "sound.json",
+      "digest": "sha256-81949212538f1d90108fdc487150c0d24f955abe191febc9631671dd0553fe35",
+      "files": [
+        {
+          "name": "blip.wav",
+          "size": 9746,
+          "digest": "sha256-f93029b48122d6a1d096b310143a526282ed15aa53e13dd72985256bd797c9e5"
+        },
+        {
+          "name": "sound.json",
+          "size": 306,
+          "digest": "sha256-076c9006ed2417ce4402dc73dfbe840d9e3db89fe6d01793ebf72958e0b8c3b3"
+        }
+      ],
+      "preview": {
+        "file": "blip.wav",
+        "ms": 220
+      }
+    },
+    {
+      "kind": "sound",
+      "id": "coin",
+      "name": "Coin",
+      "version": "1.0.0",
+      "description": "The two-note blip a coin makes, up a fifth and held. For a window made of bricks and blue sky.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "sounds/coin",
+      "manifest": "sound.json",
+      "digest": "sha256-2fb111c0401eab791d841b2d1b166bc69b19948c741cb73a1f658b72f822db09",
+      "files": [
+        {
+          "name": "coin.wav",
+          "size": 18566,
+          "digest": "sha256-23e78b443806b35baa80563507ae2cdd82da01cbceeb97ac92fda5126d6fc0a7"
+        },
+        {
+          "name": "sound.json",
+          "size": 283,
+          "digest": "sha256-6c9cd8fd96dbee5d4761d58c6869bb426531d2b850984dd2ffdddbb47deedb4c"
+        }
+      ],
+      "preview": {
+        "file": "coin.wav",
+        "ms": 420
+      }
+    },
+    {
+      "kind": "sound",
+      "id": "fanfare",
+      "name": "Fanfare",
+      "version": "1.0.0",
+      "description": "Four notes up a major chord, square over triangle: the noise a thing being found makes. For Quest.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "sounds/fanfare",
+      "manifest": "sound.json",
+      "digest": "sha256-8ba11075d1b9b8195be3b65a361c6f9287aca049f7d1ddb90322b4c40672d87c",
+      "files": [
+        {
+          "name": "fanfare.wav",
+          "size": 39734,
+          "digest": "sha256-c0a9ffe1d7b018f5457df024df2131432b28b75fca2f299626ee19880ae223f4"
+        },
+        {
+          "name": "sound.json",
+          "size": 296,
+          "digest": "sha256-2482a361f3869ad24e05e0bac9980bfcf1b887e911c96c33d4be3febe2cf6221"
+        }
+      ],
+      "preview": {
+        "file": "fanfare.wav",
+        "ms": 900
+      }
+    },
+    {
+      "kind": "sound",
+      "id": "knock",
+      "name": "Knock",
+      "version": "1.0.0",
+      "description": "A block set down: a sine bent down fourteen semitones with a little grit on the front. The one to pick to be told without being interrupted.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "sounds/knock",
+      "manifest": "sound.json",
+      "digest": "sha256-a07c202fa02e9abdae0d9d403d2a73e4a89d3386e8cd1fb1f0e0c970b1160fd1",
+      "files": [
+        {
+          "name": "knock.wav",
+          "size": 11510,
+          "digest": "sha256-8d83b70689de1a0b915e1c7a2133ad67dfaa02432cbbd9ac0582b20fe3f4b9f6"
+        },
+        {
+          "name": "sound.json",
+          "size": 332,
+          "digest": "sha256-b8c221de366a2e2e68d4aa3dbf2919adbdbde140acd47d59d21eacf9f4cc10ab"
+        }
+      ],
+      "preview": {
+        "file": "knock.wav",
+        "ms": 260
+      }
+    },
+    {
       "kind": "pack",
       "id": "cobble",
       "name": "Cobble",
-      "version": "1.0.0",
-      "description": "An inventory screen around a chat-coloured terminal, with a fox. Blocks.",
+      "version": "1.1.0",
+      "description": "An inventory screen around a chat-coloured terminal, a miner with a pick, and a block being set down. Blocks.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/cobble",
       "manifest": "pack.json",
-      "digest": "sha256-7a0a5fd8d7fd4e247c1ff6f0e69cacf3ffdc81f17a14ae254044915f5b27ca40",
+      "digest": "sha256-704fe4a4161e82ed4f99fb8bd43357283e5eed5b18490c840b8464f1f5fa5ac0",
       "files": [
         {
           "name": "pack.json",
-          "size": 305,
-          "digest": "sha256-bfc981e996a6185debd854db72ce4a2ef62005a02f505bcd99f011cea3203fa4"
+          "size": 364,
+          "digest": "sha256-b8ec120ae4c0d2f35b100108fe59714a2d400c07787c952aa291e50f50cf42b2"
         }
       ],
       "preview": {
         "theme": "deepslate",
         "skin": "cobble",
-        "mascot": "fox"
+        "mascot": "miner",
+        "sound": "knock"
       }
     },
     {
       "kind": "pack",
       "id": "handheld",
       "name": "Handheld",
-      "version": "1.0.0",
-      "description": "Grey plastic, four greens, and a rabbit. Your agents in a screen you can hold in two hands.",
+      "version": "1.1.0",
+      "description": "Grey plastic, four greens, a rabbit, and the two-note blip a menu makes. Your agents in a screen you can hold in two hands.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/handheld",
       "manifest": "pack.json",
-      "digest": "sha256-444fa665385eebd3b36cfe749299b8231637dd05cbcbd553541b20b8dc3707e0",
+      "digest": "sha256-25aef5d2108fc91c8f6235c18e2d1be72a25f43f65c64fe16906efd255ff6860",
       "files": [
         {
           "name": "pack.json",
-          "size": 332,
-          "digest": "sha256-057aa4af1bc697b92fd629336b60f60e1419acc3446b736eb3e72d478599cf57"
+          "size": 383,
+          "digest": "sha256-022d6b6e43e2be6c1d76c4e9c4adc5d3733056c493ed053bc9e39e4e223e3fb6"
         }
       ],
       "preview": {
         "theme": "pea-soup",
         "skin": "handheld",
-        "mascot": "rabbit"
+        "mascot": "rabbit",
+        "sound": "blip"
       }
     },
     {
       "kind": "pack",
       "id": "ironclad",
       "name": "Ironclad",
-      "version": "1.0.0",
-      "description": "The steel skin with the palette it was drawn against, and a wolf. The whole window in one click.",
+      "version": "1.1.0",
+      "description": "The steel skin with the palette it was drawn against, a knight with the visor down, and struck metal. The whole window in one click.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/ironclad",
       "manifest": "pack.json",
-      "digest": "sha256-c3a32f2044296ad8d74947da3ce86f351f5c33ba53696cf0417a80b765584ed5",
+      "digest": "sha256-c174a407d761f1ea9e0ee402af02afbf65020be924042e6df7a4e22ff89faae5",
       "files": [
         {
           "name": "pack.json",
-          "size": 335,
-          "digest": "sha256-f35faf57d8d33f50d42dc67bbdcd74548ccd5273e00509615aade0f92df19647"
+          "size": 393,
+          "digest": "sha256-263c643cc1f1902fd66bb8d5ae6b944ec99ed0d9d3a97fcff64c476cdafdc622"
         }
       ],
       "preview": {
         "theme": "ironclad",
         "skin": "ironclad",
-        "mascot": "wolf"
+        "mascot": "knight",
+        "sound": "anvil"
       }
     },
     {
       "kind": "pack",
       "id": "quest",
       "name": "Quest",
-      "version": "1.0.0",
-      "description": "Blue stone walls, a black HUD with three hearts, an 8-bit palette on navy, and a deer in the lost woods.",
+      "version": "1.1.0",
+      "description": "Blue stone walls, a black HUD with three hearts, an 8-bit palette on navy, somebody small with a sword, and four notes up a major chord.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/quest",
       "manifest": "pack.json",
-      "digest": "sha256-aec4553911b452aeeec0720c784685d77777d62e2cc913ccc24de04dd1b0c7e9",
+      "digest": "sha256-f1af669fcadc3e533306f4d7d8e551d302a500f4828b58af65ec71b4e0483f86",
       "files": [
         {
           "name": "pack.json",
-          "size": 333,
-          "digest": "sha256-568a52ec30fd3e84c13f82d36606d4db362a66ec5da1282924516997d8985d16"
+          "size": 387,
+          "digest": "sha256-27806a0d46bcebd5e247e7f6c31fd5fe2587e1912cc06f8a2b64340ef63ea77d"
         }
       ],
       "preview": {
         "theme": "dungeon",
         "skin": "quest",
-        "mascot": "deer"
+        "mascot": "hero",
+        "sound": "fanfare"
       }
     },
     {
       "kind": "pack",
       "id": "world-1-1",
       "name": "World 1-1",
-      "version": "1.0.0",
-      "description": "Bricks in a blue sky over a black underground terminal, and a fish, because there is always a fish.",
+      "version": "1.1.0",
+      "description": "Bricks in a blue sky over a black underground terminal, a plumber in a red cap, and the noise a coin makes.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/world-1-1",
       "manifest": "pack.json",
-      "digest": "sha256-d4ac092ebb41d3c26b3e7009b5f922d2c854135a21807affa16362c17f501796",
+      "digest": "sha256-a560a6bc7c76f5c7d986942d869f2ea6122cc7508a11cdc4b1232ea0b01573a2",
       "files": [
         {
           "name": "pack.json",
-          "size": 344,
-          "digest": "sha256-b0e7a822f826d20a9c903947f4d19bd79ec3741995ca63bd91f9e8e1ce60adad"
+          "size": 374,
+          "digest": "sha256-d339a6a5fb74747b387a6e989c398b91e1b4055b081cc11e5c938182d5ce9d85"
         }
       ],
       "preview": {
         "theme": "underground",
         "skin": "world-1-1",
-        "mascot": "fish"
+        "mascot": "plumber",
+        "sound": "coin"
       }
     }
   ]
