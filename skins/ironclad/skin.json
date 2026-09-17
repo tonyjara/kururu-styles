@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "kind": "skin",
+  "id": "ironclad",
+  "name": "Ironclad",
+  "version": "1.0.0",
+  "description": "Riveted steel around every pane, a HUD along the bottom, and a red line for the one you are in. Pixel art at 3x — the terminals get smaller and that is the idea.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "tokens": {
+    "radiusXs": "0",
+    "radiusSm": "0",
+    "radiusMd": "0",
+    "radiusLg": "0",
+    "radiusXl": "0",
+    "border": "2px",
+    "borderThick": "3px",
+    "gutter": "6px",
+    "uiLetterSpacing": "0.03em",
+    "outlineOn": "none",
+    "elevDialog": "0 0 0 3px var(--shadow)",
+    "elevMenu": "0 0 0 2px var(--shadow)"
+  },
+  "colors": {
+    "chrome": "#23272b",
+    "chromeHigh": "#33393f",
+    "line": "#4a525a",
+    "lineHigh": "#6b747d",
+    "text": "#d8dee3",
+    "textStrong": "#ffffff",
+    "dim": "#9aa4ad",
+    "dimmer": "#6b747d",
+    "accent": "#c62828",
+    "onAccent": "#ffffff",
+    "danger": "#ff5252",
+    "dangerBg": "#b71c1c",
+    "onDanger": "#ffffff",
+    "shadow": "rgba(0, 0, 0, 0.7)"
+  },
+  "parts": {
+    "sidebar": {
+      "image": "sidebar.png",
+      "mode": "tile",
+      "scale": 3
+    },
+    "well": {
+      "image": "well.png",
+      "mode": "tile",
+      "scale": 3
+    },
+    "pane": {
+      "image": "pane.png",
+      "mode": "nine",
+      "slice": 6,
+      "scale": 3,
+      "repeat": "repeat"
+    },
+    "pane-on": {
+      "image": "pane-on.png",
+      "mode": "nine",
+      "slice": 6,
+      "scale": 3,
+      "repeat": "repeat"
+    },
+    "tabstrip": {
+      "image": "tabstrip.png",
+      "mode": "nine",
+      "slice": 2,
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "tab": {
+      "image": "tab.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "tab-on": {
+      "image": "tab-on.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "button": {
+      "image": "button.png",
+      "mode": "nine",
+      "slice": 4,
+      "scale": 2
+    },
+    "row-on": {
+      "image": "row-on.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "statusbar": {
+      "image": "statusbar.png",
+      "mode": "nine",
+      "slice": [
+        3,
+        8,
+        3,
+        8
+      ],
+      "scale": 3,
+      "repeat": "repeat"
+    },
+    "dialog": {
+      "image": "dialog.png",
+      "mode": "nine",
+      "slice": 6,
+      "scale": 3
+    }
+  },
+  "icons": {
+    "close": "x",
+    "run": ">",
+    "caret": "v",
+    "add": "+"
+  }
+}

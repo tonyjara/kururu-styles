@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "kind": "skin",
+  "id": "handheld",
+  "name": "Handheld",
+  "version": "1.0.0",
+  "description": "Grey plastic, a dark screen bezel around every pane with a power light in the corner, magenta buttons and a speaker grille. Wear it with Pea Soup and the terminals are the screen.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "tokens": {
+    "radiusXs": "2px",
+    "radiusSm": "3px",
+    "radiusMd": "4px",
+    "radiusLg": "5px",
+    "radiusXl": "8px",
+    "border": "2px",
+    "borderThick": "3px",
+    "gutter": "10px",
+    "uiLetterSpacing": "0.02em",
+    "outlineOn": "none",
+    "elevDialog": "0 6px 0 var(--shadow)",
+    "elevMenu": "0 4px 0 var(--shadow)"
+  },
+  "colors": {
+    "chrome": "#c9c5bd",
+    "chromeHigh": "#dcd8d0",
+    "line": "#a19c94",
+    "lineHigh": "#7f7a72",
+    "text": "#26302a",
+    "textStrong": "#0f380f",
+    "dim": "#4f5a4f",
+    "dimmer": "#7a827a",
+    "accent": "#a53c6c",
+    "onAccent": "#ffffff",
+    "danger": "#b0203a",
+    "dangerBg": "#b0203a",
+    "onDanger": "#ffffff",
+    "scrim": "rgba(0, 0, 0, 0.35)",
+    "shadow": "rgba(0, 0, 0, 0.3)"
+  },
+  "parts": {
+    "sidebar": {
+      "image": "sidebar.png",
+      "mode": "tile",
+      "scale": 3
+    },
+    "well": {
+      "image": "well.png",
+      "mode": "tile",
+      "scale": 3
+    },
+    "pane": {
+      "image": "pane.png",
+      "mode": "nine",
+      "slice": 10,
+      "scale": 3
+    },
+    "pane-on": {
+      "image": "pane-on.png",
+      "mode": "nine",
+      "slice": 10,
+      "scale": 3
+    },
+    "tabstrip": {
+      "image": "tabstrip.png",
+      "mode": "nine",
+      "slice": 2,
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "tab": {
+      "image": "tab.png",
+      "mode": "nine",
+      "slice": 4,
+      "scale": 2
+    },
+    "tab-on": {
+      "image": "tab-on.png",
+      "mode": "nine",
+      "slice": 4,
+      "scale": 2
+    },
+    "button": {
+      "image": "button.png",
+      "mode": "nine",
+      "slice": 5,
+      "scale": 2
+    },
+    "row-on": {
+      "image": "row-on.png",
+      "mode": "nine",
+      "slice": 3,
+      "scale": 2
+    },
+    "statusbar": {
+      "image": "statusbar.png",
+      "mode": "nine",
+      "slice": [
+        3,
+        14,
+        3,
+        6
+      ],
+      "scale": 3,
+      "repeat": "repeat"
+    },
+    "dialog": {
+      "image": "dialog.png",
+      "mode": "nine",
+      "slice": 6,
+      "scale": 3
+    }
+  }
+}

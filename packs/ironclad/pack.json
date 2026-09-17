@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "kind": "pack",
+  "id": "ironclad",
+  "name": "Ironclad",
+  "version": "1.0.0",
+  "description": "The steel skin with the palette it was drawn against, and a wolf. The whole window in one click.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "theme": "ironclad",
+  "skin": "ironclad",
+  "mascot": "wolf"
+}

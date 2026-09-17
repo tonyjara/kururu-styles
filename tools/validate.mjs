@@ -183,13 +183,23 @@ function validateTheme(where, m) {
 }
 
 function validateSkin(where, m, dir, files) {
-  if (!m.tokens || typeof m.tokens !== "object") {
-    fail(where, `"tokens" is required — a skin is the difference it makes, but it has to make one`);
-    return;
-  }
-  const names = Object.keys(m.tokens);
-  if (names.length === 0) fail(where, `"tokens" is empty, so this skin is the default with a different name`);
-  for (const [name, value] of Object.entries(m.tokens)) {
+  /**
+   * A skin is the difference it makes, and since the studio a difference may be
+   * a picture rather than a token: a skin that paints its panes and moves no
+   * radius is a skin. What is still refused is one that does nothing at all,
+   * because offering it is offering the default under another name.
+   */
+  const tokens = m.tokens ?? {};
+  if (typeof tokens !== "object" || Array.isArray(tokens)) fail(where, `"tokens" must be an object of CSS values`);
+  const parts = m.parts ?? {};
+  if (typeof parts !== "object" || Array.isArray(parts)) fail(where, `"parts" must be an object, one entry per part it paints`);
+  const colors = m.colors ?? {};
+  if (typeof colors !== "object" || Array.isArray(colors)) fail(where, `"colors" must be an object of chrome colours`);
+  const moves =
+    Object.keys(tokens).length + Object.keys(parts).length + Object.keys(colors).length + (m.iconSheet ? 1 : 0);
+  if (moves === 0) fail(where, `moves nothing — no tokens, no parts, no colours — so this skin is the default with a different name`);
+
+  for (const [name, value] of Object.entries(tokens)) {
     if (!VOCAB.skin.tokens.includes(name)) fail(where, `"tokens.${name}" is not a token kururu answers for`);
     if (typeof value !== "string") fail(where, `"tokens.${name}" must be a string — a CSS value, units and all`);
   }
@@ -197,6 +207,66 @@ function validateSkin(where, m, dir, files) {
     if (!VOCAB.skin.icons.includes(name)) fail(where, `"icons.${name}" is not an icon kururu draws`);
     if (value !== null && (typeof value !== "string" || [...value].length > 2)) {
       fail(where, `"icons.${name}" must be a glyph or two, or null to keep kururu's`);
+    }
+  }
+
+  /**
+   * The pictures. Each names a PNG in this directory and says how it is cut,
+   * and the cut has to fit the picture: a slice that adds up to more than the
+   * picture is wide is a frame with no middle, which the browser draws as
+   * nothing at all.
+   */
+  for (const [name, p] of Object.entries(parts)) {
+    if (!VOCAB.skin.parts.includes(name)) {
+      fail(where, `"parts.${name}" is not a part kururu paints — one of ${VOCAB.skin.parts.join(", ")}`);
+      continue;
+    }
+    if (!p || typeof p !== "object") {
+      fail(where, `"parts.${name}" must be an object with an "image"`);
+      continue;
+    }
+    const size = picture(where, `parts.${name}.image`, p.image, dir, files);
+    if (p.mode !== undefined && !VOCAB.skin.paintModes.includes(p.mode)) {
+      fail(where, `"parts.${name}.mode" must be one of ${VOCAB.skin.paintModes.join(", ")}`);
+    }
+    if (p.repeat !== undefined && !VOCAB.skin.paintRepeats.includes(p.repeat)) {
+      fail(where, `"parts.${name}.repeat" must be one of ${VOCAB.skin.paintRepeats.join(", ")}`);
+    }
+    if (p.scale !== undefined && (!Number.isInteger(p.scale) || p.scale < 1 || p.scale > 8)) {
+      fail(where, `"parts.${name}.scale" is picture pixels to screen pixels: a whole number from 1 to 8`);
+    }
+    const slice = p.slice === undefined ? [0, 0, 0, 0] : typeof p.slice === "number" ? [p.slice, p.slice, p.slice, p.slice] : p.slice;
+    if (!Array.isArray(slice) || slice.length !== 4 || !slice.every((n) => Number.isInteger(n) && n >= 0)) {
+      fail(where, `"parts.${name}.slice" is one whole number, or four (top, right, bottom, left), in the picture's own pixels`);
+    } else if (size && (p.mode ?? "nine") === "nine") {
+      if (slice[0] + slice[2] > size.height || slice[1] + slice[3] > size.width) {
+        fail(where, `"parts.${name}.slice" adds up to more than ${p.image} is (${size.width}×${size.height}), leaving no middle`);
+      }
+    }
+  }
+
+  /**
+   * The chrome colours a skin insists on. Only the theme's `ui` names, only
+   * colours: the terminal is not a skin's to recolour, and a value that is not
+   * a colour here lands on the root element of a window that is on the tailnet.
+   */
+  for (const [name, value] of Object.entries(colors)) {
+    if (!VOCAB.skin.colors.includes(name)) fail(where, `"colors.${name}" is not a chrome colour kururu answers for`);
+    else if (!COLOUR.test(String(value))) fail(where, `"colors.${name}" is ${JSON.stringify(value)}, which is not a colour`);
+  }
+
+  if (m.iconSheet !== undefined) {
+    const sheet = m.iconSheet;
+    if (!sheet || typeof sheet !== "object") fail(where, `"iconSheet" must be an object with an "image"`);
+    else {
+      const size = picture(where, "iconSheet.image", sheet.image, dir, files);
+      const n = VOCAB.skin.icons.length;
+      if (size && size.width !== size.height * n) {
+        fail(where, `"iconSheet.image" must be ${n} square cells in a row — ${sheet.image} is ${size.width}×${size.height}, and ${n}×${size.height} would be ${n * size.height} wide`);
+      }
+      if (sheet.mode !== undefined && !VOCAB.skin.iconSheetModes.includes(sheet.mode)) {
+        fail(where, `"iconSheet.mode" must be one of ${VOCAB.skin.iconSheetModes.join(", ")}`);
+      }
     }
   }
 
@@ -227,6 +297,17 @@ function validateSkin(where, m, dir, files) {
       }
     }
   }
+}
+
+/** A field that names a PNG in the entry: checked as a name, as a file, and as a PNG. Returns its size, or null. */
+function picture(where, field, name, dir, files) {
+  if (typeof name !== "string" || !files.includes(name)) {
+    fail(where, `"${field}" must name a PNG in this directory, not ${JSON.stringify(name)}`);
+    return null;
+  }
+  const size = pngSize(join(ROOT, dir, name));
+  if (!size) fail(where, `"${field}": ${name} is not a PNG`);
+  return size;
 }
 
 function validateMascot(where, m, dir, files) {

@@ -74,7 +74,7 @@ for (const e of entries()) {
       size: sizeOf(e.dir, name),
       digest: sha256(readFileSync(join(ROOT, e.dir, name))),
     })),
-    preview: preview(e.kind, m),
+    preview: preview(e.kind, m, files),
   });
 }
 
@@ -89,7 +89,7 @@ for (const e of entries()) {
  * drawn *in itself* rather than described. A mascot's is the geometry, so the
  * sheet can be cut and animated straight from the picker.
  */
-function preview(kind, m) {
+function preview(kind, m, files) {
   if (kind === "theme") {
     return {
       appearance: m.appearance,
@@ -113,6 +113,12 @@ function preview(kind, m) {
     // installed yet. Saying so is better than a card that quietly lies about
     // what it will look like.
     p.fonts = (m.fonts ?? []).map((f) => f.family);
+    // A skin made of pictures cannot be drawn from numbers at all, so its card
+    // is a screenshot the author put in the directory as `shot.png` — proxied
+    // by kururu the way a mascot's sheet is. Which parts it paints travels too,
+    // so a card with no screenshot can at least say "paints the panes".
+    p.parts = Object.keys(m.parts ?? {});
+    if (files.includes("shot.png")) p.shot = "shot.png";
     return p;
   }
   if (kind === "mascot") {

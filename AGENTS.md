@@ -81,6 +81,29 @@ stop catching the mistake.
 
 **Do not touch `index.json`.** Generated. See above.
 
+## Skins with pictures
+
+A skin's `parts` name PNGs in its own directory and say how each is cut. The
+things that go wrong:
+
+- **A part name is one of twelve** — `schema/tokens.json` lists them under
+  `skin.parts`. It names a region of the window (`statusbar`), never a class.
+- **A slice has to leave a middle.** Top plus bottom no more than the picture's
+  height, left plus right no more than its width. The validator checks this
+  against the PNG's real size.
+- **`scale` is a whole number, 1 to 8.** Pixel art is drawn small and shown big;
+  a `2.5` would blur it and is refused.
+- **`colors` takes the theme's `ui` names only.** No terminal colours. A skin
+  drawn for a palette ships the palette as a theme and the two as a pack.
+- **Put a `shot.png` beside the pictures.** The Styles tab draws the card from
+  it; without one the card falls back to a box drawn from the tokens, which for
+  a picture skin says nothing.
+- **Do not hand-draw what `tools/art.mjs` generates.** `skins/ironclad` and
+  `skins/handheld` are code; change the script and rerun it.
+
+The fastest route is kururu's own *Settings → Skin studio*, which writes this
+exact format to `~/.config/kururu/styles/skins/<id>/`. Copy the folder in.
+
 ## Mascots specifically
 
 The sprite work is the part an agent gets wrong. Kururu wants **one sheet, square

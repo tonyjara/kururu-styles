@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "kind": "pack",
+  "id": "handheld",
+  "name": "Handheld",
+  "version": "1.0.0",
+  "description": "Grey plastic, four greens, and a rabbit. Your agents in a screen you can hold in two hands.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "theme": "pea-soup",
+  "skin": "handheld",
+  "mascot": "rabbit"
+}
