@@ -3,6 +3,36 @@
   "entries": [
     {
       "kind": "theme",
+      "id": "deepslate",
+      "name": "Deepslate",
+      "version": "1.0.0",
+      "description": "The sixteen colours a block game writes its chat in, as the sixteen colours a terminal has, on near-black stone. Drawn for Cobble and a plain, bright dark theme without it.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "themes/deepslate",
+      "manifest": "theme.json",
+      "digest": "sha256-7aadf150ad750b42ee9ca11baa7ee4fc568a3b67c45f7a68e820625ca0ef3b66",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1748,
+          "digest": "sha256-018fff681b712853977509c19a71fe33dee74d1a9d54472d514068af96fac077"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#1b1b1b",
+        "chrome": "#2b2b2b",
+        "line": "#555555",
+        "text": "#e0e0e0",
+        "accent": "#00aa00",
+        "working": "#ffaa00",
+        "blocked": "#ff5555",
+        "done": "#55ff55"
+      }
+    },
+    {
+      "kind": "theme",
       "id": "dracula",
       "name": "Dracula",
       "version": "1.0.0",
@@ -34,6 +64,36 @@
     },
     {
       "kind": "theme",
+      "id": "dungeon",
+      "name": "Dungeon",
+      "version": "1.0.0",
+      "description": "The palette an 8-bit console could show, on the navy of a dungeon floor, with a gold cursor. Drawn for Quest.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "themes/dungeon",
+      "manifest": "theme.json",
+      "digest": "sha256-fd27927a153a736181250433c718406218cdd6a10868f299005c0f6aa3f6e476",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1681,
+          "digest": "sha256-dafcbcc3355ea247bf3adb47f1f7b6913a9336b99cc8cea88acf698e458437e8"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#060c1c",
+        "chrome": "#0a1020",
+        "line": "#2c4c8c",
+        "text": "#fcfcfc",
+        "accent": "#f8b800",
+        "working": "#e45c10",
+        "blocked": "#f83800",
+        "done": "#58d854"
+      }
+    },
+    {
+      "kind": "theme",
       "id": "gruvbox-dark",
       "name": "Gruvbox Dark",
       "version": "1.0.0",
@@ -61,6 +121,36 @@
         "working": "#fe8019",
         "blocked": "#fabd2f",
         "done": "#83a598"
+      }
+    },
+    {
+      "kind": "theme",
+      "id": "ironclad",
+      "name": "Ironclad",
+      "version": "1.0.0",
+      "description": "Gunmetal and one red. Drawn for the skin of the same name, and a perfectly good dark theme without it.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "themes/ironclad",
+      "manifest": "theme.json",
+      "digest": "sha256-0c3ffe3a6bb12ea320186d87725d4019ab39c58e550c7a87088b9cad23436245",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1676,
+          "digest": "sha256-f865617dd10ca4443af632e42744b117d39c8d9100546361ab2841ed1beba802"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#14161a",
+        "chrome": "#23272b",
+        "line": "#4a525a",
+        "text": "#d8dee3",
+        "accent": "#c62828",
+        "working": "#f0a030",
+        "blocked": "#ffd166",
+        "done": "#57a0ff"
       }
     },
     {
@@ -127,6 +217,36 @@
     },
     {
       "kind": "theme",
+      "id": "pea-soup",
+      "name": "Pea Soup",
+      "version": "1.0.0",
+      "description": "Four greens and nothing else in the terminal, on grey plastic. Every ANSI slot is dark on light, so nothing an agent prints can disappear.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "themes/pea-soup",
+      "manifest": "theme.json",
+      "digest": "sha256-d0dbdec3d118ecca4af55d0f316abdd4bed02e5111eacbccdc300136801f3f4d",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1714,
+          "digest": "sha256-11888ce4402222bcfaf69083d69fe91b2de496b884d28330eb69cfd8384bbfb7"
+        }
+      ],
+      "preview": {
+        "appearance": "light",
+        "bg": "#9bbc0f",
+        "chrome": "#c9c5bd",
+        "line": "#a19c94",
+        "text": "#26302a",
+        "accent": "#a53c6c",
+        "working": "#e6a100",
+        "blocked": "#d94f4f",
+        "done": "#306230"
+      }
+    },
+    {
+      "kind": "theme",
       "id": "tokyo-night",
       "name": "Tokyo Night",
       "version": "1.0.0",
@@ -157,126 +277,538 @@
       }
     },
     {
-      "kind": "skin",
-      "id": "blueprint",
-      "name": "Blueprint",
+      "kind": "theme",
+      "id": "underground",
+      "name": "Underground",
       "version": "1.0.0",
-      "description": "Hairlines, wide tracking and a 24px grid over the whole window. A drafting sheet you happen to be running agents on.",
+      "description": "The same 8-bit palette on pure black, with the blue of an underground level for the cursor and the accent. Drawn for World 1-1.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
-      "path": "skins/blueprint",
-      "manifest": "skin.json",
-      "digest": "sha256-3f97710879e10ef686ac61f2d00a32b79dd2fda6ced46fa5ebe5c6987eaaebfb",
+      "path": "themes/underground",
+      "manifest": "theme.json",
+      "digest": "sha256-9f8a9d3a75a028f88bec4e5035720c41fa131507b684cc00ea547220c5c611e4",
       "files": [
         {
-          "name": "skin.json",
-          "size": 1235,
-          "digest": "sha256-a34a1dee8fc2951ee2d30e0a994a49a0e8ca4e57c673234bcc48c365ba6094fc"
+          "name": "theme.json",
+          "size": 1707,
+          "digest": "sha256-b7661013a1813258360c6674061e32b7b20d900d59b3850f03112bf4fd8e7d45"
         }
       ],
       "preview": {
-        "radiusLg": "2px",
-        "radiusXl": "2px",
-        "border": "1px",
-        "ui": "\"Helvetica Neue\", Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
-        "fsXs": "9px",
-        "fsLg": "12px",
-        "uiLineHeight": "1.45",
-        "uiLetterSpacing": "0.06em",
-        "frame": "inset 0 0 0 1px var(--line)",
-        "run": "▷",
-        "fonts": []
+        "appearance": "dark",
+        "bg": "#000000",
+        "chrome": "#0c0c14",
+        "line": "#2c2c4c",
+        "text": "#fcfcfc",
+        "accent": "#0078f8",
+        "working": "#f8b800",
+        "blocked": "#f83800",
+        "done": "#b8f818"
       }
     },
     {
       "kind": "skin",
-      "id": "bubblegum",
-      "name": "Bubblegum",
+      "id": "cobble",
+      "name": "Cobble",
       "version": "1.0.0",
-      "description": "Everything rounded off, Nunito, and shadows that behave like light. The friendliest thing you can do to a multiplexer.",
+      "description": "An inventory screen: grey plates around every pane, slots for tabs, a stone button, experience along the bottom, sand and cobblestone behind. Wear it with Deepslate.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
-      "path": "skins/bubblegum",
+      "path": "skins/cobble",
       "manifest": "skin.json",
-      "digest": "sha256-07001dd79aa6c5bf1f5d11b9db88c25f90c54aa2e402f5d0e79bb7c0532531f1",
+      "digest": "sha256-0afa7181af2b797380b4f8bf6ec1e34764d33b8cab647f055ae47485777a3ddb",
       "files": [
         {
-          "name": "OFL.txt",
-          "size": 4385,
-          "digest": "sha256-580df76c95a1ec5ab878ceb25bb3d85c6a076804e9c970c8c6972aea775fdf65"
+          "name": "button.png",
+          "size": 260,
+          "digest": "sha256-798e1613ec3dc063998ba543d7efcb7ac8de49416ea6185134efeb978d4ba30a"
         },
         {
-          "name": "nunito-variable.woff2",
-          "size": 39152,
-          "digest": "sha256-20fc9b6fc618e7c3c68d3ac750a2a5dfbceb8521675458d2cea580b5693e4798"
+          "name": "dialog.png",
+          "size": 98,
+          "digest": "sha256-0e29a382c8ae12b2abbeed1714f5ebd4a04cbb5b19d8a682df285a42d2df6767"
+        },
+        {
+          "name": "pane-on.png",
+          "size": 114,
+          "digest": "sha256-d3b53f22cd8997a61392e823ac43f90c5fc49d155366af35efdac197b98ac380"
+        },
+        {
+          "name": "pane.png",
+          "size": 121,
+          "digest": "sha256-b105a6c60bde63b8deee5c31c41a703d9b7a83eb4e6dd23f4f206b8147bb8926"
+        },
+        {
+          "name": "row-on.png",
+          "size": 92,
+          "digest": "sha256-dfc9db8b270006e10cb75956b0a647014f365cf7bc6987b9650ad98ab08bf53e"
+        },
+        {
+          "name": "shot.png",
+          "size": 51961,
+          "digest": "sha256-b6e0552dbaf61ed25e8038c7f6e1855c61b10760994629e53501aebde25698b6"
+        },
+        {
+          "name": "sidebar.png",
+          "size": 194,
+          "digest": "sha256-9c7dbaad8ab67bd79f47100a981bc71ef6b8b1b4d5880b79b08f02db3e19b910"
         },
         {
           "name": "skin.json",
-          "size": 1211,
-          "digest": "sha256-84c8dc26e4b7f577e25d63ab07cd94d0dd92b7327f728ef05e66aaa726749b5f"
-        }
-      ],
-      "preview": {
-        "radiusLg": "12px",
-        "radiusXl": "16px",
-        "ui": "\"Nunito\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
-        "fsXs": "10px",
-        "fsLg": "14px",
-        "uiLineHeight": "1.5",
-        "frame": "0 2px 12px var(--shadow)",
-        "run": "▶",
-        "fonts": [
-          "Nunito"
-        ]
-      }
-    },
-    {
-      "kind": "skin",
-      "id": "teletype",
-      "name": "Teletype",
-      "version": "1.0.0",
-      "description": "Square corners, Space Mono everywhere, and a scanline you can just about see. The chrome pretends it is part of the terminal.",
-      "author": "kururu-styles",
-      "licence": "CC0-1.0",
-      "path": "skins/teletype",
-      "manifest": "skin.json",
-      "digest": "sha256-2eca026418676bbb192aa073c6c6dc9b8f60707f9648a5f63cd881c6846c1b52",
-      "files": [
-        {
-          "name": "OFL.txt",
-          "size": 4392,
-          "digest": "sha256-8e4ee42b2553e1e01504e61cb0d46d148cd8c9e5eacaa3622a7df2d4f2955b9f"
+          "size": 2463,
+          "digest": "sha256-9f769620391530c35db2f0be0b64d37a75f89ac069cb1f08fc3e2b3df8a238c3"
         },
         {
-          "name": "skin.json",
-          "size": 1431,
-          "digest": "sha256-58271a1d218a44eea057c8da11446fc23cc385b02700c53d6e6ea75b228603b2"
+          "name": "statusbar.png",
+          "size": 114,
+          "digest": "sha256-795074766dad0e5824907321019327bcd1973c971875900be8383e2bfe5aaefc"
         },
         {
-          "name": "space-mono-400.woff2",
-          "size": 9464,
-          "digest": "sha256-e0c8e616bda27642f4c3cebaecff6525d901e73afc8a227cbbb0f2af4810f300"
+          "name": "tab-on.png",
+          "size": 95,
+          "digest": "sha256-e913ea0ad668cddf8b1bc626f8ad04b2f2888d2cd38622799a40e0c5c26a4233"
         },
         {
-          "name": "space-mono-700.woff2",
-          "size": 9552,
-          "digest": "sha256-af7cf6d2b897ec453acdcdacde4e9bcc8410718af5914de865b453e09f10eebc"
+          "name": "tab.png",
+          "size": 86,
+          "digest": "sha256-a996941884ee3884b4e75904053fe10d1030029607e433a2fae50db3638358d3"
+        },
+        {
+          "name": "tabstrip.png",
+          "size": 87,
+          "digest": "sha256-2d8a70f8d1cd2b369f598f0599bd6ac5212e312d754fca3834c9b5296bce2673"
+        },
+        {
+          "name": "well.png",
+          "size": 492,
+          "digest": "sha256-07ddcf69d0f73ddbe96ee1f821a32b218013f68197ca9a6cc1650b064659d142"
         }
       ],
       "preview": {
         "radiusLg": "0",
         "radiusXl": "0",
-        "ui": "\"Space Mono\", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
-        "fsXs": "9px",
-        "fsLg": "12px",
-        "uiLineHeight": "1.5",
-        "uiLetterSpacing": "0.01em",
-        "frame": "inset 0 0 0 1px var(--chrome-high)",
+        "border": "2px",
+        "uiLetterSpacing": "0.02em",
         "run": ">",
-        "fonts": [
-          "Space Mono",
-          "Space Mono"
-        ]
+        "fonts": [],
+        "parts": [
+          "sidebar",
+          "well",
+          "pane",
+          "pane-on",
+          "tabstrip",
+          "tab",
+          "tab-on",
+          "button",
+          "row-on",
+          "statusbar",
+          "dialog"
+        ],
+        "shot": "shot.png"
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "handheld",
+      "name": "Handheld",
+      "version": "1.0.0",
+      "description": "Grey plastic, a dark screen bezel around every pane with a power light in the corner, magenta buttons and a speaker grille. Wear it with Pea Soup and the terminals are the screen.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/handheld",
+      "manifest": "skin.json",
+      "digest": "sha256-cd34d55458ec78e023bc60f4473da210c9ffff231f5547fb13af6779e51f408e",
+      "files": [
+        {
+          "name": "button.png",
+          "size": 118,
+          "digest": "sha256-14617de48d8f4d4d05b1da26f38f3f2100eeff0a0c04604d450ce2d1e669ee35"
+        },
+        {
+          "name": "dialog.png",
+          "size": 140,
+          "digest": "sha256-d345d560b566d926a365d3ca9d36b7181230b95824a6ea6735694db1a6911f2a"
+        },
+        {
+          "name": "pane-on.png",
+          "size": 194,
+          "digest": "sha256-bfa348265f70b6152eacfd21772d1d30a6b92db8aab435f39528a16d36641406"
+        },
+        {
+          "name": "pane.png",
+          "size": 187,
+          "digest": "sha256-3d667c126e10d987d34e1f8040d2e7eef88e34e748e383df92d6e217fd393623"
+        },
+        {
+          "name": "row-on.png",
+          "size": 93,
+          "digest": "sha256-bafe31aab7b18ad47437e617822cc12a249324cbb25d10202016cf99121c3b7d"
+        },
+        {
+          "name": "shot.png",
+          "size": 31749,
+          "digest": "sha256-90020a574f6bef0846bc262e42c1a1a2cb18067daff0c1cf5bfbfb499a941848"
+        },
+        {
+          "name": "sidebar.png",
+          "size": 297,
+          "digest": "sha256-93c1cb21acee63101db79d6d45219cfd1d1ea4c4fb4dc6d624e59450e957185a"
+        },
+        {
+          "name": "skin.json",
+          "size": 2407,
+          "digest": "sha256-d304a8a93c193466773e7d4ff2de395252bed22567768a0726ed60e5a980a02e"
+        },
+        {
+          "name": "statusbar.png",
+          "size": 487,
+          "digest": "sha256-00aba1ed3fed318d9f1a4e5b49086d1c850aa2e7677da60c40206a50baf92ad2"
+        },
+        {
+          "name": "tab-on.png",
+          "size": 99,
+          "digest": "sha256-34174e25736b0a122d1e4e8cb39baf36ab5daf5b117153da48adf0ec818024ca"
+        },
+        {
+          "name": "tab.png",
+          "size": 100,
+          "digest": "sha256-bc0a7f8c0c348935ac6cbdd8bd7e359b4433b25c3638ec20525c228f133aeedd"
+        },
+        {
+          "name": "tabstrip.png",
+          "size": 87,
+          "digest": "sha256-648e3b7f99fdd355841f8466a6cf94f7b12b5b562b71cb1930007f7e2c6e203f"
+        },
+        {
+          "name": "well.png",
+          "size": 295,
+          "digest": "sha256-c83732944b4d514a4d51bb39224a199ba7b5d23b4138cc78d95bafd22f2cd3ce"
+        }
+      ],
+      "preview": {
+        "radiusLg": "5px",
+        "radiusXl": "8px",
+        "border": "2px",
+        "uiLetterSpacing": "0.02em",
+        "run": "▸",
+        "fonts": [],
+        "parts": [
+          "sidebar",
+          "well",
+          "pane",
+          "pane-on",
+          "tabstrip",
+          "tab",
+          "tab-on",
+          "button",
+          "row-on",
+          "statusbar",
+          "dialog"
+        ],
+        "shot": "shot.png"
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "ironclad",
+      "name": "Ironclad",
+      "version": "1.0.0",
+      "description": "Riveted steel around every pane, a HUD along the bottom, and a red line for the one you are in. Pixel art at 3x — the terminals get smaller and that is the idea.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/ironclad",
+      "manifest": "skin.json",
+      "digest": "sha256-e283d1d785676144c5cff7bb3b8a8da99c24b9425269456f293e2d5519011690",
+      "files": [
+        {
+          "name": "button.png",
+          "size": 101,
+          "digest": "sha256-4f9ca7aca176a4ff963ac4da5b96d5fe00cafa0b14a8b4dc735f6bbe57c59f68"
+        },
+        {
+          "name": "dialog.png",
+          "size": 177,
+          "digest": "sha256-0e5dbfa569776ec50c7100e2d866acc827fa1b281adeeebc493e35df2f3b144a"
+        },
+        {
+          "name": "pane-on.png",
+          "size": 180,
+          "digest": "sha256-3626e20b9f37836ee9cb443d25fa15b2cfd856f063cf651e989f998363d8261a"
+        },
+        {
+          "name": "pane.png",
+          "size": 177,
+          "digest": "sha256-7827302b35300aef2dc8381268b4941e2ef16196d2b67d2491a8331edb28cf69"
+        },
+        {
+          "name": "row-on.png",
+          "size": 113,
+          "digest": "sha256-96347133de37d0050f8886cd575b34193975e485e22de6a315ebaf75798be166"
+        },
+        {
+          "name": "shot.png",
+          "size": 36698,
+          "digest": "sha256-14660b00e073abcf76c250a153b950919ed2ced07b1da271c995d239f6c3192c"
+        },
+        {
+          "name": "sidebar.png",
+          "size": 375,
+          "digest": "sha256-4e4fb940dc03cf60954585186e94b0a9874efe187fa1175e2937009a7aed6420"
+        },
+        {
+          "name": "skin.json",
+          "size": 2482,
+          "digest": "sha256-0a3aa28b11b88337ac491799f5bcb104441d5deeecb1bfddc04d29e1f36b04de"
+        },
+        {
+          "name": "statusbar.png",
+          "size": 459,
+          "digest": "sha256-115f17eca64286ae02871c87a7759a5e1850db99e7c31fb2b0f5bddd36ef40d5"
+        },
+        {
+          "name": "tab-on.png",
+          "size": 99,
+          "digest": "sha256-9c4c9c83aa4ca462470d3288f589d2f72ff5b830a6069b1c673a8a168a4544ef"
+        },
+        {
+          "name": "tab.png",
+          "size": 91,
+          "digest": "sha256-f143be0fed0bc21d5dfbe034df5a20ad09ff58933f6850f16b41809efbb0dc96"
+        },
+        {
+          "name": "tabstrip.png",
+          "size": 90,
+          "digest": "sha256-f83633081c948695ab77d2aece057cfb21f5544d4e6fd568d6fd9985b752af4c"
+        },
+        {
+          "name": "well.png",
+          "size": 342,
+          "digest": "sha256-e2404f7350bd708762d9ebb3465c53d2150a7c5c023575faaf6a8738e3d24a5e"
+        }
+      ],
+      "preview": {
+        "radiusLg": "0",
+        "radiusXl": "0",
+        "border": "2px",
+        "uiLetterSpacing": "0.03em",
+        "run": ">",
+        "fonts": [],
+        "parts": [
+          "sidebar",
+          "well",
+          "pane",
+          "pane-on",
+          "tabstrip",
+          "tab",
+          "tab-on",
+          "button",
+          "row-on",
+          "statusbar",
+          "dialog"
+        ],
+        "shot": "shot.png"
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "quest",
+      "name": "Quest",
+      "version": "1.0.0",
+      "description": "An 8-bit dungeon: blue stone walls around every pane, item boxes for tabs, a black HUD with a map and three hearts, gold on what you picked. Wear it with Dungeon.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/quest",
+      "manifest": "skin.json",
+      "digest": "sha256-3757cf768634536de8a1c4f37fea9d16b1217ac5e43ddcb29582034667189a4f",
+      "files": [
+        {
+          "name": "button.png",
+          "size": 99,
+          "digest": "sha256-47406878029d40eb18627eed8f558f60867aa574863bbfd5ea5e748fdb3d0fb0"
+        },
+        {
+          "name": "dialog.png",
+          "size": 117,
+          "digest": "sha256-0d2e1ced2b200b50c66f38f4cdd3e0a68318d2c41a0eec978f3ee495dc3ab839"
+        },
+        {
+          "name": "pane-on.png",
+          "size": 132,
+          "digest": "sha256-b2714ac4ebea8e1bfda6b402d34b508ae37c828fa1d0d3185d7ec4072c091cb1"
+        },
+        {
+          "name": "pane.png",
+          "size": 128,
+          "digest": "sha256-65ac40d3d3e7062b52db2faf764477b20cfda57de1f1574aceed3af42a42cd16"
+        },
+        {
+          "name": "row-on.png",
+          "size": 95,
+          "digest": "sha256-7a2d41c8e4c2e54b8aa8ef63d2d526186672dfaaf2dcfb386df82d9b119c0c05"
+        },
+        {
+          "name": "shot.png",
+          "size": 37820,
+          "digest": "sha256-b2258521d64d478496ff5b58a73f0c9cb6f4d2478f5b2fad68026f8b84afce16"
+        },
+        {
+          "name": "sidebar.png",
+          "size": 89,
+          "digest": "sha256-5e4967121d372b93916fa3a26f2290f5412f0ea0ac270fca04f74eba556d8505"
+        },
+        {
+          "name": "skin.json",
+          "size": 2512,
+          "digest": "sha256-56d3f5a1500a90f9a2496ba7d96438f2fc450654b2420605e0daa937f3d2dd4e"
+        },
+        {
+          "name": "statusbar.png",
+          "size": 158,
+          "digest": "sha256-d4348c7e7f9613347a487bc05c23be0b0f79a04c82217b95b2ded206f7052db8"
+        },
+        {
+          "name": "tab-on.png",
+          "size": 84,
+          "digest": "sha256-89bc0ece8c2caa1be106b1965b587038423557c61290368f8c36b72d2e280aae"
+        },
+        {
+          "name": "tab.png",
+          "size": 83,
+          "digest": "sha256-7c6a090f851d6745a95d027a7ff26011cfc00b82b4dabf8dfb02eabd278a4e45"
+        },
+        {
+          "name": "tabstrip.png",
+          "size": 80,
+          "digest": "sha256-79910978827d6261c39a8e15de69ec816950ee112ad617ac5e90e03b4ef93bca"
+        },
+        {
+          "name": "well.png",
+          "size": 88,
+          "digest": "sha256-286beca7ce011e71b55a63e6bc7e961efba9023efb4124fbf49f8f19c52b8365"
+        }
+      ],
+      "preview": {
+        "radiusLg": "0",
+        "radiusXl": "0",
+        "border": "2px",
+        "uiLetterSpacing": "0.04em",
+        "run": ">",
+        "fonts": [],
+        "parts": [
+          "sidebar",
+          "well",
+          "pane",
+          "pane-on",
+          "tabstrip",
+          "tab",
+          "tab-on",
+          "button",
+          "row-on",
+          "statusbar",
+          "dialog"
+        ],
+        "shot": "shot.png"
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "world-1-1",
+      "name": "World 1-1",
+      "version": "1.0.0",
+      "description": "Brick blocks in a blue sky. The pane you are in is a gold block with four dots, the tab strip a pipe, every dialog a cloud, the ground along the bottom. Wear it with Underground.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/world-1-1",
+      "manifest": "skin.json",
+      "digest": "sha256-97f1ebb9c98c3abe919c5ef2fbbf746f46881fb934c1fdd02921ff3548c59383",
+      "files": [
+        {
+          "name": "button.png",
+          "size": 100,
+          "digest": "sha256-da53faf0980fb9b1aa40cd0b156ac7367aa4ab4e65455e6c3b7323059ff6fbe3"
+        },
+        {
+          "name": "dialog.png",
+          "size": 127,
+          "digest": "sha256-c5cb2d6f511a61c30cb74dbf0dd5d4e5edb60e0921978b695318b5e88e496f1d"
+        },
+        {
+          "name": "pane-on.png",
+          "size": 142,
+          "digest": "sha256-16c37ce5a9450a8079d96aa7a7f0231294e253c9773ee0ecfab755a68723372d"
+        },
+        {
+          "name": "pane.png",
+          "size": 159,
+          "digest": "sha256-11cb37657e1f58c702f97eaea8006925986d46e1a104806d46ec40e5dff3f1cb"
+        },
+        {
+          "name": "row-on.png",
+          "size": 112,
+          "digest": "sha256-caf1b9407222ce969e8e01d35d52046d419ae49619c2d9bd6203083ba0166c92"
+        },
+        {
+          "name": "shot.png",
+          "size": 33762,
+          "digest": "sha256-bc5d84d325eb742f72a2f20a5c99fff6ff169398caf974d08dfa3c70a6c658cb"
+        },
+        {
+          "name": "sidebar.png",
+          "size": 313,
+          "digest": "sha256-d20212d4b86de296093d5ca46b1901881ea92f036b92e51e00a76c7b8c7e7655"
+        },
+        {
+          "name": "skin.json",
+          "size": 2557,
+          "digest": "sha256-32202fcb66b66a115a8675fd947f169344cbf451733ca7f18ab9131265a87a10"
+        },
+        {
+          "name": "statusbar.png",
+          "size": 117,
+          "digest": "sha256-5659bb38f5339e2f84bf42772541f34e632d7459065fa106bfa1fdd2ba076549"
+        },
+        {
+          "name": "tab-on.png",
+          "size": 98,
+          "digest": "sha256-6543d0356e5bd4e1fd0d0a963648747f721fb077c92a71d12cd29f3c308b3fa0"
+        },
+        {
+          "name": "tab.png",
+          "size": 81,
+          "digest": "sha256-ab308ea851604db834f9d91be9d326eeb8b0b31469abd2812796c569ae1d6366"
+        },
+        {
+          "name": "tabstrip.png",
+          "size": 96,
+          "digest": "sha256-f7649f709d44d9f9d4850a94707483e699398a2b6d4f6a173370e845aabeadda"
+        },
+        {
+          "name": "well.png",
+          "size": 76,
+          "digest": "sha256-246c3784412a09f3b6f55697824f90e910b854a19a249520479287c0710a1d04"
+        }
+      ],
+      "preview": {
+        "radiusLg": "0",
+        "radiusXl": "0",
+        "border": "2px",
+        "uiLetterSpacing": "0.03em",
+        "run": ">",
+        "fonts": [],
+        "parts": [
+          "sidebar",
+          "well",
+          "pane",
+          "pane-on",
+          "tabstrip",
+          "tab",
+          "tab-on",
+          "button",
+          "row-on",
+          "statusbar",
+          "dialog"
+        ],
+        "shot": "shot.png"
       }
     },
     {
@@ -332,6 +864,103 @@
     },
     {
       "kind": "mascot",
+      "id": "boar",
+      "name": "Boar",
+      "version": "1.0.0",
+      "description": "Trots head-down and unbothered while it works, and stands there breathing while it waits.",
+      "author": "ScratchIO",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/animated-wild-animals",
+      "path": "mascots/boar",
+      "manifest": "mascot.json",
+      "digest": "sha256-ef4d5efcf41bfc0ce7f169e421c8ca597f36b81a495e9ff290c161955e500a24",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1393,
+          "digest": "sha256-1dbda835c7d0586dc262f49d01ddc67ef89118da63b0083626a910e35d850843"
+        },
+        {
+          "name": "mascot.json",
+          "size": 577,
+          "digest": "sha256-9da216122f06c7af9b6550e6b55e983a889f8e94db32be503401bf9bd8c6d057"
+        },
+        {
+          "name": "sheet.png",
+          "size": 2797,
+          "digest": "sha256-7afe9275576b8ef4390b426763b2c5e8e9153ea675778e3aa0e7c583c8d103f8"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 44,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 44
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 8,
+          "cycle": 840
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 8,
+          "cycle": 2000
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "cat",
+      "name": "Cat",
+      "version": "1.0.0",
+      "description": "Pads across the badge while it works, and hands it back to the dot when it stops. A black cat, so it is a silhouette with one green eye.",
+      "author": "Shepardskin",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/cat-sprites",
+      "path": "mascots/cat",
+      "manifest": "mascot.json",
+      "digest": "sha256-b08c56f879cf2109bd80ba1c78770b16c8a5b0bacdbe5d2c113f89bf67824d16",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1976,
+          "digest": "sha256-a5e053f2a019c7c30ee1d0e5951582c73fc90900b08df712830392a7c9228d3b"
+        },
+        {
+          "name": "mascot.json",
+          "size": 551,
+          "digest": "sha256-92ff66ef429bd92911cfcf2487fd0fa39c5358ebf40f3d054fe7d1cc21ffeb37"
+        },
+        {
+          "name": "sheet.png",
+          "size": 960,
+          "digest": "sha256-0ee3d68bde15d87dd174f0d046bb64ed35bc196b64d1b1248f0f75d5b272acce"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 20,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 20
+        },
+        "working": {
+          "row": 0,
+          "col": 0,
+          "count": 6,
+          "cycle": 720
+        },
+        "idle": null
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "deer",
       "name": "Deer",
       "version": "1.0.0",
@@ -378,6 +1007,57 @@
           "col": 0,
           "count": 10,
           "cycle": 2400
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "dog",
+      "name": "Dog",
+      "version": "1.0.0",
+      "description": "A small pup that scurries while it works and stands wagging while it waits. Three of them on the sheet — the other two are a row away.",
+      "author": "Jason of GDN",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/dog-spritesheets",
+      "path": "mascots/dog",
+      "manifest": "mascot.json",
+      "digest": "sha256-517b9faf4c2f0dfedeb68c575b4c486ce32c0abc41025cfacf2f60c354e57e12",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1454,
+          "digest": "sha256-18ce0781291b4a64ef3dab7eca483363b64b51eb34f0422b34b124695e38b8a4"
+        },
+        {
+          "name": "mascot.json",
+          "size": 620,
+          "digest": "sha256-425c0db82b2491a180431ff9b6303683634b06267d29f73516ea1c0ba2e63024"
+        },
+        {
+          "name": "sheet.png",
+          "size": 6459,
+          "digest": "sha256-444c9a8295b74f378ecb72a3380cd5f0c01114d7bf9b98f3d5f56a16bbb0e790"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 6,
+          "cycle": 660
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 6,
+          "cycle": 1800
         }
       }
     },
@@ -587,6 +1267,57 @@
     },
     {
       "kind": "mascot",
+      "id": "horse",
+      "name": "Horse",
+      "version": "1.0.0",
+      "description": "Walks while it works. Its idle is thirteen frames long, which is the slowest thing in here and reads as breathing.",
+      "author": "ScratchIO",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/farming-set-pixel-art",
+      "path": "mascots/horse",
+      "manifest": "mascot.json",
+      "digest": "sha256-705ecc97479bf41a2ed656ad0f9ac2ba4f4e968751fc99c966cb88e12f199bbb",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1097,
+          "digest": "sha256-0dfa7d022a934d8c6bcfae74d6e962c4db77fc7cfbcc08e60c0b7f8a4cd98f59"
+        },
+        {
+          "name": "mascot.json",
+          "size": 605,
+          "digest": "sha256-6a4f913e0ac7b855914f87e0ec9ba5a92320ed08b78abcdb026cfca5f6c6c6f1"
+        },
+        {
+          "name": "sheet.png",
+          "size": 4850,
+          "digest": "sha256-f87cf7b6e8f9bed388e83291aa147bef014e444dfc5ee29c61ab21b012fb8588"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 53,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 53
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 8,
+          "cycle": 900
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 13,
+          "cycle": 2800
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "rabbit",
       "name": "Rabbit",
       "version": "1.0.0",
@@ -786,74 +1517,122 @@
     },
     {
       "kind": "pack",
-      "id": "campfire",
-      "name": "Campfire",
+      "id": "cobble",
+      "name": "Cobble",
       "version": "1.0.0",
-      "description": "Gruvbox, rounded off, with a bear lumbering through the sidebar. Warm and slow.",
+      "description": "An inventory screen around a chat-coloured terminal, with a fox. Blocks.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
-      "path": "packs/campfire",
+      "path": "packs/cobble",
       "manifest": "pack.json",
-      "digest": "sha256-710d8076d7d3bca66d9af1c88ad1849458e3c6d1af416cdc29d7534c9e1990ae",
+      "digest": "sha256-7a0a5fd8d7fd4e247c1ff6f0e69cacf3ffdc81f17a14ae254044915f5b27ca40",
       "files": [
         {
           "name": "pack.json",
-          "size": 323,
-          "digest": "sha256-655ffde7d2d1f406bbd64a8daf8ec889d01a91247736798a94021733bd1e28cf"
+          "size": 305,
+          "digest": "sha256-bfc981e996a6185debd854db72ce4a2ef62005a02f505bcd99f011cea3203fa4"
         }
       ],
       "preview": {
-        "theme": "gruvbox-dark",
-        "skin": "bubblegum",
-        "mascot": "bear"
+        "theme": "deepslate",
+        "skin": "cobble",
+        "mascot": "fox"
       }
     },
     {
       "kind": "pack",
-      "id": "green-screen",
-      "name": "Green Screen",
+      "id": "handheld",
+      "name": "Handheld",
       "version": "1.0.0",
-      "description": "Dracula's greens on a square monospace chrome, with a rabbit. The most terminal thing here.",
+      "description": "Grey plastic, four greens, and a rabbit. Your agents in a screen you can hold in two hands.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
-      "path": "packs/green-screen",
+      "path": "packs/handheld",
       "manifest": "pack.json",
-      "digest": "sha256-0da1d01bb27a006994056055d25a39ae8f9f646b113769702460f12075d73b58",
+      "digest": "sha256-444fa665385eebd3b36cfe749299b8231637dd05cbcbd553541b20b8dc3707e0",
       "files": [
         {
           "name": "pack.json",
-          "size": 339,
-          "digest": "sha256-876e2c56ccb2cc2e86ca8558f1acbcbe33b657d100333015ddb7392c3f80f769"
+          "size": 332,
+          "digest": "sha256-057aa4af1bc697b92fd629336b60f60e1419acc3446b736eb3e72d478599cf57"
         }
       ],
       "preview": {
-        "theme": "dracula",
-        "skin": "teletype",
+        "theme": "pea-soup",
+        "skin": "handheld",
         "mascot": "rabbit"
       }
     },
     {
       "kind": "pack",
-      "id": "night-shift",
-      "name": "Night Shift",
+      "id": "ironclad",
+      "name": "Ironclad",
       "version": "1.0.0",
-      "description": "Tokyo Night under a drafting grid, with a wolf. What a late one looks like.",
+      "description": "The steel skin with the palette it was drawn against, and a wolf. The whole window in one click.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
-      "path": "packs/night-shift",
+      "path": "packs/ironclad",
       "manifest": "pack.json",
-      "digest": "sha256-05d9f2bc39cc0673be454611e81871465411ec61546988c3cf0c3f8c30aba240",
+      "digest": "sha256-c3a32f2044296ad8d74947da3ce86f351f5c33ba53696cf0417a80b765584ed5",
       "files": [
         {
           "name": "pack.json",
-          "size": 324,
-          "digest": "sha256-9f57475fd8ad768fba4e0b3d37f223e558cd288fe0135fc97fb1a5e14f708c40"
+          "size": 335,
+          "digest": "sha256-f35faf57d8d33f50d42dc67bbdcd74548ccd5273e00509615aade0f92df19647"
         }
       ],
       "preview": {
-        "theme": "tokyo-night",
-        "skin": "blueprint",
+        "theme": "ironclad",
+        "skin": "ironclad",
         "mascot": "wolf"
+      }
+    },
+    {
+      "kind": "pack",
+      "id": "quest",
+      "name": "Quest",
+      "version": "1.0.0",
+      "description": "Blue stone walls, a black HUD with three hearts, an 8-bit palette on navy, and a deer in the lost woods.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "packs/quest",
+      "manifest": "pack.json",
+      "digest": "sha256-aec4553911b452aeeec0720c784685d77777d62e2cc913ccc24de04dd1b0c7e9",
+      "files": [
+        {
+          "name": "pack.json",
+          "size": 333,
+          "digest": "sha256-568a52ec30fd3e84c13f82d36606d4db362a66ec5da1282924516997d8985d16"
+        }
+      ],
+      "preview": {
+        "theme": "dungeon",
+        "skin": "quest",
+        "mascot": "deer"
+      }
+    },
+    {
+      "kind": "pack",
+      "id": "world-1-1",
+      "name": "World 1-1",
+      "version": "1.0.0",
+      "description": "Bricks in a blue sky over a black underground terminal, and a fish, because there is always a fish.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "packs/world-1-1",
+      "manifest": "pack.json",
+      "digest": "sha256-d4ac092ebb41d3c26b3e7009b5f922d2c854135a21807affa16362c17f501796",
+      "files": [
+        {
+          "name": "pack.json",
+          "size": 344,
+          "digest": "sha256-b0e7a822f826d20a9c903947f4d19bd79ec3741995ca63bd91f9e8e1ce60adad"
+        }
+      ],
+      "preview": {
+        "theme": "underground",
+        "skin": "world-1-1",
+        "mascot": "fish"
       }
     }
   ]
