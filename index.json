@@ -1483,6 +1483,108 @@
     },
     {
       "kind": "mascot",
+      "id": "owl",
+      "name": "Owl",
+      "version": "1.0.0",
+      "description": "Waddles while it works, and while it waits stands still and turns its head all the way round.",
+      "author": "Vander96",
+      "licence": "OGA-BY-3.0",
+      "source": "https://opengameart.org/content/owl-animated-person",
+      "path": "mascots/owl",
+      "manifest": "mascot.json",
+      "digest": "sha256-1a79456f9a0eea3b2283713cbff8df7e67704854123c7efd2affa2447e2c6526",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1289,
+          "digest": "sha256-a726903ab26109abee0d7201c7cc4f6bda88bad801cdc0bdcf42c898df9a4c54"
+        },
+        {
+          "name": "mascot.json",
+          "size": 580,
+          "digest": "sha256-a3a7e7cd7a18c7616fb2d571915758f87c1969b9527c559d269d2225570e3e65"
+        },
+        {
+          "name": "sheet.png",
+          "size": 1291,
+          "digest": "sha256-ed66c5159e567d066dfade09bbac774827a65972bb2a64dc3a8a83d7b9fae914"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 20,
+        "trim": {
+          "x": 1,
+          "y": 1,
+          "size": 19
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 640
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 12,
+          "cycle": 3600
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "owlet",
+      "name": "Owlet",
+      "version": "1.0.0",
+      "description": "A sixteen-pixel horned owl, drawn at the badge's own size. Flaps while it works and bobs and blinks while it waits.",
+      "author": "revangale",
+      "licence": "CC-BY-SA-3.0",
+      "source": "https://opengameart.org/content/owl-and-raven-sprites",
+      "path": "mascots/owlet",
+      "manifest": "mascot.json",
+      "digest": "sha256-89f648c1d7c62d55d41734941346c353918f5263f524510c0a88ee056fdd0c86",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1214,
+          "digest": "sha256-a53537e8e245230d58638de942060c68552d66e3421abcbcae1b10634f62f1c8"
+        },
+        {
+          "name": "mascot.json",
+          "size": 610,
+          "digest": "sha256-1d7f818f05551fdac0a55df3f164b47e4b13e884b928df83f04d1407099ace37"
+        },
+        {
+          "name": "sheet.png",
+          "size": 1075,
+          "digest": "sha256-2c76b107a0a108962187b9db58a7f626162f547a2e92f5affa5d131aec4e038d"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 1,
+          "y": 1,
+          "size": 13
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 480
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 4,
+          "cycle": 1800
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "plumber",
       "name": "Plumber",
       "version": "1.0.0",
@@ -1869,125 +1971,130 @@
       "kind": "pack",
       "id": "cobble",
       "name": "Cobble",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "An inventory screen around a chat-coloured terminal, a miner with a pick, and a block being set down. Blocks.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/cobble",
       "manifest": "pack.json",
-      "digest": "sha256-704fe4a4161e82ed4f99fb8bd43357283e5eed5b18490c840b8464f1f5fa5ac0",
+      "digest": "sha256-84e05f8853df49d8c554acc9eb7bcfefc0c3fbd06ea77a21e11eb92dc7a05ef1",
       "files": [
         {
           "name": "pack.json",
-          "size": 364,
-          "digest": "sha256-b8ec120ae4c0d2f35b100108fe59714a2d400c07787c952aa291e50f50cf42b2"
+          "size": 385,
+          "digest": "sha256-26d9c6b88bed33d5576da09c39096529abb236a50652d290ef476f3e9ceb9b73"
         }
       ],
       "preview": {
         "theme": "deepslate",
         "skin": "cobble",
         "mascot": "miner",
-        "sound": "knock"
+        "sound": "knock",
+        "font": "PT Mono"
       }
     },
     {
       "kind": "pack",
       "id": "handheld",
       "name": "Handheld",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "Grey plastic, four greens, a rabbit, and the two-note blip a menu makes. Your agents in a screen you can hold in two hands.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/handheld",
       "manifest": "pack.json",
-      "digest": "sha256-25aef5d2108fc91c8f6235c18e2d1be72a25f43f65c64fe16906efd255ff6860",
+      "digest": "sha256-b8549d5ba68d046160bd35a17a88c0e82d94baf87508f5c5746e791d79988fe8",
       "files": [
         {
           "name": "pack.json",
-          "size": 383,
-          "digest": "sha256-022d6b6e43e2be6c1d76c4e9c4adc5d3733056c493ed053bc9e39e4e223e3fb6"
+          "size": 403,
+          "digest": "sha256-938777d25d7fd36b1e552c7c0c4e9cad0471a2b05b5c12291535b48fb17653da"
         }
       ],
       "preview": {
         "theme": "pea-soup",
         "skin": "handheld",
         "mascot": "rabbit",
-        "sound": "blip"
+        "sound": "blip",
+        "font": "Monaco"
       }
     },
     {
       "kind": "pack",
       "id": "ironclad",
       "name": "Ironclad",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "The steel skin with the palette it was drawn against, a knight with the visor down, and struck metal. The whole window in one click.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/ironclad",
       "manifest": "pack.json",
-      "digest": "sha256-c174a407d761f1ea9e0ee402af02afbf65020be924042e6df7a4e22ff89faae5",
+      "digest": "sha256-a35a78d27516f78db341a24b567f4b9bdc1b4d5ce49ca365dafc642338cf4330",
       "files": [
         {
           "name": "pack.json",
-          "size": 393,
-          "digest": "sha256-263c643cc1f1902fd66bb8d5ae6b944ec99ed0d9d3a97fcff64c476cdafdc622"
+          "size": 412,
+          "digest": "sha256-9dd9d1318df3f110a5c2607d8c9f52f51f4b3caebe934491f73dab8b4b2aed2c"
         }
       ],
       "preview": {
         "theme": "ironclad",
         "skin": "ironclad",
         "mascot": "knight",
-        "sound": "anvil"
+        "sound": "anvil",
+        "font": "Menlo"
       }
     },
     {
       "kind": "pack",
       "id": "quest",
       "name": "Quest",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "Blue stone walls, a black HUD with three hearts, an 8-bit palette on navy, somebody small with a sword, and four notes up a major chord.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/quest",
       "manifest": "pack.json",
-      "digest": "sha256-f1af669fcadc3e533306f4d7d8e551d302a500f4828b58af65ec71b4e0483f86",
+      "digest": "sha256-36fed46636f9449890a195b37191708e4745993c4dfd74aa50427bb905bd8d29",
       "files": [
         {
           "name": "pack.json",
-          "size": 387,
-          "digest": "sha256-27806a0d46bcebd5e247e7f6c31fd5fe2587e1912cc06f8a2b64340ef63ea77d"
+          "size": 412,
+          "digest": "sha256-0571a8917e0c3e4a43d7e3e85f656f7245db4e82a467fcb3a5feb0ccd92f132c"
         }
       ],
       "preview": {
         "theme": "dungeon",
         "skin": "quest",
         "mascot": "hero",
-        "sound": "fanfare"
+        "sound": "fanfare",
+        "font": "Courier New"
       }
     },
     {
       "kind": "pack",
       "id": "world-1-1",
       "name": "World 1-1",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "description": "Bricks in a blue sky over a black underground terminal, a plumber in a red cap, and the noise a coin makes.",
       "author": "kururu-styles",
       "licence": "CC0-1.0",
       "path": "packs/world-1-1",
       "manifest": "pack.json",
-      "digest": "sha256-a560a6bc7c76f5c7d986942d869f2ea6122cc7508a11cdc4b1232ea0b01573a2",
+      "digest": "sha256-4419a42f6e0ffa6876a599a8484f930251eb1e481ffcdcfdc040c4bef77bc676",
       "files": [
         {
           "name": "pack.json",
-          "size": 374,
-          "digest": "sha256-d339a6a5fb74747b387a6e989c398b91e1b4055b081cc11e5c938182d5ce9d85"
+          "size": 399,
+          "digest": "sha256-9b50305b905c72735f467696302f444de3d6b05d7cd96bf72a3a928b22a46c7b"
         }
       ],
       "preview": {
         "theme": "underground",
         "skin": "world-1-1",
         "mascot": "plumber",
-        "sound": "coin"
+        "sound": "coin",
+        "font": "Andale Mono"
       }
     }
   ]
