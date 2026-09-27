@@ -1,0 +1,23 @@
+These sprites are from "Owl and Raven Sprites" by revangale, published on
+OpenGameArt under Creative Commons Attribution-ShareAlike 3.0 (CC BY-SA 3.0):
+
+    https://opengameart.org/content/owl-and-raven-sprites
+    https://creativecommons.org/licenses/by-sa/3.0/
+
+Attribution IS required by this licence, and so is ShareAlike: this sheet, and
+anything made from it, is under CC BY-SA 3.0 too. The author and the source above
+are the attribution; kururu shows both on the row that offers this mascot, and
+this file travels with the sheet wherever it is installed.
+
+WHAT WAS CHANGED
+
+The original is a 4x4 grid of 16px cells on a checkerboard of two flat colours,
+one per cell — idle, flying toward, flying away, and side-on. The only change
+made here is that each cell's background was turned into transparency by
+flood-filling from the cell's edge. It had to be a fill and not a colour key,
+because the owl's pale belly is the same blue as half the checkerboard, and
+keying it out punches a hole through every frame.
+
+The grid is the artist's own and all four rows are still on the sheet, so
+Settings can re-cut it — row 2 is the owl flying away, row 3 side-on. No pixel
+was redrawn and no colour was changed.

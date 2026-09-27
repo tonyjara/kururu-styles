@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "owlet",
+  "name": "Owlet",
+  "version": "1.0.0",
+  "description": "A sixteen-pixel horned owl, drawn at the badge's own size. Flaps while it works and bobs and blinks while it waits.",
+  "author": "revangale",
+  "licence": "CC-BY-SA-3.0",
+  "source": "https://opengameart.org/content/owl-and-raven-sprites",
+  "sheet": "sheet.png",
+  "frame": 16,
+  "trim": {
+    "x": 1,
+    "y": 1,
+    "size": 13
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 4,
+    "cycle": 480
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 4,
+    "cycle": 1800
+  }
+}

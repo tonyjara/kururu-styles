@@ -1,0 +1,25 @@
+These sprites are from "Owl [Animated Person]" by Vander96, published on OpenGameArt
+under the OpenGameArt Attribution License 3.0 (OGA-BY 3.0):
+
+    https://opengameart.org/content/owl-animated-person
+    https://opengameart.org/content/oga-by-30-faq
+
+Attribution IS required by this licence. The author and the source above are it;
+kururu shows both on the row that offers this mascot, and this file travels with
+the sheet wherever it is installed. The artist asks for something like "Owl
+Person — Vander" in the credits, and for a happy message.
+
+WHAT WAS CHANGED
+
+The original is one strip of twelve 15x20 frames: a three-frame walk, then a head
+turned right, three views of the back of it, a head turned left, and the front
+again. Kururu wants square cells and one clip per row, so each frame was placed
+unchanged in a 20px cell, centred on the same two pixels for every frame, and the
+strip was re-laid into two rows:
+
+    row 0 (idle, 12 frames)   stand ×5, turn right, back ×3, turn left, stand ×2
+    row 1 (working, 4 frames) stand, step, stand, other step
+
+Frames are repeated rather than timed because a clip has one speed; holding the
+front view for five frames is what makes the head-turn read as a glance and not
+a spin. No pixel was redrawn and no colour was changed.

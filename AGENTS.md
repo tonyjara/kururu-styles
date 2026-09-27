@@ -20,7 +20,7 @@ themes/<id>/theme.json      a complete palette
 skins/<id>/skin.json        a difference from kururu's base shape
 mascots/<id>/mascot.json    + sheet.png
 sounds/<id>/sound.json      + one short audio file
-packs/<id>/pack.json        three ids, and optionally a fourth
+packs/<id>/pack.json        three ids, optionally a fourth, and a font name
 index.json                  GENERATED — do not edit
 schema/tokens.json          the token vocabulary. Read it; do not invent tokens
 ```

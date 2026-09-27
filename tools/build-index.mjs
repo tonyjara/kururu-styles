@@ -147,11 +147,14 @@ function preview(kind, m, files) {
     const ms = String(m.file).toLowerCase().endsWith(".wav") ? wavMs(join(ROOT, "sounds", m.id, m.file)) : null;
     return { file: m.file, ...(ms === null ? {} : { ms }) };
   }
-  // A pack is its parts, and the optional one is left out rather than written
+  // A pack is its parts, and the optional ones are left out rather than written
   // as null — an absent key is a pack with no opinion, which is what the
-  // manifest said.
+  // manifest said. The font is in here with them although it is not an entry,
+  // because the card draws it: a chip set in the face the pack asks for, which
+  // on a machine that has not got it falls back and says so by saying nothing.
   const p = {};
   for (const { kind: part } of PACK_PARTS) if (m[part] !== undefined) p[part] = m[part];
+  if (m.font !== undefined) p.font = m.font;
   return p;
 }
 

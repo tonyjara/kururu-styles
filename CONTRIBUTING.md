@@ -408,22 +408,50 @@ node tools/sfx.mjs
   "theme": "dungeon",
   "skin": "quest",
   "mascot": "hero",
-  "sound": "fanfare"
+  "sound": "fanfare",
+  "font": "Courier New"
 }
 ```
 
-The theme, the skin and the mascot are required; **`sound` is optional**, because
-a pack about a colour scheme may honestly have no opinion about what a
-notification sounds like — and because every pack published before sounds existed
-would otherwise have broken on the day they arrived.
+The theme, the skin and the mascot are required; **`sound` and `font` are
+optional**, because a pack about a colour scheme may honestly have no opinion
+about what a notification sounds like or what its terminal is set in — and
+because every pack published before those fields existed would otherwise have
+broken on the day they arrived.
 
 Everything it names must already exist in this repository — CI checks. A pack is
 a reference and never a copy, so improving one of its parts improves the pack,
 and somebody can install the pack and then keep only the mascot.
 
-Installing a pack puts its sound in kururu's notification settings. It does not
+**`font` is the exception: it names something that is not here and never will
+be.** This repository ships no typefaces and kururu installs none — a face is a
+licence and a hundred kilobytes a weight, and the machine it has to exist on is
+the one drawing the glyphs, which for somebody watching their agents on a phone
+is not the machine the agents are on. So a pack says what it would like to be set
+in, a machine that has that face wears it, and a machine that has not keeps the
+font it had. Three rules, each because kururu would otherwise accept the value
+and quietly mean something else by it:
+
+- **One family, so no commas.** Kururu puts the name at the front of its own
+  stack, quoted, so an agent's devicons keep working underneath it. A list would
+  be quoted whole and match nothing.
+- **None of `; } " ' < >`.** They are the characters kururu strips on the way in,
+  and a manifest that means something different once installed is worse than one
+  that does not install.
+- **Under 120 characters**, which is where kururu truncates.
+
+Prefer a face somebody is likely to have. A name nobody has installed is not an
+error and never reports one — it is simply a pack that does not change your font.
+
+Wearing a pack puts its sound in kururu's notification settings. It does not
 switch notifications *on*: whether to be interrupted is the user's decision and
 not a style's.
+
+**A pack is worn, not just installed.** Kururu lists the installed packs in
+Settings → Appearance and puts the whole of one back on in a click, with nothing
+downloaded. That is what the parts are *for*, and it is the reason to keep a pack
+coherent: somebody will press it again six months later expecting the look they
+remember.
 
 ---
 

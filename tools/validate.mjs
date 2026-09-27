@@ -84,6 +84,9 @@ const COLOUR = /^(#[0-9a-fA-F]{3,8}|rgba?\([\d\s.,%/]+\)|hsla?\([\d\s.,%/deg]+\)
  */
 const REMOTE = /(url\(\s*['"]?\s*(https?:)?\/\/)|(@import)|(['"]https?:\/\/)/i;
 
+/** What `adoptFontFamily` truncates at, so a name that survives here survives installation. */
+const MAX_FONT = 120;
+
 const index = existsSync(join(ROOT, "index.json")) ? readJson("index.json") : { entries: [] };
 const published = new Map(index.entries.map((e) => [`${e.kind}/${e.id}`, e]));
 
@@ -154,6 +157,7 @@ for (const [key, { entry, manifest }] of found) {
       fail(entry.dir, `names ${kind} "${id}", which is not in this repository`);
     }
   }
+  validatePackFont(entry.dir, manifest);
   void key;
 }
 
@@ -314,6 +318,43 @@ function validateSkin(where, m, dir, files) {
       }
     }
   }
+}
+
+/**
+ * A pack's `font`, which is the one thing a pack names that is not an entry.
+ *
+ * Optional, and a name rather than a file: this repository ships no fonts and
+ * kururu installs none. A typeface is a licence and a hundred kilobytes a
+ * weight, and the machine it has to exist on is the one drawing the glyphs —
+ * which, for somebody watching their agents on a phone, is not the machine the
+ * agents are on. So a pack says what it would like to be set in and a machine
+ * that has that face wears it.
+ *
+ * Three rules, and each of them exists because kururu would otherwise accept the
+ * value and quietly mean something else by it:
+ *
+ * - **One family, so no commas.** Kururu puts the name at the *front* of its own
+ *   stack, quoted — `"<your font>", <the Nerd Font faces>, monospace` — so that
+ *   an agent's devicons keep working underneath whatever you picked. A list
+ *   would be quoted whole and match nothing at all.
+ * - **None of the characters `adoptFontFamily` strips.** They are the ones that
+ *   could end a CSS declaration and begin somebody else's. A manifest containing
+ *   one is not refused by kururu, it is *edited* — and a manifest that means
+ *   something different once installed is worse than one that does not install.
+ * - **Under the length it truncates at**, for the same reason.
+ */
+function validatePackFont(where, m) {
+  if (m.font === undefined) return;
+  if (typeof m.font !== "string" || m.font.trim() === "") {
+    fail(where, `"font" must be the name of a typeface, or be left out entirely`);
+    return;
+  }
+  if (m.font !== m.font.trim()) fail(where, `"font" has space around it`);
+  if (m.font.length > MAX_FONT) fail(where, `"font" must be at most ${MAX_FONT} characters`);
+  if (m.font.includes(",")) {
+    fail(where, `"font" names one family — kururu puts it in front of its own stack, so a list matches nothing`);
+  }
+  if (/[;}"'<>]/.test(m.font)) fail(where, `"font" must not contain ; } " ' < or >`);
 }
 
 /** A field that names a PNG in the entry: checked as a name, as a file, and as a PNG. Returns its size, or null. */

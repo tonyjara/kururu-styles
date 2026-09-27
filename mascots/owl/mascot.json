@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "owl",
+  "name": "Owl",
+  "version": "1.0.0",
+  "description": "Waddles while it works, and while it waits stands still and turns its head all the way round.",
+  "author": "Vander96",
+  "licence": "OGA-BY-3.0",
+  "source": "https://opengameart.org/content/owl-animated-person",
+  "sheet": "sheet.png",
+  "frame": 20,
+  "trim": {
+    "x": 1,
+    "y": 1,
+    "size": 19
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 4,
+    "cycle": 640
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 12,
+    "cycle": 3600
+  }
+}
