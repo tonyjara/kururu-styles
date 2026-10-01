@@ -1,0 +1,33 @@
+These sprites are from "Platypus concept and sprites" by p0ss, published on
+OpenGameArt under Creative Commons Attribution-ShareAlike 3.0 (CC BY-SA 3.0):
+
+    https://opengameart.org/content/platypus-concept-and-sprites
+    https://creativecommons.org/licenses/by-sa/3.0/
+
+Attribution IS required by this licence, and so is share-alike: `sheet.png` is
+an adaptation, and it is offered under CC BY-SA 3.0 as well. Anything cut from
+it inherits the same terms. The author and the source above are the
+attribution; kururu shows both on the row that offers this mascot, and this
+file travels with the sheet wherever it is installed.
+
+WHAT WAS CHANGED
+
+The original ships six separate 256x90 PNGs — a standing pose, a three-frame
+walk and a two-frame jump. Kururu wants a single sheet with a square cell, one
+clip per row, so `sheet.png` here lays them into a 247px grid:
+
+  row 0   stand   (1 frame)    idle
+  row 1   walk    (3 frames)   working
+  row 2   jump    (2 frames)   unused, there for Settings to re-cut to
+
+Every frame is cropped to the *union* bounding box of all six and then centred
+in its cell, so the animal does not shift between frames.
+
+**The trim is deliberately not the whole animal.** A platypus is three times
+as long as it is tall, and a square around all of it at 16px is a brown line.
+The trim is a 152px window over the front half instead — bill, head and the
+forefoot that steps — and the rest is still in the cell for Settings to widen
+to.
+
+This is painted art, not pixel art, and it is downscaled smoothly rather than
+by whole multiples. No pixel was redrawn and no colour was changed.
