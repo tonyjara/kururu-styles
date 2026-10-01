@@ -1585,6 +1585,57 @@
     },
     {
       "kind": "mascot",
+      "id": "platypus",
+      "name": "Platypus",
+      "version": "1.0.0",
+      "description": "Paddles along on its forefeet while it works and holds still while it waits. Painted, not pixel art — the trim is a window on its bill.",
+      "author": "p0ss",
+      "licence": "CC-BY-SA-3.0",
+      "source": "https://opengameart.org/content/platypus-concept-and-sprites",
+      "path": "mascots/platypus",
+      "manifest": "mascot.json",
+      "digest": "sha256-23330f0ae1fe55ae2ee95fd41f2ecf9e0731ed39909d6a6cf060227faf5b7182",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1619,
+          "digest": "sha256-e52bad9a67b6781cd8197ff4ed034b73289320727299d92128a9174b61bf9773"
+        },
+        {
+          "name": "mascot.json",
+          "size": 644,
+          "digest": "sha256-0dda965657aca91f6edac9b2ff5b4b8a2cba950c2c83d5526b6bd1a4e975179e"
+        },
+        {
+          "name": "sheet.png",
+          "size": 111372,
+          "digest": "sha256-dc8bfcc9e34cabe9ab9b2f09f155802dbb7031f014d692582f3b2a094419d9ef"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 247,
+        "trim": {
+          "x": 95,
+          "y": 48,
+          "size": 152
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 3,
+          "cycle": 720
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 1,
+          "cycle": 2400
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "plumber",
       "name": "Plumber",
       "version": "1.0.0",
