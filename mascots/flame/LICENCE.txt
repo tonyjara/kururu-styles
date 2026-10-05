@@ -1,0 +1,41 @@
+These sprites are from "Flame creature" by takeshi, published on OpenGameArt
+under CC0 1.0 (public domain dedication):
+
+    https://opengameart.org/content/flame-creature
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+No attribution is required. It is here anyway, because knowing where a picture
+came from is worth more than the two lines it costs.
+
+WHAT WAS CHANGED
+
+The original is `messy.png`, and it is named honestly: every animation the
+creature has, packed into one 786x326 sheet at whatever spacing fitted, plus two
+GIFs at 3x and about 6.25x. Kururu wants a single sheet with a square cell, one
+clip per row, so `sheet.png` lays them into a 92px grid:
+
+  row 0   stand    (4 frames)   idle
+  row 1   burn     (4 frames)   working
+  row 2   walk     (7 frames)   the one in the artist's walking GIF
+  row 3   shuffle  (7 frames)   an earlier, gentler walk on the same sheet
+  row 4   ember    (8 frames)   the creature as a resting blob
+  row 5   creep    (5 frames)   the blob sliding along
+  row 6   blaze    (4 frames)   the bigger fire the creature turns into
+
+Rows 2 to 6 are not used by default; they are there for Settings to re-cut to.
+The one-shot transitions between forms are left out, because a badge loops.
+
+The burn is taken from the artist's own GIF, halved back from its clean 3x, and
+its loop is the last four of its five frames — the artist's note says to loop
+exactly those, and the GIF does. Every other clip is cut from `messy.png`, where
+frames are placed rather than packed: they stand on a shared floor at a regular
+pitch, and that alignment was recovered by keeping each frame's body over the
+first frame's. The same method was run against the two GIFs first, whose fixed
+canvases are the artist's alignment, and it agreed to within one pixel.
+
+Each clip is then cropped to the union bounding box of all its frames, stood on
+the bottom of its cell and centred across. The trim is one square over every
+frame of stand and burn together, which the burn's sparks decide.
+
+No pixel was redrawn and no colour was changed. Sparks between two frames on the
+original sheet go to whichever frame they are nearer.

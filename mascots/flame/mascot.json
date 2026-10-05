@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "flame",
+  "name": "Flame",
+  "version": "1.0.0",
+  "description": "A little flame with a face. Stands about flickering while it waits and goes up like a bonfire while it works. Its walk, an ember and a bigger blaze are on the sheet too.",
+  "author": "takeshi",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/content/flame-creature",
+  "sheet": "sheet.png",
+  "frame": 92,
+  "trim": {
+    "x": 15,
+    "y": 30,
+    "size": 62
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 4,
+    "cycle": 400
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 4,
+    "cycle": 1200
+  }
+}
