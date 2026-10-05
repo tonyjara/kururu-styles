@@ -1297,6 +1297,51 @@
     },
     {
       "kind": "mascot",
+      "id": "hand",
+      "name": "Hand",
+      "version": "1.0.0",
+      "description": "A cartoon hand in a blue cuff, drawn at the badge's own sixteen pixels. Waves hello while it works and lifts a lazy palm while it waits.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/hand",
+      "manifest": "mascot.json",
+      "digest": "sha256-948d775b0b47143fe6ef5ff9c18be35a93b845a9cdb415985f9784c354101fcf",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 559,
+          "digest": "sha256-e5334d8307cb4f1dd2457e6ce0e443f5fd6f307b118abd4daea01ad8cd868e80"
+        },
+        {
+          "name": "sheet.png",
+          "size": 387,
+          "digest": "sha256-efb346ece8540828cb6d1025284e86dfa6ad51c36d0457c5a656a3173ece7372"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 6,
+          "cycle": 600
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 2,
+          "cycle": 1800
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "hawk",
       "name": "Hawk",
       "version": "1.0.0",
