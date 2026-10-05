@@ -1144,6 +1144,57 @@
     },
     {
       "kind": "mascot",
+      "id": "flame",
+      "name": "Flame",
+      "version": "1.0.0",
+      "description": "A little flame with a face. Stands about flickering while it waits and goes up like a bonfire while it works. Its walk, an ember and a bigger blaze are on the sheet too.",
+      "author": "takeshi",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/content/flame-creature",
+      "path": "mascots/flame",
+      "manifest": "mascot.json",
+      "digest": "sha256-c64946c58b3a0bfab5213e564f16b98082c655d61f3498d253677957a2289f8e",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 2149,
+          "digest": "sha256-2255190c3a999815d8089b391ab5af66d390f59cc1880fcc3f95e2e3f4486a45"
+        },
+        {
+          "name": "mascot.json",
+          "size": 652,
+          "digest": "sha256-4c30903e0d8a6a47797af58633d905779dbf90f624cd78e31defad44f01349cb"
+        },
+        {
+          "name": "sheet.png",
+          "size": 18265,
+          "digest": "sha256-bcd2fc45c7e5f859d661d755524a73e997bd871e5d7e041f4cae0973bc5c4c14"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 92,
+        "trim": {
+          "x": 15,
+          "y": 30,
+          "size": 62
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 400
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 4,
+          "cycle": 1200
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "fox",
       "name": "Fox",
       "version": "1.0.0",
