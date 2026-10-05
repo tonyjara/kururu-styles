@@ -34,6 +34,7 @@ template for each kind. If you are an agent doing it on somebody's behalf,
 | | Fish · Whale | and two things that swim |
 | | Cat · Dog · Horse | and three that live with people. The dog carries all three of its pups on one sheet |
 | | Plumber · Hero · Knight · Miner | four people, drawn by `tools/art.mjs` at the sixteen pixels the badge actually is |
+| | Hand | a cartoon hand that waves while it works, drawn the same way |
 | **Sounds** | Coin · Fanfare · Anvil · Blip · Knock | the noise a notification makes — every one synthesised by `tools/sfx.mjs`, none sampled from anything |
 | **Packs** | Ironclad · Handheld · Cobble · Quest · World 1-1 | each picture skin with the palette it was drawn against, a sprite that fits, and the noise it makes |
 

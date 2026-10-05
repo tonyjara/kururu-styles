@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "hand",
+  "name": "Hand",
+  "version": "1.0.0",
+  "description": "A cartoon hand in a blue cuff, drawn at the badge's own sixteen pixels. Waves hello while it works and lifts a lazy palm while it waits.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "sheet": "sheet.png",
+  "frame": 16,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 16
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 6,
+    "cycle": 600
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 2,
+    "cycle": 1800
+  }
+}

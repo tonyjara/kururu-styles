@@ -100,8 +100,8 @@ things that go wrong:
   it; without one the card falls back to a box drawn from the tokens, which for
   a picture skin says nothing.
 - **Do not hand-draw what `tools/art.mjs` generates.** `skins/ironclad` and
-  `skins/handheld` are code, and so are the four people in `mascots/`; change
-  the script and rerun it.
+  `skins/handheld` are code, and so are the four people and the hand in
+  `mascots/`; change the script and rerun it.
 
 The fastest route is kururu's own *Settings → Skin studio*, which writes this
 exact format to `~/.config/kururu/styles/skins/<id>/`. Copy the folder in.

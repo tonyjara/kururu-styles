@@ -1137,34 +1137,172 @@ const WALK = [
   { legs: "pass", bob: 1 },
 ];
 
+/**
+ * A sheet and its manifest, row 1 working and row 0 idle, with the trim read off
+ * the finished picture. Shared by the people and the hand so that the one rule
+ * every generated mascot has to keep — the trim is measured, never typed — is
+ * written once.
+ */
+function mascot(spec, img, { working, idle }) {
+  const dir = join(ROOT, "mascots", spec.id);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "sheet.png"), encodePng(img));
+  const trim = sheetTrim(img, CELL);
+  const manifest = {
+    schema: 1,
+    kind: "mascot",
+    id: spec.id,
+    name: spec.name,
+    version: "1.0.0",
+    description: spec.description,
+    author: "kururu-styles",
+    licence: "CC0-1.0",
+    sheet: "sheet.png",
+    frame: CELL,
+    trim,
+    working: { row: 1, col: 0, ...working },
+    idle: { row: 0, col: 0, ...idle },
+  };
+  writeFileSync(join(dir, "mascot.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+  console.log(`  mascots/${spec.id}/sheet.png ${img.width}×${img.height}  trim ${trim.x},${trim.y} ${trim.size}px`);
+}
+
 function people() {
   for (const spec of FIGURES) {
     const img = image(CELL * Math.max(IDLE.length, WALK.length), CELL * 2);
     IDLE.forEach((pose, i) => figure(img, i * CELL, 0, spec, pose));
     WALK.forEach((pose, i) => figure(img, i * CELL, CELL, spec, pose));
-
-    const dir = join(ROOT, "mascots", spec.id);
-    mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, "sheet.png"), encodePng(img));
-    const trim = sheetTrim(img, CELL);
-    const manifest = {
-      schema: 1,
-      kind: "mascot",
-      id: spec.id,
-      name: spec.name,
-      version: "1.0.0",
-      description: spec.description,
-      author: "kururu-styles",
-      licence: "CC0-1.0",
-      sheet: "sheet.png",
-      frame: CELL,
-      trim,
-      working: { row: 1, col: 0, count: WALK.length, cycle: 640 },
-      idle: { row: 0, col: 0, count: IDLE.length, cycle: 1600 },
-    };
-    writeFileSync(join(dir, "mascot.json"), `${JSON.stringify(manifest, null, 2)}\n`);
-    console.log(`  mascots/${spec.id}/sheet.png ${img.width}×${img.height}  trim ${trim.x},${trim.y} ${trim.size}px`);
+    mascot(spec, img, {
+      working: { count: WALK.length, cycle: 640 },
+      idle: { count: IDLE.length, cycle: 1600 },
+    });
   }
+}
+
+// ---------------------------------------------------------------------------
+// A hand, waving
+// ---------------------------------------------------------------------------
+
+/**
+ * A cartoon hand in a cuff, which waves while its agent works.
+ *
+ * Drawn here rather than found, and not for want of looking: what the open
+ * archives have under "hand" is cursors, first-person spell-casting photographs
+ * and a pixel *Creation of Adam* whose licence is given as "CC1", which is not
+ * a licence anybody can check. A registry that refuses a sprite it cannot name the licence of
+ * is left with drawing one, and drawing it in code keeps it in the same state as
+ * the four people above — anybody can change the wave by editing a number.
+ *
+ * Three fingers and a thumb, which is the cartoon convention and also the only
+ * hand that fits. Four two-pixel fingers with an outline between each are
+ * thirteen pixels wide before the thumb, and a wave needs two pixels of swing to
+ * either side of that inside sixteen.
+ *
+ * ## Why the wave is a tilt in blocks
+ *
+ * The obvious wave is a shear about the wrist, each row shifted in proportion to
+ * its height. The first cut did that and the fingers broke: a two-pixel finger
+ * that steps sideways half way up its own length reads as a knuckle bent the
+ * wrong way, and at sixteen pixels there is nothing else in the finger to
+ * contradict it. So the hand moves in three rigid blocks — the fingers by the
+ * full lean, the knuckles and the top of the palm by half of it, the wrist not at
+ * all — and the only steps land where a hand actually bends.
+ *
+ * The outline is drawn *after* the tilt, round whatever pixels landed, rather
+ * than being part of the rows. Tilted with the fill, an outline drawn into the
+ * picture opens at every step; traced afterwards it is closed by construction,
+ * and the gaps between the fingers come out of the same pass for free, because a
+ * one-pixel gap is a transparent pixel with fill on both sides of it.
+ */
+const HAND = [
+  "................",
+  "........hs......",
+  ".....hs.hs.hs...",
+  ".....hs.hs.hs...",
+  ".....hs.hs.hs...",
+  ".....hs.hs.hs...",
+  "..hs.hs.hs.hs...",
+  "..hss.sssssssS..",
+  "...hsssssssssS..",
+  "....hssssssssS..",
+  ".....sssssssSS..",
+  ".....ssssssSS...",
+  "......cccccc....",
+  "......cccccC....",
+  "................",
+  "................",
+];
+
+/**
+ * The emoji's yellow rather than a skin tone, so that the hand is nobody's in
+ * particular; light on the left of every finger, shade down the right of the
+ * palm. A blue cuff, because a wrist that ends in nothing reads as a glove.
+ */
+const HAND_KEY = { h: "#ffe28a", s: "#ffc83d", S: "#e09a1a", c: "#5b8fe0", C: "#3d6cb8" };
+const HAND_EDGE = "#4a2c08";
+
+/**
+ * The two strokes on the side a hand has just swung away from. Grey and not the
+ * outline's brown, because the brown vanishes against a dark sidebar and these
+ * have no fill beside them to be seen against.
+ */
+const HAND_MARK = "#9aa4b8";
+
+/** How far each row moves for a lean of `lean`: fingers, then knuckles and palm, then wrist. */
+function handShift(y, lean) {
+  if (y <= 5) return lean;
+  if (y <= 9) return Math.sign(lean) * Math.floor(Math.abs(lean) / 2);
+  return 0;
+}
+
+function handFrame(img, ox, oy, lean) {
+  const cell = image(CELL, CELL);
+  HAND.forEach((row, y) => {
+    const dx = handShift(y, lean);
+    [...row].forEach((ch, x) => {
+      if (HAND_KEY[ch]) put(cell, x + dx, y, HAND_KEY[ch]);
+    });
+  });
+  const filled = (x, y) =>
+    x >= 0 && y >= 0 && x < CELL && y < CELL && cell.data[(y * CELL + x) * 4 + 3] > 0;
+  for (let y = 0; y < CELL; y++) {
+    for (let x = 0; x < CELL; x++) {
+      const at = (y * CELL + x) * 4;
+      if (filled(x, y)) put(img, ox + x, oy + y, [...cell.data.subarray(at, at + 4)]);
+      else if (filled(x - 1, y) || filled(x + 1, y) || filled(x, y - 1) || filled(x, y + 1)) put(img, ox + x, oy + y, HAND_EDGE);
+    }
+  }
+  if (Math.abs(lean) === 2) {
+    const marks = lean > 0 ? [[2, 2], [1, 3], [1, 4], [2, 5]] : [[13, 2], [14, 3], [14, 4], [13, 5]];
+    for (const [x, y] of marks) put(img, ox + x, oy + y, HAND_MARK);
+  }
+}
+
+/**
+ * Idle is a lazy half-wave, two frames slow. Working is the whole wave, out to
+ * the marks on each side and back through the middle without stopping there —
+ * a frame at zero would be a beat where the hand holds still, which is the idle
+ * clip's job and would make the two harder to tell apart at a glance.
+ */
+const HAND_IDLE = [0, 1];
+const HAND_WAVE = [-2, -1, 1, 2, 1, -1];
+
+function hand() {
+  const img = image(CELL * Math.max(HAND_IDLE.length, HAND_WAVE.length), CELL * 2);
+  HAND_IDLE.forEach((lean, i) => handFrame(img, i * CELL, 0, lean));
+  HAND_WAVE.forEach((lean, i) => handFrame(img, i * CELL, CELL, lean));
+  mascot(
+    {
+      id: "hand",
+      name: "Hand",
+      description: "A cartoon hand in a blue cuff, drawn at the badge's own sixteen pixels. Waves hello while it works and lifts a lazy palm while it waits.",
+    },
+    img,
+    {
+      working: { count: HAND_WAVE.length, cycle: 600 },
+      idle: { count: HAND_IDLE.length, cycle: 1800 },
+    },
+  );
 }
 
 ironclad();
@@ -1174,3 +1312,4 @@ quest();
 world11();
 console.log("mascots:");
 people();
+hand();
