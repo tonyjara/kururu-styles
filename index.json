@@ -945,6 +945,51 @@
     },
     {
       "kind": "mascot",
+      "id": "boba",
+      "name": "Boba",
+      "version": "1.0.0",
+      "description": "A cup of milk tea with pearls at the bottom and a fat pink straw. Sends a pearl up the straw while it works; the pearls settle while it waits.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/boba",
+      "manifest": "mascot.json",
+      "digest": "sha256-83edc7e5c306087ffd23a73ca0b6d4c6b2e7abce9dc60c5dbabcde3cc87eb25d",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 565,
+          "digest": "sha256-ef64903807d60ecb8fda96184107bf9f04b4e797fb882b16c0ac45738eafb2f2"
+        },
+        {
+          "name": "sheet.png",
+          "size": 314,
+          "digest": "sha256-3bd77cc0f2fc48831ac81d9e5265a6687ed62d6f1eee7bdf8204c03fea01beb6"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 6,
+          "cycle": 720
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 2,
+          "cycle": 2000
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "cat",
       "name": "Cat",
       "version": "1.0.0",
@@ -987,6 +1032,57 @@
           "cycle": 720
         },
         "idle": null
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "coffee",
+      "name": "Coffee",
+      "version": "1.0.0",
+      "description": "A green mug of coffee with a heart on it. Steams in long curls while its agent works and breathes one small wisp while it waits.",
+      "author": "Bansexual",
+      "licence": "CC-BY-4.0",
+      "source": "https://bansexual.itch.io/heart-mug",
+      "path": "mascots/coffee",
+      "manifest": "mascot.json",
+      "digest": "sha256-e9445b192bceabd200a06ebb7fe2018cf4877b2da17b652f38aa6bf93299fc92",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1932,
+          "digest": "sha256-a5c36300f208ac91fa6c9dab81a93d803fcb751498b78a943dd7f7a883613f0d"
+        },
+        {
+          "name": "mascot.json",
+          "size": 606,
+          "digest": "sha256-335045a2f7bbdc6a4079899fd722ac5fbc0b0609c40f8b1feb8686966cec81ac"
+        },
+        {
+          "name": "sheet.png",
+          "size": 2418,
+          "digest": "sha256-4a29ad167f9f4c927cc6a6f2cfaaec049d346e3986a70fc8867028eb6f173544"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 32,
+        "trim": {
+          "x": 1,
+          "y": 1,
+          "size": 31
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 28,
+          "cycle": 2800
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 2,
+          "cycle": 2400
+        }
       }
     },
     {
@@ -1828,6 +1924,51 @@
     },
     {
       "kind": "mascot",
+      "id": "soda",
+      "name": "Soda",
+      "version": "1.0.0",
+      "description": "An opened red can with a white swoosh. Fizzes and rattles while it works; lets one bubble up while it waits.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/soda",
+      "manifest": "mascot.json",
+      "digest": "sha256-cde7a4669e0be43d267f57eaf70cd55f53512fdf4f52ec8016f46941d30fb71e",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 531,
+          "digest": "sha256-aff933b657277c18cd8e5adbeb31d4de05c56d3ba358ffffa8b1c3b4fff34b14"
+        },
+        {
+          "name": "sheet.png",
+          "size": 378,
+          "digest": "sha256-22b608617aa675475811c17f283066ba87eba0aa73dfb18b6faca5149f6da1e2"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 6,
+          "cycle": 540
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 6,
+          "cycle": 2400
+        }
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "songbird",
       "name": "Songbird",
       "version": "1.0.0",
@@ -1874,6 +2015,51 @@
           "col": 0,
           "count": 8,
           "cycle": 2000
+        }
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "tea",
+      "name": "Tea",
+      "version": "1.0.0",
+      "description": "A china cup of tea on a saucer, the bag's tag hanging down the front. Dunks the bag and steams while it works; one wisp while it waits.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/tea",
+      "manifest": "mascot.json",
+      "digest": "sha256-17e03be96ea66d4746aa5963f599d3e731258ca6596592669526e49dcc0f679e",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 556,
+          "digest": "sha256-f15467d3e902da6279920d72c4f8a01dc0466f821ecf909c8d8d62fe1eddff3a"
+        },
+        {
+          "name": "sheet.png",
+          "size": 477,
+          "digest": "sha256-e690dd27e0727005f8ceab7bbca2e80b4eb1dfc2e7819c5aec5af83adc73e30e"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 8,
+          "cycle": 960
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 8,
+          "cycle": 2400
         }
       }
     },
