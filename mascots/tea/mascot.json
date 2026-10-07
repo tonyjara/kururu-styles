@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "tea",
+  "name": "Tea",
+  "version": "1.0.0",
+  "description": "A china cup of tea on a saucer, the bag's tag hanging down the front. Dunks the bag and steams while it works; one wisp while it waits.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "sheet": "sheet.png",
+  "frame": 16,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 16
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 8,
+    "cycle": 960
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 8,
+    "cycle": 2400
+  }
+}

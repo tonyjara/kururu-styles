@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "coffee",
+  "name": "Coffee",
+  "version": "1.0.0",
+  "description": "A green mug of coffee with a heart on it. Steams in long curls while its agent works and breathes one small wisp while it waits.",
+  "author": "Bansexual",
+  "licence": "CC-BY-4.0",
+  "source": "https://bansexual.itch.io/heart-mug",
+  "sheet": "sheet.png",
+  "frame": 32,
+  "trim": {
+    "x": 1,
+    "y": 1,
+    "size": 31
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 28,
+    "cycle": 2800
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 2,
+    "cycle": 2400
+  }
+}

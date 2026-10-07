@@ -1255,6 +1255,23 @@ function handShift(y, lean) {
   return 0;
 }
 
+/**
+ * Copy `cell` into `img` at (ox, oy) and trace `edge` a pixel out round whatever
+ * landed in it — the outline-afterwards described above, shared with the drinks
+ * below, which need it for the same reason when a can rattles a pixel.
+ */
+function traced(img, ox, oy, cell, edge) {
+  const filled = (x, y) =>
+    x >= 0 && y >= 0 && x < cell.width && y < cell.height && cell.data[(y * cell.width + x) * 4 + 3] > 0;
+  for (let y = 0; y < cell.height; y++) {
+    for (let x = 0; x < cell.width; x++) {
+      const at = (y * cell.width + x) * 4;
+      if (filled(x, y)) put(img, ox + x, oy + y, [...cell.data.subarray(at, at + 4)]);
+      else if (filled(x - 1, y) || filled(x + 1, y) || filled(x, y - 1) || filled(x, y + 1)) put(img, ox + x, oy + y, edge);
+    }
+  }
+}
+
 function handFrame(img, ox, oy, lean) {
   const cell = image(CELL, CELL);
   HAND.forEach((row, y) => {
@@ -1263,15 +1280,7 @@ function handFrame(img, ox, oy, lean) {
       if (HAND_KEY[ch]) put(cell, x + dx, y, HAND_KEY[ch]);
     });
   });
-  const filled = (x, y) =>
-    x >= 0 && y >= 0 && x < CELL && y < CELL && cell.data[(y * CELL + x) * 4 + 3] > 0;
-  for (let y = 0; y < CELL; y++) {
-    for (let x = 0; x < CELL; x++) {
-      const at = (y * CELL + x) * 4;
-      if (filled(x, y)) put(img, ox + x, oy + y, [...cell.data.subarray(at, at + 4)]);
-      else if (filled(x - 1, y) || filled(x + 1, y) || filled(x, y - 1) || filled(x, y + 1)) put(img, ox + x, oy + y, HAND_EDGE);
-    }
-  }
+  traced(img, ox, oy, cell, HAND_EDGE);
   if (Math.abs(lean) === 2) {
     const marks = lean > 0 ? [[2, 2], [1, 3], [1, 4], [2, 5]] : [[13, 2], [14, 3], [14, 4], [13, 5]];
     for (const [x, y] of marks) put(img, ox + x, oy + y, HAND_MARK);
@@ -1305,6 +1314,245 @@ function hand() {
   );
 }
 
+// ---------------------------------------------------------------------------
+// Drinks — a cup of tea, a can of soda, a cup of bubble tea
+// ---------------------------------------------------------------------------
+
+/**
+ * Three drinks, for the agent that runs on them.
+ *
+ * Drawn here for the reason the hand is, narrower: the open archives have drinks
+ * by the dozen and every one of them is an icon. A mascot is two clips, and a
+ * still cup with a licence is a picture of a mascot rather than one. The one
+ * drink that came animated, a steaming mug, is `mascots/coffee`, cut from its
+ * artist's own sheet; these are the ones nobody had drawn moving.
+ *
+ * Each is a body and something that rises off it. The body is ASCII through a
+ * key and outlined afterwards, the hand's way, so a cup nudged a pixel keeps a
+ * closed edge. What rises — steam, fizz — is drawn after the outline and is
+ * never outlined itself, because a ring round a wisp of steam makes it solid.
+ * It is grey-blue rather than white for the reason the hand's marks are grey:
+ * white vanishes on a light sidebar and these have no fill beside them.
+ *
+ * Working and idle are the same drink at two tempos, never two drawings: a badge
+ * that changed what it was when its agent stopped would read as a different
+ * agent. Working has more coming off it and moves faster; idle is one wisp, one
+ * bubble, a settling — still warm, still open, not busy.
+ */
+const DRINK_EDGE = "#3a2a24";
+
+/**
+ * A tile scrolled up through a window, a row a frame: what steam and fizz both
+ * are. Window row `y` shows tile row `(y + frame) % period`, so whatever is in
+ * the tile rises and wraps, and a clip as long as the period loops without a
+ * seam. `colours` runs top to bottom of the window and its last entry fills the
+ * rest, which is how a wisp thins out as it climbs.
+ */
+function rising(tile, frame, { x, top, height, colours }) {
+  const out = [];
+  for (let j = 0; j < height; j++) {
+    const row = tile[(j + frame) % tile.length];
+    const colour = colours[Math.min(j, colours.length - 1)];
+    [...row].forEach((ch, i) => {
+      if (ch === "X") out.push([x + i, top + j, colour]);
+    });
+  }
+  return out;
+}
+
+/**
+ * One drink cell. `body` is painted through `key` and moved by `dx`/`dy`, then
+ * `inside` — pixels that sit on the body and change no edge, a tag or a pearl —
+ * then the outline, then `over`, which floats above it unoutlined.
+ */
+function drinkFrame(img, ox, oy, { body, key, dx = 0, dy = 0, inside = [], over = [] }) {
+  const cell = image(CELL, CELL);
+  sprite(cell, dx, dy, body, key);
+  for (const [x, y, colour] of inside) put(cell, x + dx, y + dy, colour);
+  traced(img, ox, oy, cell, DRINK_EDGE);
+  for (const [x, y, colour] of over) put(img, ox + x, oy + y, colour);
+}
+
+/** An S of steam with one gap in eight, so it reads as a curl going up rather than a wire standing still. */
+const WISP = [".X.", "X..", "X..", ".X.", "..X", "..X", ".X.", "..."];
+const STEAM = ["#e3e8ef", "#c9d1dc", "#aeb9c8"];
+
+// Tea: a china cup on a saucer, a tea bag's tag hanging down the front.
+
+const TEA = [
+  "................",
+  "................",
+  "................",
+  "................",
+  "................",
+  "................",
+  "................",
+  "..wttttttttW....",
+  "..wwwwwwwwwWhh..",
+  "..wwwwwwwwwW.h..",
+  "..wwwwwwwwwWhh..",
+  "...wwwwwwwW.....",
+  "....wwwwwW......",
+  ".ssssssssssss...",
+  "..SSSSSSSSSS....",
+  "................",
+];
+const TEA_KEY = { w: "#fbf6ec", W: "#d6cab6", h: "#fbf6ec", t: "#b8622a", s: "#efe6d6", S: "#c4b6a0" };
+const TAG = { y: "#f2b632", Y: "#c4851a", string: "#8c7a66" };
+
+/** The tag at `top`, three by two, and the string from the rim down to it. */
+function teaBag(top) {
+  const out = [];
+  for (let y = 7; y < top; y++) out.push([6, y, TAG.string]);
+  out.push([5, top, TAG.y], [6, top, TAG.y], [7, top, TAG.Y]);
+  out.push([5, top + 1, TAG.Y], [6, top + 1, TAG.Y], [7, top + 1, TAG.Y]);
+  return out;
+}
+
+/** Idle: one wisp, the bag at rest. Working: two wisps out of phase and the bag dunked twice a loop. */
+const TEA_IDLE = WISP.map((_, f) => ({ tag: 10, wisps: [[6, f]] }));
+const TEA_WORK = WISP.map((_, f) => ({ tag: [10, 9, 8, 9, 10, 9, 8, 9][f], wisps: [[3, f], [7, (f + 4) % WISP.length]] }));
+
+function teaFrame(img, ox, oy, { tag, wisps }) {
+  const over = wisps.flatMap(([x, f]) => rising(WISP, f, { x, top: 0, height: 6, colours: STEAM }));
+  drinkFrame(img, ox, oy, { body: TEA, key: TEA_KEY, inside: teaBag(tag), over });
+}
+
+// Soda: a red can, opened, with a white swoosh.
+
+const SODA = [
+  "................",
+  "................",
+  "................",
+  "................",
+  "................",
+  ".....ggkkgg.....",
+  "....GGGGGGGG....",
+  "....lrrrrrrR....",
+  "....lrrrrwwR....",
+  "....lrwwwwrR....",
+  "....lwwrrrrR....",
+  "....lrrrrrrR....",
+  "....lrrrrrrR....",
+  "....GGGGGGGG....",
+  ".....gggggg.....",
+  "................",
+];
+const SODA_KEY = { r: "#e2483d", l: "#ff8f80", R: "#a32a22", w: "#fff4ec", g: "#d5dbe3", G: "#8f98a6", k: "#4e5561" };
+
+/**
+ * Bubbles off the tab, six rows of them. Never two in one column on adjacent
+ * rows, because two bubbles touching vertically read as a line standing still
+ * rather than as two things rising.
+ */
+const FIZZ = ["X...X.", "..X...", "....X.", ".X....", "...X.X", "..X..."];
+const BUBBLE = ["#d7ecfb", "#a9d2f0"];
+const ONE_BUBBLE = ["..", "..", "X.", ".X", "..", ".."];
+
+/** Idle: one bubble, slowly. Working: the fizz, and the can rattles a pixel on every other frame. */
+const SODA_IDLE = ONE_BUBBLE.map((_, f) => ({ f, tile: ONE_BUBBLE, x: 7, rattle: 0 }));
+const SODA_WORK = FIZZ.map((_, f) => ({ f, tile: FIZZ, x: 5, rattle: f % 2 }));
+
+function sodaFrame(img, ox, oy, { f, tile, x, rattle }) {
+  const over = rising(tile, f, { x, top: 0, height: 4 - rattle, colours: BUBBLE });
+  drinkFrame(img, ox, oy, { body: SODA, key: SODA_KEY, dy: -rattle, over });
+}
+
+// Bubble tea: a clear cup of milk tea, pearls at the bottom, a fat pink straw.
+
+const BOBA = [
+  "..........pP....",
+  ".........pP.....",
+  "........pP......",
+  ".......pP.......",
+  "....LLLLLLLL....",
+  "....cmmmmmmM....",
+  "....cmmmmmmM....",
+  "....cmmmmmmM....",
+  "....cmmmmmmM....",
+  "....cmmmmmmM....",
+  ".....cmmmmM.....",
+  ".....cmmmmM.....",
+  ".....cmmmmM.....",
+  ".....cmmmmM.....",
+  ".....cccccc.....",
+  "................",
+];
+const BOBA_KEY = { p: "#ff86b8", P: "#d4508c", L: "#f7d4e2", c: "#eef5f9", m: "#dcb48a", M: "#c39568" };
+/**
+ * The pearls, a pixel apart in a checker and swapped between the two, which at
+ * this size is a jostle. Single dots, because four pixels across will not hold a
+ * round pearl and anything bigger merges into a lump: the first cut was a heap
+ * and read as one, and the cut before that put two dots over a line and smiled.
+ */
+const PEARLS = [
+  ["o.o.", ".o.o", "o.o."],
+  [".o.o", "o.o.", ".o.o"],
+];
+const PEARL = "#3b2416";
+
+/** Where a pearl is on its way up the straw, a row at a time, filling the straw's width. */
+const STRAW = [[7, 3], [8, 2], [9, 1], [10, 0]];
+
+/** Idle: the pearls settle back and forth, slowly. Working: they jostle and one goes up the straw. */
+const BOBA_IDLE = [0, 1].map((k) => ({ pearls: k, sip: -1 }));
+const BOBA_WORK = [0, 1, 2, 3, 4, 5].map((f) => ({ pearls: f % 2, sip: f < STRAW.length ? f : -1 }));
+
+function bobaFrame(img, ox, oy, { pearls, sip }) {
+  const inside = [];
+  PEARLS[pearls].forEach((row, j) => {
+    [...row].forEach((ch, i) => {
+      if (ch === "o") inside.push([6 + i, 11 + j, PEARL]);
+    });
+  });
+  if (sip >= 0) {
+    const [x, y] = STRAW[sip];
+    inside.push([x, y, PEARL], [x + 1, y, PEARL]);
+  }
+  drinkFrame(img, ox, oy, { body: BOBA, key: BOBA_KEY, inside });
+}
+
+function drinks() {
+  const kinds = [
+    {
+      id: "tea",
+      name: "Tea",
+      description: "A china cup of tea on a saucer, the bag's tag hanging down the front. Dunks the bag and steams while it works; one wisp while it waits.",
+      frame: teaFrame,
+      idle: TEA_IDLE,
+      working: TEA_WORK,
+      cycles: { idle: 2400, working: 960 },
+    },
+    {
+      id: "soda",
+      name: "Soda",
+      description: "An opened red can with a white swoosh. Fizzes and rattles while it works; lets one bubble up while it waits.",
+      frame: sodaFrame,
+      idle: SODA_IDLE,
+      working: SODA_WORK,
+      cycles: { idle: 2400, working: 540 },
+    },
+    {
+      id: "boba",
+      name: "Boba",
+      description: "A cup of milk tea with pearls at the bottom and a fat pink straw. Sends a pearl up the straw while it works; the pearls settle while it waits.",
+      frame: bobaFrame,
+      idle: BOBA_IDLE,
+      working: BOBA_WORK,
+      cycles: { idle: 2000, working: 720 },
+    },
+  ];
+  for (const kind of kinds) {
+    const img = image(CELL * Math.max(kind.idle.length, kind.working.length), CELL * 2);
+    kind.idle.forEach((pose, i) => kind.frame(img, i * CELL, 0, pose));
+    kind.working.forEach((pose, i) => kind.frame(img, i * CELL, CELL, pose));
+    mascot(kind, img, {
+      working: { count: kind.working.length, cycle: kind.cycles.working },
+      idle: { count: kind.idle.length, cycle: kind.cycles.idle },
+    });
+  }
+}
+
 ironclad();
 handheld();
 cobble();
@@ -1313,3 +1561,4 @@ world11();
 console.log("mascots:");
 people();
 hand();
+drinks();

@@ -35,6 +35,7 @@ template for each kind. If you are an agent doing it on somebody's behalf,
 | | Cat · Dog · Horse | and three that live with people. The dog carries all three of its pups on one sheet |
 | | Plumber · Hero · Knight · Miner | four people, drawn by `tools/art.mjs` at the sixteen pixels the badge actually is |
 | | Hand | a cartoon hand that waves while it works, drawn the same way |
+| | Coffee · Tea · Soda · Boba | four drinks: a steaming mug from [Bansexual's CC-BY sheet](https://bansexual.itch.io/heart-mug), and three drawn by `tools/art.mjs` because nobody had drawn them moving |
 | **Sounds** | Coin · Fanfare · Anvil · Blip · Knock | the noise a notification makes — every one synthesised by `tools/sfx.mjs`, none sampled from anything |
 | **Packs** | Ironclad · Handheld · Cobble · Quest · World 1-1 | each picture skin with the palette it was drawn against, a sprite that fits, and the noise it makes |
 
@@ -265,5 +266,7 @@ and a licence file beside it:
   sprites](https://opengameart.org/content/cat-sprites) by Shepardskin (CC0),
   which needed the most; and [Cute Fish
   Sprites](https://opengameart.org/content/cute-fish-sprites) by chips8688,
-  which is **OGA-BY 3.0** and the one entry here that genuinely requires
-  attribution rather than merely deserving it.
+  which is **OGA-BY 3.0** and genuinely requires attribution rather than
+  merely deserving it, as does [Static and animated heart
+  mugs](https://bansexual.itch.io/heart-mug) by Bansexual (**CC-BY 4.0**) for
+  the coffee.

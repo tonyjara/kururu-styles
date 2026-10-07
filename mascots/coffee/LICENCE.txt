@@ -1,0 +1,40 @@
+This sprite is "Static and animated heart mugs" by Bansexual, published on
+itch.io under Creative Commons Attribution 4.0 International:
+
+    https://bansexual.itch.io/heart-mug
+    https://creativecommons.org/licenses/by/4.0/
+
+The licence requires credit, and this file and the manifest's "author" and
+"source" are that credit. The download's own licence.html reads, in full:
+"Animated heart mug by Bansexual is licensed under Attribution 4.0
+International".
+
+WHAT WAS CHANGED
+
+The download (Coffee.zip) ships the steaming mug as a 16x32 animation in three
+forms: a GIF, a sheet of its 13 frames, and a sheet of 28 frames in which some
+are repeated. The repeats are the artist's timing, written out for engines that
+play every frame for the same length of time, and kururu is one of those, so
+the working clip is that 28-frame sequence as it stands:
+
+    0 0 0 1 1 1 2 2 3 3 4 4 5 6 6 6 7 7 8 8 9 9 9 10 10 11 11 12
+
+played at the GIF's own 100ms a frame, 2800ms a loop. Two curls of steam, one
+leaning each way, with a beat of bare mug between them (frame 6).
+
+Kururu wants one sheet with a square cell and one clip per row, so `sheet.png`
+is a 32px grid with each 16x32 frame placed in the middle of a 32x32 cell, at
+the height it had in its own:
+
+  row 0   idle     (2 frames)   frame 6, the bare mug, then frame 0, the first
+                                wisp — slowly, so the mug breathes one curl
+  row 1   working  (28 frames)  the artist's sequence above
+
+The idle clip is the only choice made here rather than recovered from the
+download: the pack has one animation, and a mug that is waiting should still
+look warm without looking busy. The trim is one square over every frame of both
+clips, which the top of the highest curl decides.
+
+No pixel was redrawn and no colour was changed. The 1px transparent gutter the
+sheets put round each frame is dropped, and the static 16x16 mug and the
+Aseprite files are left out.

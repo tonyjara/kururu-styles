@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "boba",
+  "name": "Boba",
+  "version": "1.0.0",
+  "description": "A cup of milk tea with pearls at the bottom and a fat pink straw. Sends a pearl up the straw while it works; the pearls settle while it waits.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "sheet": "sheet.png",
+  "frame": 16,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 16
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 6,
+    "cycle": 720
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 2,
+    "cycle": 2000
+  }
+}

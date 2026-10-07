@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "soda",
+  "name": "Soda",
+  "version": "1.0.0",
+  "description": "An opened red can with a white swoosh. Fizzes and rattles while it works; lets one bubble up while it waits.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "sheet": "sheet.png",
+  "frame": 16,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 16
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 6,
+    "cycle": 540
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 6,
+    "cycle": 2400
+  }
+}
