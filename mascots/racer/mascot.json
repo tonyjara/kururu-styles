@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "racer",
+  "name": "Racer",
+  "version": "1.0.0",
+  "description": "A helmet on the grid, at speed while it works, a BOX board when it wants you and a chequered flag when it is done. Draws all four states.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "sheet": "sheet.png",
+  "frame": 16,
+  "trim": {
+    "x": 0,
+    "y": 0,
+    "size": 16
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 4,
+    "cycle": 360
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 2,
+    "cycle": 2400
+  },
+  "blocked": {
+    "row": 2,
+    "col": 0,
+    "count": 2,
+    "cycle": 900
+  },
+  "done": {
+    "row": 3,
+    "col": 0,
+    "count": 4,
+    "cycle": 880
+  }
+}

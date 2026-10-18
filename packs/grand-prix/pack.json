@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "kind": "pack",
+  "id": "grand-prix",
+  "name": "Grand Prix",
+  "version": "1.0.0",
+  "description": "Carbon fibre and racing red with a timing screen's colours, a kerb on the pane you are in, a helmet that waves the chequered flag when it is done, and lights out.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "theme": "pit-wall",
+  "skin": "grand-prix",
+  "mascot": "racer",
+  "sound": "lights-out",
+  "font": "SF Mono"
+}

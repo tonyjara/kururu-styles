@@ -310,7 +310,7 @@ A mascot is a **rectangle of cells on one sheet**, and two clips cut from it.
 
 - `frame` is the **square** cell size in pixels. The sheet is a grid of them.
 - `trim` is the square inside a cell actually worth drawing. It has to be **one
-  box for every frame of both clips**, not each frame's own bounding box — where
+  box for every frame of every clip**, not each frame's own bounding box — where
   a sprite sits in its cell is how a sheet draws a hop, so trimming each frame
   separately lands them all on the floor, and trimming each *clip* separately
   makes the sprite change size the moment its agent stops.
@@ -320,9 +320,13 @@ A mascot is a **rectangle of cells on one sheet**, and two clips cut from it.
 - `idle` may be `null`, which means a plain dot. Some sheets hold only one
   animation worth having.
 
-Only those two states animate. `blocked` and `done` stay dots on purpose: they
-are the two that want a human, and a still dot among moving neighbours is what
-makes them stand out.
+- `blocked` and `done` are optional, a clip each, for a sheet that has a
+  picture for those two states — `mascots/racer` holds up a pit board when its
+  agent is asking and waves a chequered flag when its turn is done. Leave them
+  out, or write `null`, and both wear `idle` like every other stopped state.
+  The trim is still one box across every clip, these two included. A kururu
+  older than these fields ignores them and draws idle, which is the same
+  picture a mascot without them has.
 
 ### Cutting a sheet from an asset pack
 

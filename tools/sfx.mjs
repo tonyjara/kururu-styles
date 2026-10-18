@@ -3,8 +3,8 @@
  *
  *     node tools/sfx.mjs
  *
- * `sounds/coin`, `sounds/fanfare`, `sounds/anvil`, `sounds/blip` and
- * `sounds/knock` are generated here rather than recorded or downloaded, and the
+ * `sounds/coin`, `sounds/fanfare`, `sounds/anvil`, `sounds/blip`,
+ * `sounds/knock` and `sounds/lights-out` are generated here rather than recorded or downloaded, and the
  * reason is the one `tools/art.mjs` gives for the picture skins: a registry of
  * other people's files needs entries whose files anybody can regenerate, read
  * and change by editing a number. These are those entries.
@@ -95,6 +95,8 @@ const WAVES = {
     return p < 0.5 ? p * 4 - 1 : 3 - p * 4;
   },
   sine: (phase) => Math.sin(phase * Math.PI * 2),
+  /** An engine: every harmonic at once, which is what makes a saw buzz like a cylinder firing. */
+  saw: (phase) => 2 * (phase % 1) - 1,
 };
 
 /**
@@ -308,6 +310,40 @@ function knock() {
 }
 
 // ---------------------------------------------------------------------------
+// Lights Out — Grand Prix
+// ---------------------------------------------------------------------------
+
+/**
+ * Five lights coming on, then a car going past.
+ *
+ * Five short, quiet ticks, a step apart and each a little louder — the gantry
+ * filling up — then the gap where the lights go out, then the pass: two saws a
+ * few cents apart, swelling and falling in pitch as the car arrives and leaves,
+ * which is the Doppler shift every trackside recording has and nobody owns.
+ *
+ * It plays when an agent stops and it is your move, so it is "lights out" in
+ * the sense that matters: the start is yours. The ticks are kept small and the
+ * pass under a second, because this is still a noise somebody hears thirty
+ * times a day; a real start procedure is several seconds of silence and would
+ * be a strange thing to sit through every time a turn ends.
+ */
+function lightsOut() {
+  const out = track(980);
+  for (let i = 0; i < 5; i++) {
+    note(out, i * 70, { freq: hz("A5"), ms: 28, wave: "square", duty: 0.25, gain: 0.16 + i * 0.05, attack: 1, curve: 6 });
+  }
+  const at = 440;
+  // The arrival and the departure are one note each: up a little as it comes,
+  // and down a fifth as it goes, with the swell in the attack.
+  note(out, at, { freq: 196, ms: 160, wave: "saw", gain: 0.42, attack: 150, bend: 2, curve: 0.5 });
+  note(out, at, { freq: 197.5, ms: 160, wave: "saw", gain: 0.3, attack: 150, bend: 2, curve: 0.5 });
+  note(out, at + 160, { freq: 220, ms: 380, wave: "saw", gain: 0.42, attack: 4, bend: -7, curve: 4.5 });
+  note(out, at + 160, { freq: 221.6, ms: 380, wave: "saw", gain: 0.3, attack: 4, bend: -7, curve: 4.5 });
+  hiss(out, at + 120, { ms: 260, gain: 0.12, curve: 6, seed: 0xf1 });
+  return out;
+}
+
+// ---------------------------------------------------------------------------
 
 console.log("sounds:");
 write("coin", coin());
@@ -315,3 +351,4 @@ write("fanfare", fanfare());
 write("anvil", anvil());
 write("blip", blip());
 write("knock", knock());
+write("lights-out", lightsOut());

@@ -432,9 +432,12 @@ function validateMascot(where, m, dir, files) {
     fail(where, `"trim" does not fit inside a ${frame}px cell`);
   }
 
-  for (const which of ["working", "idle"]) {
+  // `blocked` and `done` are optional, and absent or null means "wear idle" —
+  // kururu before 0.5 ignores them, which is the same picture.
+  for (const which of ["working", "idle", "blocked", "done"]) {
     const clip = m[which];
-    if (clip === null && which === "idle") continue; // null idle is the dot, and is allowed.
+    if (clip === null && which !== "working") continue; // null idle is the dot, and is allowed.
+    if (clip === undefined && (which === "blocked" || which === "done")) continue;
     if (!clip || typeof clip !== "object") {
       fail(where, `"${which}" is required${which === "idle" ? " (or null, for a plain dot)" : ""}`);
       continue;

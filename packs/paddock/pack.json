@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "kind": "pack",
+  "id": "paddock",
+  "name": "Paddock",
+  "version": "1.0.0",
+  "description": "Grand Prix in daylight: white garage walls and racing red, the same kerb, the helmet and its chequered flag, and lights out.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "theme": "paddock",
+  "skin": "paddock",
+  "mascot": "racer",
+  "sound": "lights-out",
+  "font": "SF Mono"
+}

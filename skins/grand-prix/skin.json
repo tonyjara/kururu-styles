@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "kind": "skin",
+  "id": "grand-prix",
+  "name": "Grand Prix",
+  "version": "1.0.0",
+  "description": "Carbon fibre, a red-and-white kerb along the top of the pane you are in, a timing tower's red marker on the selected row and a chequer at each end of the status bar. Wear it with Pit Wall.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "tokens": {
+    "radiusXs": "0",
+    "radiusSm": "1px",
+    "radiusMd": "2px",
+    "radiusLg": "2px",
+    "radiusXl": "3px",
+    "ui": "\"Avenir Next Condensed\", \"DIN Alternate\", \"Roboto Condensed\", \"Arial Narrow\", system-ui, sans-serif",
+    "fsXs": "10px",
+    "fsSm": "11px",
+    "fsBase": "12px",
+    "fsMd": "13px",
+    "fsLg": "14px",
+    "fsXl": "16px",
+    "uiLetterSpacing": "0.02em",
+    "gutter": "4px",
+    "outlineOn": "none"
+  },
+  "colors": {
+    "chrome": "#17181b",
+    "chromeHigh": "#212328",
+    "line": "#2e3035",
+    "lineHigh": "#545961",
+    "text": "#e4e6e9",
+    "textStrong": "#ffffff",
+    "dim": "#a2a7af",
+    "dimmer": "#7b8089",
+    "accent": "#ff4545",
+    "onAccent": "#0f1012",
+    "danger": "#ff7070",
+    "dangerBg": "#d0121b",
+    "onDanger": "#ffffff",
+    "shadow": "rgba(0, 0, 0, 0.6)"
+  },
+  "parts": {
+    "sidebar": {
+      "image": "sidebar.png",
+      "mode": "tile",
+      "scale": 2
+    },
+    "panel": {
+      "image": "panel.png",
+      "mode": "nine",
+      "slice": 1,
+      "scale": 2
+    },
+    "well": {
+      "image": "well.png",
+      "mode": "tile",
+      "scale": 2
+    },
+    "pane": {
+      "image": "pane.png",
+      "mode": "nine",
+      "slice": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "pane-on": {
+      "image": "pane-on.png",
+      "mode": "nine",
+      "slice": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "tabstrip": {
+      "image": "tabstrip.png",
+      "mode": "nine",
+      "slice": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "tab": {
+      "image": "tab.png",
+      "mode": "nine",
+      "slice": 1,
+      "scale": 2
+    },
+    "tab-on": {
+      "image": "tab-on.png",
+      "mode": "nine",
+      "slice": 1,
+      "scale": 2
+    },
+    "button": {
+      "image": "button.png",
+      "mode": "nine",
+      "slice": 1,
+      "scale": 2
+    },
+    "row-on": {
+      "image": "row-on.png",
+      "mode": "nine",
+      "slice": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "scale": 2
+    },
+    "statusbar": {
+      "image": "statusbar.png",
+      "mode": "nine",
+      "slice": [
+        1,
+        8,
+        1,
+        8
+      ],
+      "scale": 2,
+      "repeat": "repeat"
+    },
+    "dialog": {
+      "image": "dialog.png",
+      "mode": "nine",
+      "slice": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "scale": 2
+    }
+  }
+}

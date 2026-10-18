@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "kind": "sound",
+  "id": "lights-out",
+  "name": "Lights Out",
+  "version": "1.0.0",
+  "description": "Five lights coming on and a car going past. For a window on the pit wall: it plays when the start is yours.",
+  "author": "kururu-styles",
+  "licence": "CC0-1.0",
+  "file": "lights-out.wav"
+}

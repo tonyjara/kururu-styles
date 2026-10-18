@@ -3,8 +3,8 @@
  *
  *     node tools/art.mjs
  *
- * `skins/ironclad`, `skins/handheld`, `skins/cobble`, `skins/quest` and
- * `skins/world-1-1` are made of nine-slices and tiles, and every one of them is
+ * `skins/ironclad`, `skins/handheld`, `skins/cobble`, `skins/quest`,
+ * `skins/world-1-1`, `skins/grand-prix` and `skins/paddock` are made of nine-slices and tiles, and every one of them is
  * generated here rather than drawn in an editor, for one reason: a registry of
  * other people's pictures needs entries whose pictures anybody can regenerate,
  * read and change by editing a number. These are those entries. They are also
@@ -893,6 +893,202 @@ function world11() {
 
 
 // ---------------------------------------------------------------------------
+// Grand Prix and Paddock — carbon, kerbs, a timing tower
+// ---------------------------------------------------------------------------
+
+/**
+ * Two skins from one function, because they are one design in two lights: the
+ * dark one is a car's carbon fibre and the light one is a garage's white
+ * walls, and everything else — the kerb along the top of the pane you are in,
+ * the red marker on the selected row, the chequered ends of the status bar —
+ * is the same picture in the other palette.
+ *
+ * Motor racing in general rather than any series in particular: a kerb, a
+ * chequer and a timing tower are the furniture of every circuit, and none of
+ * them is a mark. No logo, no wordmark and no team's livery is drawn here, and
+ * the red is a red rather than anybody's.
+ *
+ * **The frames are thin and the middles are clear.** These are modern cars, not
+ * pixel art, so everything is drawn at 1x and shown at 2x, and the ground under
+ * every part is the theme's — which is what lets the selected tab, the quiet
+ * button and the dialog follow `chromeHigh` and `chrome` rather than a colour
+ * baked into a picture. The exception is the two textures, the sidebar and the
+ * well, and they are drawn within a step of the theme's own chrome so the
+ * contrast the theme was checked at is the contrast on screen.
+ *
+ * `pane` and `pane-on` are cut to the same slices on purpose. A frame takes
+ * room, and a focused pane whose frame was a pixel thicker would resize its
+ * terminal every time the focus moved.
+ */
+const CIRCUIT = {
+  "grand-prix": {
+    // Twill: four tones close enough together to read as a weave rather than
+    // as a pattern somebody has to read text over.
+    weave: ["#15161a", "#1b1d21", "#121316", "#1f2126"],
+    asphalt: "#0b0c0e",
+    speck: ["#121316", "#17181c", "#0e0f11"],
+    face: "#17181b",
+    raised: "#212328",
+    sunk: "#111215",
+    rule: "#2e3035",
+    edge: "#08090a",
+    red: "#ff4545",
+    redD: "#b3161c",
+    kerbW: "#f2f2f2",
+    chequer: ["#f2f2f2", "#0b0c0e"],
+    lightEdge: "#ffffff2e",
+    darkEdge: "#00000066",
+  },
+  paddock: {
+    // A garage wall: white panels a hair apart, with a seam every so often.
+    weave: ["#eeeff1", "#eceef0", "#f0f1f3", "#e9ebee"],
+    asphalt: "#e6e7ea",
+    speck: ["#dcdee2", "#eff0f2", "#d6d8dc"],
+    face: "#eeeff1",
+    raised: "#e1e3e7",
+    sunk: "#f8f8f9",
+    rule: "#c8cbd1",
+    edge: "#9da2aa",
+    red: "#c8101e",
+    redD: "#8c0a14",
+    kerbW: "#ffffff",
+    chequer: ["#ffffff", "#18191c"],
+    lightEdge: "#ffffff99",
+    darkEdge: "#18191c33",
+  },
+};
+
+/** A 2/2 twill, the weave every carbon part is laid up in. Two-pixel tows turning every block. */
+function twill(size, tones) {
+  const img = image(size, size);
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      const bx = x >> 1;
+      const by = y >> 1;
+      const along = (bx + by) % 2 === 0;
+      // Along a tow its two pixels are lit and shaded across it; that is what
+      // makes a weave catch the light differently block by block.
+      const lit = along ? (y & 1) === 0 : (x & 1) === 0;
+      put(img, x, y, tones[(along ? 0 : 2) + (lit ? 1 : 0)]);
+    }
+  }
+  return img;
+}
+
+/** Red and white kerb blocks, `block` pixels each, along a row of `h`. */
+function kerb(img, x, y, w, h, block, { red, white }) {
+  for (let i = 0; i < w; i++) {
+    const colour = Math.floor(i / block) % 2 === 0 ? red : white;
+    rect(img, x + i, y, 1, h, colour);
+  }
+}
+
+function circuit(id) {
+  console.log(id);
+  const P = CIRCUIT[id];
+  const clear = [0, 0, 0, 0];
+
+  // The sidebar is the weave; the paddock's is the same function with tones a
+  // breath apart, which reads as a panelled wall rather than as cloth.
+  write(id, "sidebar.png", twill(8, P.weave));
+
+  const well = image(16, 16);
+  rect(well, 0, 0, 16, 16, P.asphalt);
+  speckle(well, P.speck, 0.22, id === "paddock" ? 41 : 17);
+  write(id, "well.png", well);
+
+  // The pane: three rows across the top, two down each side and along the
+  // bottom, and a clear middle. At rest the top is a plain rule; on the pane
+  // you are in it is a kerb — the one picture in the skin that says "here".
+  // Twelve wide with two-pixel sides leaves an eight-pixel middle, which is
+  // two kerb blocks, so the repeat never cuts a block in half.
+  const pane = image(12, 12);
+  rect(pane, 0, 0, 12, 3, P.face);
+  rect(pane, 0, 2, 12, 1, P.rule);
+  rect(pane, 0, 3, 2, 9, P.face);
+  rect(pane, 10, 3, 2, 9, P.face);
+  rect(pane, 0, 10, 12, 2, P.face);
+  rect(pane, 1, 3, 1, 8, P.rule);
+  rect(pane, 10, 3, 1, 8, P.rule);
+  rect(pane, 1, 10, 10, 1, P.rule);
+  rect(pane, 2, 3, 8, 7, clear);
+  write(id, "pane.png", pane);
+
+  const paneOn = image(12, 12);
+  kerb(paneOn, 0, 0, 12, 2, 4, { red: P.red, white: P.kerbW });
+  rect(paneOn, 0, 2, 12, 1, P.redD);
+  rect(paneOn, 0, 3, 2, 9, P.face);
+  rect(paneOn, 10, 3, 2, 9, P.face);
+  rect(paneOn, 0, 10, 12, 2, P.face);
+  rect(paneOn, 1, 3, 1, 8, P.red);
+  rect(paneOn, 10, 3, 1, 8, P.red);
+  rect(paneOn, 1, 10, 10, 1, P.red);
+  rect(paneOn, 2, 3, 8, 7, clear);
+  write(id, "pane-on.png", paneOn);
+
+  // The tab strip is the weave's flat neighbour with a rule underneath.
+  const strip = image(6, 6);
+  rect(strip, 0, 0, 6, 6, P.face);
+  rect(strip, 0, 5, 6, 1, P.rule);
+  write(id, "tabstrip.png", strip);
+
+  // Tabs are a timing tower's rows: at rest, a hairline divider on the right;
+  // the selected one, a red marker along its top. Both clear in the middle so
+  // the theme's ground under them is the one the contrast check measured.
+  const tab = image(6, 6);
+  rect(tab, 5, 1, 1, 4, P.rule);
+  write(id, "tab.png", tab);
+
+  const tabOn = image(6, 6);
+  rect(tabOn, 0, 0, 6, 1, P.red);
+  rect(tabOn, 5, 1, 1, 4, P.rule);
+  write(id, "tab-on.png", tabOn);
+
+  // A button is a lit edge and a shaded one over whatever fill the button
+  // already has — the accent on a primary, `chromeHigh` on a quiet one. A red
+  // picture here would have made every quiet button red too.
+  const button = image(6, 6);
+  rect(button, 0, 0, 6, 1, P.lightEdge);
+  rect(button, 0, 5, 6, 1, P.darkEdge);
+  write(id, "button.png", button);
+
+  // The selected row is the leader's row on the tower: a red bar down its left.
+  const row = image(8, 8);
+  rect(row, 0, 0, 2, 8, P.red);
+  write(id, "row-on.png", row);
+
+  const panel = image(6, 6);
+  rect(panel, 0, 0, 6, 6, P.sunk);
+  ring(panel, 0, 0, 6, 6, P.rule);
+  write(id, "panel.png", panel);
+
+  // The status bar: a red rule along its top, and a chequer at each end. The
+  // chequers are in the end slices, which repeat down the bar's height, so a
+  // taller bar has more rows of squares rather than stretched ones.
+  const bar = image(32, 12);
+  rect(bar, 0, 0, 32, 12, P.face);
+  rect(bar, 0, 0, 32, 1, P.red);
+  for (const x0 of [0, 24]) {
+    for (let j = 1; j < 12; j++) {
+      for (let i = 0; i < 8; i++) {
+        put(bar, x0 + i, j, P.chequer[((i >> 1) + ((j - 1) >> 1)) % 2]);
+      }
+    }
+  }
+  // Clear between the ends, so the bar's ground is the theme's and its labels
+  // are read against the colour they were checked against.
+  rect(bar, 8, 1, 16, 11, clear);
+  write(id, "statusbar.png", bar);
+
+  // A dialog is a rule round the edge and a red stripe across the top, the
+  // graphic a broadcast puts up when somebody is talking on the radio.
+  const dialog = image(12, 12);
+  ring(dialog, 0, 0, 12, 12, P.rule);
+  rect(dialog, 0, 0, 12, 2, P.red);
+  write(id, "dialog.png", dialog);
+}
+
+// ---------------------------------------------------------------------------
 // The people — sprite sheets for the packs that are homages
 // ---------------------------------------------------------------------------
 
@@ -1143,7 +1339,7 @@ const WALK = [
  * every generated mascot has to keep — the trim is measured, never typed — is
  * written once.
  */
-function mascot(spec, img, { working, idle }) {
+function mascot(spec, img, { working, idle, blocked, done }) {
   const dir = join(ROOT, "mascots", spec.id);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, "sheet.png"), encodePng(img));
@@ -1162,6 +1358,8 @@ function mascot(spec, img, { working, idle }) {
     trim,
     working: { row: 1, col: 0, ...working },
     idle: { row: 0, col: 0, ...idle },
+    ...(blocked && { blocked }),
+    ...(done && { done }),
   };
   writeFileSync(join(dir, "mascot.json"), `${JSON.stringify(manifest, null, 2)}\n`);
   console.log(`  mascots/${spec.id}/sheet.png ${img.width}×${img.height}  trim ${trim.x},${trim.y} ${trim.size}px`);
@@ -1553,12 +1751,144 @@ function drinks() {
   }
 }
 
+// ---------------------------------------------------------------------------
+// The racer — a helmet, a pit board and a chequered flag
+// ---------------------------------------------------------------------------
+
+/**
+ * The one mascot here with a picture for every state, which is what kururu's
+ * `blocked` and `done` clips are for: a helmet at rest on the grid, the same
+ * helmet with the air streaming past it while it works, the pit board that
+ * calls a car in when the agent is waiting on you, and the chequered flag when
+ * its turn is over. Four rows rather than two:
+ *
+ *     row 0   idle      2 frames   a glint crossing the visor
+ *     row 1   working   4 frames   speed lines, and a pixel of vibration
+ *     row 2   blocked   2 frames   BOX, raised and lowered
+ *     row 3   done      4 frames   the flag, waving
+ *
+ * A helmet rather than a car because a car is a wide thing and the badge is a
+ * square: a side-on car at sixteen pixels letterboxes to five pixels tall. The
+ * helmet is a generic full-face shape in a red of no one's; the pit board says
+ * BOX, which is the word every series uses for "come in".
+ *
+ * The flag and the board carry an outline of their own in a mid grey, because
+ * these sheets are not themed and the same picture has to read on the carbon
+ * sidebar and on the paddock's white one: black squares vanish into the first
+ * and white squares into the second, and the outline is what keeps the shape.
+ */
+const RACER_KEY = {
+  o: "#0b0b0d",
+  R: "#e8262e",
+  r: "#a3141b",
+  W: "#f4f4f4",
+  v: "#1d2a3a",
+  V: "#2f4560",
+  g: "#bfe6ff",
+};
+
+const HELMET = [
+  "....ooooo....",
+  "..ooRRRRRoo..",
+  ".oRRRRRRRRRo.",
+  "oRRWWWWWWWRRo",
+  "oRRRRRRoooooo",
+  "oRRRRRovvvvvo",
+  "oRRRRRoVvvvvo",
+  "oRRRRRRoooooo",
+  "oRRRRRRRRRRRo",
+  ".orrrrrrrrro.",
+  "..ooooooooo..",
+];
+
+function helmet(img, x, y, glint) {
+  sprite(img, x, y, HELMET, RACER_KEY);
+  if (glint !== null) put(img, x + 7 + glint, y + 5, RACER_KEY.g);
+}
+
+/**
+ * Lines of air behind the helmet: three dashes in the three columns the helmet
+ * leaves free, each a frame out of step with the one above, so the air reads as
+ * moving past rather than blinking.
+ */
+const STREAKS = [5, 8, 11];
+
+function racerWorking(img, ox, oy, f) {
+  const bob = f % 2;
+  STREAKS.forEach((y, k) => {
+    const x = (k + f) % 4;
+    rect(img, ox + Math.max(0, x - 2), oy + y + bob, Math.min(x, 3) - Math.max(0, x - 2) + 1, 1, "#9aa4b0");
+  });
+  helmet(img, ox + 3, oy + 2 + bob, null);
+}
+
+/** BOX in a three-by-five face, which is the smallest that still spells it. */
+const BOX = [
+  "XX..XXX.X.X",
+  "X.X.X.X.X.X",
+  "XX..X.X..X.",
+  "X.X.X.X.X.X",
+  "XX..XXX.X.X",
+];
+
+function pitBoard(img, ox, oy, raised, lit) {
+  const y = oy + (raised ? 1 : 2);
+  rect(img, ox + 7, y + 9, 2, 16 - (y - oy) - 9, "#8a8f97");
+  rect(img, ox + 1, y, 14, 9, "#7b8089");
+  rect(img, ox + 2, y + 1, 12, 7, "#141518");
+  sprite(img, ox + 3, y + 2, BOX, { X: lit ? "#ffd400" : "#f4f4f4" });
+}
+
+/** A chequer of two-pixel squares, five by four, with each column lifted by the wave. */
+function chequeredFlag(img, ox, oy, f) {
+  rect(img, ox + 2, oy + 1, 1, 15, "#c9ccd2");
+  put(img, ox + 2, oy + 1, "#f4f4f4");
+  for (let i = 0; i < 12; i++) {
+    // Lifted a square column at a time, so the squares stay square.
+    const lift = Math.round(Math.sin(((i >> 1) / 6 + f / 4) * Math.PI * 2));
+    const x = ox + 3 + i;
+    const top = oy + 2 + lift;
+    put(img, x, top, "#7b8089");
+    for (let j = 0; j < 8; j++) {
+      const white = ((i >> 1) + (j >> 1)) % 2 === 0;
+      put(img, x, top + 1 + j, white ? "#f4f4f4" : "#16171a");
+    }
+    put(img, x, top + 9, "#7b8089");
+  }
+  rect(img, ox + 15, oy + 2, 1, 10, [0, 0, 0, 0]);
+}
+
+function racer() {
+  const img = image(CELL * 4, CELL * 4);
+  [null, 1].forEach((glint, i) => helmet(img, i * CELL + 2, 3, glint === null ? null : glint));
+  [0, 1, 2, 3].forEach((f) => racerWorking(img, f * CELL, CELL, f));
+  [true, false].forEach((raised, i) => pitBoard(img, i * CELL, CELL * 2, raised, raised));
+  [0, 1, 2, 3].forEach((f) => chequeredFlag(img, f * CELL, CELL * 3, f));
+  mascot(
+    {
+      id: "racer",
+      name: "Racer",
+      description: "A helmet on the grid, at speed while it works, a BOX board when it wants you and a chequered flag when it is done. Draws all four states.",
+    },
+    img,
+    {
+      working: { count: 4, cycle: 360 },
+      idle: { count: 2, cycle: 2400 },
+      blocked: { row: 2, col: 0, count: 2, cycle: 900 },
+      done: { row: 3, col: 0, count: 4, cycle: 880 },
+    },
+  );
+}
+
 ironclad();
 handheld();
 cobble();
 quest();
 world11();
+circuit("grand-prix");
+circuit("paddock");
 console.log("mascots:");
 people();
 hand();
 drinks();
+racer();

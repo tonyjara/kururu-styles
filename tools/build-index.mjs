@@ -131,6 +131,8 @@ function preview(kind, m, files) {
       trim: m.trim,
       working: m.working,
       idle: m.idle ?? null,
+      blocked: m.blocked ?? null,
+      done: m.done ?? null,
     };
   }
   /**
