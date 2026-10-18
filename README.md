@@ -12,8 +12,10 @@ merged — no release, no npm, no marketplace account.
 Kururu ships its own defaults and does not need this repository to start. That is
 deliberate and load-bearing: a machine with no network, a GitHub outage and a
 first run before anybody has explored are all the same case, and in all three the
-window comes up in Catppuccin Mocha with the Soft skin and the frog. What is here
-is everything *beyond* the defaults.
+window comes up in kururu's own theme with the Soft skin, the frog and the croak —
+the built-in **Kururu** pack, which is also the way back from every pack in here.
+What is here is everything *beyond* the defaults, which is why no pack in here
+may take the id `kururu`.
 
 **Contributing?** [CONTRIBUTING.md](CONTRIBUTING.md) is the step-by-step, with a
 template for each kind. If you are an agent doing it on somebody's behalf,

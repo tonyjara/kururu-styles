@@ -146,6 +146,10 @@ for (const e of entries()) {
 // Packs point at other entries, so they are checked once everything is known.
 for (const [key, { entry, manifest }] of found) {
   if (entry.kind !== "pack") continue;
+  // Kururu's own look is a pack built into kururu, and kururu wears that one
+  // for this id whatever is installed under it — so a pack here by that name
+  // could be installed and never worn.
+  if (entry.id === "kururu") fail(entry.dir, `"kururu" is the pack kururu ships built in; pick another id`);
   for (const { kind, required } of PACK_PARTS) {
     const id = manifest[kind];
     // An absent optional part is a pack with no opinion about that half of the
