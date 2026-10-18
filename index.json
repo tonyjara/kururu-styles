@@ -217,6 +217,36 @@
     },
     {
       "kind": "theme",
+      "id": "paddock",
+      "name": "Paddock",
+      "version": "1.0.0",
+      "description": "Pit Wall in daylight: white garage walls, racing red, and the timing colours taken dark enough to read on white.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "themes/paddock",
+      "manifest": "theme.json",
+      "digest": "sha256-bdeb47ac42a20386136373222dffe6704820191470977d860f89d699e08229fb",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1837,
+          "digest": "sha256-72cc68a6c2b4fb865bd2ac21ca9667ef2633c6c3541b88c968d40aef4a4dac07"
+        }
+      ],
+      "preview": {
+        "appearance": "light",
+        "bg": "#f8f8f9",
+        "chrome": "#eeeff1",
+        "line": "#c8cbd1",
+        "text": "#18191c",
+        "accent": "#c8101e",
+        "working": "#11833a",
+        "blocked": "#8f6400",
+        "done": "#7a2ee0"
+      }
+    },
+    {
+      "kind": "theme",
       "id": "pea-soup",
       "name": "Pea Soup",
       "version": "1.0.0",
@@ -243,6 +273,36 @@
         "working": "#e6a100",
         "blocked": "#d94f4f",
         "done": "#306230"
+      }
+    },
+    {
+      "kind": "theme",
+      "id": "pit-wall",
+      "name": "Pit Wall",
+      "version": "1.0.0",
+      "description": "Carbon black and racing red, with a timing screen's colours for the states: green while it goes, purple when it is done, flag yellow when it wants you.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "themes/pit-wall",
+      "manifest": "theme.json",
+      "digest": "sha256-fd49946443532f8aa00d116062e613a6ca6729203c73a598269df5e0aaa80899",
+      "files": [
+        {
+          "name": "theme.json",
+          "size": 1869,
+          "digest": "sha256-57dabf8cbdc0a03e076573ceb8b9b2ad9ef6b44d48d3678730aa9d8b771de2f9"
+        }
+      ],
+      "preview": {
+        "appearance": "dark",
+        "bg": "#0f1012",
+        "chrome": "#17181b",
+        "line": "#2e3035",
+        "text": "#e4e6e9",
+        "accent": "#ff4545",
+        "working": "#2fd75a",
+        "blocked": "#ffd400",
+        "done": "#b36bff"
       }
     },
     {
@@ -395,6 +455,115 @@
         "border": "2px",
         "uiLetterSpacing": "0.02em",
         "run": ">",
+        "fonts": [],
+        "parts": [
+          "sidebar",
+          "panel",
+          "well",
+          "pane",
+          "pane-on",
+          "tabstrip",
+          "tab",
+          "tab-on",
+          "button",
+          "row-on",
+          "statusbar",
+          "dialog"
+        ],
+        "shot": "shot.png"
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "grand-prix",
+      "name": "Grand Prix",
+      "version": "1.0.0",
+      "description": "Carbon fibre, a red-and-white kerb along the top of the pane you are in, a timing tower's red marker on the selected row and a chequer at each end of the status bar. Wear it with Pit Wall.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/grand-prix",
+      "manifest": "skin.json",
+      "digest": "sha256-3d9952f5ef0e14fdd83ad1c1b0dce23d5d5be419099a3c21d80f398b6dbbf71f",
+      "files": [
+        {
+          "name": "button.png",
+          "size": 78,
+          "digest": "sha256-9a2e90c0f3539e0e6e459971c88c5c0c1a1366b8a0bba206540702fea77988f2"
+        },
+        {
+          "name": "dialog.png",
+          "size": 91,
+          "digest": "sha256-e1b23fa3b835e734e02e0e0c1ca5dcf026fb217b51d52c4976dafde37ecccc44"
+        },
+        {
+          "name": "pane-on.png",
+          "size": 110,
+          "digest": "sha256-cc6f415be240dd6af123fdb62c8bc99879f37ad256487e5bcb75d940a817f9e8"
+        },
+        {
+          "name": "pane.png",
+          "size": 100,
+          "digest": "sha256-059d17e7a1914a2f39a055a774a9cdc545db701f044262ade4953a96de8473ef"
+        },
+        {
+          "name": "panel.png",
+          "size": 83,
+          "digest": "sha256-b0a311ff1aae67aa2c88d36a10d41672bc04d1859972be7fe336b7709d540b70"
+        },
+        {
+          "name": "row-on.png",
+          "size": 77,
+          "digest": "sha256-368449167c1caa5b37c1a976e19b8b6e0a313afcdd7a165e26b8ed32721f438b"
+        },
+        {
+          "name": "shot.png",
+          "size": 67814,
+          "digest": "sha256-b00659f8ca2210e953a5a3bbdaa3c6f3807b0a7a3b73d99a87aac034d71f9ec5"
+        },
+        {
+          "name": "sidebar.png",
+          "size": 106,
+          "digest": "sha256-32b7047b63de4f384785a3ff1644309760676c3ded6f5695958ef2dbe4e4d3fa"
+        },
+        {
+          "name": "skin.json",
+          "size": 2904,
+          "digest": "sha256-4ea5727e07c2d9e92f9a34d1a38c3e992fad41453267f704a75302935058c67b"
+        },
+        {
+          "name": "statusbar.png",
+          "size": 116,
+          "digest": "sha256-6241667ef1ff2f93d750b1305c72336597c378af29bcc210fbcb71f4cbc2122e"
+        },
+        {
+          "name": "tab-on.png",
+          "size": 81,
+          "digest": "sha256-3c418c3b2e33ab68d93677e3d350e542e8ad0dd0770518138ea89e34dbc91b44"
+        },
+        {
+          "name": "tab.png",
+          "size": 77,
+          "digest": "sha256-35b08be7761968553fe1f03f91f8ad3d7f4f0321eb9856ad6df60cf3d0799918"
+        },
+        {
+          "name": "tabstrip.png",
+          "size": 81,
+          "digest": "sha256-5476eec2ec56b215bc3c84c93a3ed4cde66d95eb54c6249c44062a39df9d4946"
+        },
+        {
+          "name": "well.png",
+          "size": 208,
+          "digest": "sha256-f9e994ec678262a94fb273eb98dc07014f59c3e7a9bf9709f32ffd21e87a4eea"
+        }
+      ],
+      "preview": {
+        "radiusLg": "2px",
+        "radiusXl": "3px",
+        "ui": "\"Avenir Next Condensed\", \"DIN Alternate\", \"Roboto Condensed\", \"Arial Narrow\", system-ui, sans-serif",
+        "fsXs": "10px",
+        "fsLg": "14px",
+        "uiLetterSpacing": "0.02em",
+        "run": "▸",
         "fonts": [],
         "parts": [
           "sidebar",
@@ -609,6 +778,115 @@
         "border": "2px",
         "uiLetterSpacing": "0.03em",
         "run": ">",
+        "fonts": [],
+        "parts": [
+          "sidebar",
+          "panel",
+          "well",
+          "pane",
+          "pane-on",
+          "tabstrip",
+          "tab",
+          "tab-on",
+          "button",
+          "row-on",
+          "statusbar",
+          "dialog"
+        ],
+        "shot": "shot.png"
+      }
+    },
+    {
+      "kind": "skin",
+      "id": "paddock",
+      "name": "Paddock",
+      "version": "1.0.0",
+      "description": "Grand Prix in daylight: white garage walls, the same kerb on the pane you are in, the red marker on the selected row and a chequer at each end of the status bar. Wear it with Paddock.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "skins/paddock",
+      "manifest": "skin.json",
+      "digest": "sha256-6fa862356c36df47b55ecc7d64f0085e2e3af228cd74adb9d72f51571ff317f6",
+      "files": [
+        {
+          "name": "button.png",
+          "size": 81,
+          "digest": "sha256-cf97867de0c934685889273fdc8040512899a28b58585f4059114600fc6620a2"
+        },
+        {
+          "name": "dialog.png",
+          "size": 90,
+          "digest": "sha256-73fa01b4cf7d403bbe00f2dd4b1b0a9c8eeacd3a9b56fcedc32bc74aaa021d17"
+        },
+        {
+          "name": "pane-on.png",
+          "size": 107,
+          "digest": "sha256-3f31dde3096525b6287d84f4727098b8b52d1027b2ca5cbf37ca9306d3529130"
+        },
+        {
+          "name": "pane.png",
+          "size": 101,
+          "digest": "sha256-c8dba7f1635545b39e83cd132b867af1e44e426b69ab54866ca65c6db9c4241a"
+        },
+        {
+          "name": "panel.png",
+          "size": 84,
+          "digest": "sha256-b04a1b2f56ca59b60438d17550a8da0c669d8d34d7b8f72e58d00f7875508efb"
+        },
+        {
+          "name": "row-on.png",
+          "size": 77,
+          "digest": "sha256-e5bd4d1cefefb2de10b033df1fbdb4797ca61ec7624df20d9fba2a97abbf2810"
+        },
+        {
+          "name": "shot.png",
+          "size": 64171,
+          "digest": "sha256-ed7b12e5c75f6ede9252ee87e7c58c7bd6f66ec4c867fbbf0d49be23e39dfc3c"
+        },
+        {
+          "name": "sidebar.png",
+          "size": 107,
+          "digest": "sha256-a2ebc982e72e9914c82559c4dcc562678c75c3915fcdf3816b41fec2735fc1a1"
+        },
+        {
+          "name": "skin.json",
+          "size": 2897,
+          "digest": "sha256-7f54f9e774d1e23acec38a0730b980400ce0cb67f66b74b68fee478ab051fbd6"
+        },
+        {
+          "name": "statusbar.png",
+          "size": 113,
+          "digest": "sha256-f74733854ff130310ffef488048c7870bf289c0daae7174784b7ee0c9d03ea64"
+        },
+        {
+          "name": "tab-on.png",
+          "size": 82,
+          "digest": "sha256-3348f8c5af669bb87325e1ca0dda32cb80d3bced780c9fbdb3002453192cfb93"
+        },
+        {
+          "name": "tab.png",
+          "size": 77,
+          "digest": "sha256-284f2bb9e942ea0096d4c92ebbd64b4cf54e99412a1edb721f9bc7643c472814"
+        },
+        {
+          "name": "tabstrip.png",
+          "size": 82,
+          "digest": "sha256-ee7480a2bba0c285918b01e2f76c53038a4a0ded3d1ba4cced6ce2ec53545d52"
+        },
+        {
+          "name": "well.png",
+          "size": 202,
+          "digest": "sha256-226d7ff1e19cee5752dde308dd77d57adaea75ed50547375dd3bee460622c294"
+        }
+      ],
+      "preview": {
+        "radiusLg": "2px",
+        "radiusXl": "3px",
+        "ui": "\"Avenir Next Condensed\", \"DIN Alternate\", \"Roboto Condensed\", \"Arial Narrow\", system-ui, sans-serif",
+        "fsXs": "10px",
+        "fsLg": "14px",
+        "uiLetterSpacing": "0.02em",
+        "run": "▸",
         "fonts": [],
         "parts": [
           "sidebar",
@@ -889,7 +1167,9 @@
           "col": 0,
           "count": 12,
           "cycle": 2400
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -940,7 +1220,9 @@
           "col": 0,
           "count": 8,
           "cycle": 2000
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -985,7 +1267,9 @@
           "col": 0,
           "count": 2,
           "cycle": 2000
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1031,7 +1315,9 @@
           "count": 6,
           "cycle": 720
         },
-        "idle": null
+        "idle": null,
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1082,7 +1368,9 @@
           "col": 0,
           "count": 2,
           "cycle": 2400
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1133,7 +1421,9 @@
           "col": 0,
           "count": 10,
           "cycle": 2400
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1184,7 +1474,9 @@
           "col": 0,
           "count": 6,
           "cycle": 1800
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1235,7 +1527,9 @@
           "col": 8,
           "count": 4,
           "cycle": 1900
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1286,7 +1580,9 @@
           "col": 0,
           "count": 4,
           "cycle": 1200
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1337,7 +1633,9 @@
           "col": 0,
           "count": 6,
           "cycle": 1800
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1388,7 +1686,9 @@
           "col": 0,
           "count": 5,
           "cycle": 2400
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1433,7 +1733,9 @@
           "col": 0,
           "count": 2,
           "cycle": 1800
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1484,7 +1786,9 @@
           "col": 0,
           "count": 5,
           "cycle": 2600
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1529,7 +1833,9 @@
           "col": 0,
           "count": 2,
           "cycle": 1600
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1580,7 +1886,9 @@
           "col": 0,
           "count": 13,
           "cycle": 2800
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1625,7 +1933,9 @@
           "col": 0,
           "count": 2,
           "cycle": 1600
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1670,7 +1980,9 @@
           "col": 0,
           "count": 2,
           "cycle": 1600
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1721,7 +2033,9 @@
           "col": 0,
           "count": 12,
           "cycle": 3600
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1772,7 +2086,9 @@
           "col": 0,
           "count": 4,
           "cycle": 1800
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1823,7 +2139,9 @@
           "col": 0,
           "count": 1,
           "cycle": 2400
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1868,7 +2186,9 @@
           "col": 0,
           "count": 2,
           "cycle": 1600
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -1919,6 +2239,65 @@
           "col": 0,
           "count": 10,
           "cycle": 2200
+        },
+        "blocked": null,
+        "done": null
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "racer",
+      "name": "Racer",
+      "version": "1.0.0",
+      "description": "A helmet on the grid, at speed while it works, a BOX board when it wants you and a chequered flag when it is done. Draws all four states.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/racer",
+      "manifest": "mascot.json",
+      "digest": "sha256-865c258889f5338a2766d3981399fc6b41bd64ec0bee4fdff6861ebb06a2f86c",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 721,
+          "digest": "sha256-48c61ca1c5f77065f90830f7ab95e0fcae1c761f12307f683e3cbf52eacecc76"
+        },
+        {
+          "name": "sheet.png",
+          "size": 653,
+          "digest": "sha256-06d40901a465aad81d79d63382bea0e7547d7831459f5b1f58c8d917832d7c33"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 360
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 2,
+          "cycle": 2400
+        },
+        "blocked": {
+          "row": 2,
+          "col": 0,
+          "count": 2,
+          "cycle": 900
+        },
+        "done": {
+          "row": 3,
+          "col": 0,
+          "count": 4,
+          "cycle": 880
         }
       }
     },
@@ -1964,7 +2343,9 @@
           "col": 0,
           "count": 6,
           "cycle": 2400
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -2015,7 +2396,9 @@
           "col": 0,
           "count": 8,
           "cycle": 2000
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -2060,7 +2443,9 @@
           "col": 0,
           "count": 8,
           "cycle": 2400
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -2106,7 +2491,9 @@
           "count": 7,
           "cycle": 1100
         },
-        "idle": null
+        "idle": null,
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -2157,7 +2544,9 @@
           "col": 0,
           "count": 10,
           "cycle": 2600
-        }
+        },
+        "blocked": null,
+        "done": null
       }
     },
     {
@@ -2301,6 +2690,34 @@
       }
     },
     {
+      "kind": "sound",
+      "id": "lights-out",
+      "name": "Lights Out",
+      "version": "1.0.0",
+      "description": "Five lights coming on and a car going past. For a window on the pit wall: it plays when the start is yours.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "sounds/lights-out",
+      "manifest": "sound.json",
+      "digest": "sha256-3b12e41a630eddf39da42b393a3eb43a12f6962fff6d6eed370a720179da5c72",
+      "files": [
+        {
+          "name": "lights-out.wav",
+          "size": 43262,
+          "digest": "sha256-30afa4fbd18606a3a4d0c1fd1032c8e89b008678fe63a72cb44f673bc9d1ea3a"
+        },
+        {
+          "name": "sound.json",
+          "size": 314,
+          "digest": "sha256-2cfc96ea5be362007fb2e8ebbdcac1d5f7f1233f825afe7af85dab33ff586049"
+        }
+      ],
+      "preview": {
+        "file": "lights-out.wav",
+        "ms": 980
+      }
+    },
+    {
       "kind": "pack",
       "id": "cobble",
       "name": "Cobble",
@@ -2324,6 +2741,32 @@
         "mascot": "miner",
         "sound": "knock",
         "font": "PT Mono"
+      }
+    },
+    {
+      "kind": "pack",
+      "id": "grand-prix",
+      "name": "Grand Prix",
+      "version": "1.0.0",
+      "description": "Carbon fibre and racing red with a timing screen's colours, a kerb on the pane you are in, a helmet that waves the chequered flag when it is done, and lights out.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "packs/grand-prix",
+      "manifest": "pack.json",
+      "digest": "sha256-8d642e816653ca5593fc94d0107978f6eb896afb4d7417c1444e2a1accd7704b",
+      "files": [
+        {
+          "name": "pack.json",
+          "size": 454,
+          "digest": "sha256-5414404555faea9ef8073a57b1ee730e522fc8cdc8f4d600eab03ebc29be2f50"
+        }
+      ],
+      "preview": {
+        "theme": "pit-wall",
+        "skin": "grand-prix",
+        "mascot": "racer",
+        "sound": "lights-out",
+        "font": "SF Mono"
       }
     },
     {
@@ -2376,6 +2819,32 @@
         "mascot": "knight",
         "sound": "anvil",
         "font": "Menlo"
+      }
+    },
+    {
+      "kind": "pack",
+      "id": "paddock",
+      "name": "Paddock",
+      "version": "1.0.0",
+      "description": "Grand Prix in daylight: white garage walls and racing red, the same kerb, the helmet and its chequered flag, and lights out.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "packs/paddock",
+      "manifest": "pack.json",
+      "digest": "sha256-75cecbcf83291732c8f968d951c8133861ce8e9aa102089456c35ad48b3ad472",
+      "files": [
+        {
+          "name": "pack.json",
+          "size": 406,
+          "digest": "sha256-629cb520f6287738b478034cdaa32d471ffd579a59b36120ece9792e9127fb74"
+        }
+      ],
+      "preview": {
+        "theme": "paddock",
+        "skin": "paddock",
+        "mascot": "racer",
+        "sound": "lights-out",
+        "font": "SF Mono"
       }
     },
     {
