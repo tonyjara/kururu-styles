@@ -1880,6 +1880,179 @@ function racer() {
   );
 }
 
+// ---------------------------------------------------------------------------
+// A night monkey
+// ---------------------------------------------------------------------------
+
+/**
+ * A night monkey (ka'i pyhare, *Aotus*), drawn at the badge's own sixteen
+ * pixels for a workspace that wanted one. No night monkey, owl monkey, tarsier
+ * or loris turned up at 16–32px in the open archives, so it is drawn here, the
+ * way the drinks are: rows through a key, the outline traced afterwards.
+ *
+ * The head is two thirds of the height on purpose, because at sixteen pixels
+ * the eyes are what says "night monkey" and the body only says "monkey". The
+ * colours are a grey head, darker ears, the black wedge on the crown, a cream
+ * mask, dark rings round big amber eyes and an ochre chest. Two are additions:
+ * the tail a shade under the fur so it reads apart from the body, and pale
+ * hands, because a dark hand at this size is lost in the outline.
+ *
+ * Working is typing: the hands take turns on a keyboard, the struck key
+ * flashes amber, two strokes fly off that side and the head dips a pixel. The
+ * hands are a pixel each and barely show at the badge; what reads is the
+ * keyboard, the flash, the strokes and the dip. Idle is the tail curling up,
+ * coming back and drooping, with one blink late in the loop. Swinging from a
+ * vine was the other idea, and it does not fit: hanging needs the head lower
+ * and an arm above it, and there is no room for both with eyes this big.
+ */
+const MONKEY = [
+  "................",
+  ".....ggkkgg.....",
+  "...ggggkkgggg...",
+  "..gEEEEmmEEEEg..",
+  ".dgEEEEmmEEEEgd.",
+  ".dgEEEEmmEEEEgd.",
+  "..gEEEEkkEEEEg..",
+  "...gmmmmmmmmg...",
+  "....ggmmmmgg....",
+  ".....goooog.....",
+  ".....ggoogg.....",
+  ".....gggggg.....",
+  ".....dd..dd.....",
+  "................",
+  "................",
+  "................",
+];
+
+const MONKEY_KEY = {
+  g: "#9f958b", // fur
+  G: "#7a7067", // tail
+  d: "#5e544b", // ears and feet
+  h: "#e4dccf", // hands
+  k: "#1b1613", // the wedge on the crown, the nose, the rings round the eyes
+  m: "#f4ecdc", // mask
+  o: "#e0943a", // chest, and the struck key
+  a: "#b4601f", // iris
+  b: "#d5dbe3", // keyboard
+  B: "#8f98a6", // keys
+};
+const MONKEY_EDGE = "#1b1613";
+
+/**
+ * The eyes, four pixels a side: a dark ring round a 2x2 of amber with no
+ * pupil. A pupil pixel was tried in each corner; inward-low read as a squint,
+ * inward-high as a scowl, and a bottom row of pupil as half-shut. Plain amber
+ * reads as the glow a night monkey's eyes are known for. Shut is a dark lid
+ * line, low, with the mask over it, so the blink takes the ring away too.
+ */
+const MONKEY_EYES = {
+  open: ["mkkm", "kaak", "kaak", "mkkm"],
+  shut: ["mmmm", "mmmm", "kkkk", "mmmm"],
+};
+
+/**
+ * The tail, one pixel wide so the trace makes it three, from the right hip.
+ * Aotus' tail does not grip; it hangs or curls, so the sway is between a curl
+ * up beside the body and a droop, through the middle.
+ */
+const MONKEY_TAILS = {
+  up: [[11, 11], [12, 10], [13, 9], [13, 8], [14, 7]],
+  mid: [[11, 12], [12, 12], [13, 11], [14, 10], [14, 9]],
+  down: [[11, 12], [12, 13], [13, 13], [14, 12], [14, 11]],
+};
+
+/** The keyboard across the feet, and a hand on it pressing (`down`) or raised by the chin. */
+function monkeyHand(cell, x, down) {
+  const inward = x < 8 ? 1 : -1;
+  put(cell, x, 10, MONKEY_KEY.g);
+  if (down) {
+    put(cell, x, 11, MONKEY_KEY.g);
+    put(cell, x, 12, MONKEY_KEY.h);
+    put(cell, x + inward, 13, MONKEY_KEY.o);
+  } else {
+    // A pixel clear of the body, so the trace draws the arm as a limb of its own.
+    put(cell, x - inward, 9, MONKEY_KEY.h);
+  }
+}
+
+/**
+ * One frame. `typing` is null at rest, or which hand is down: "l", "r", or ""
+ * for both raised between strokes. The eyes are painted onto the head before
+ * it is bobbed, so they move with it.
+ */
+function monkeyFrame(img, ox, oy, { eye = "open", tail = "mid", typing = null, bob = 0 }) {
+  const cell = image(CELL, CELL);
+  // The tail first, so the body sits over its root.
+  MONKEY_TAILS[tail].forEach(([x, y], i, path) => put(cell, x, y, i === path.length - 1 ? MONKEY_KEY.k : MONKEY_KEY.G));
+  const rows = MONKEY_EYES[eye];
+  const head = MONKEY.map((row, y) => {
+    if (y < 3 || y > 6) return row;
+    const left = rows[y - 3];
+    const right = [...left].reverse().join("");
+    return row.slice(0, 3) + left + row.slice(7, 9) + right + row.slice(13);
+  });
+  sprite(cell, 0, bob, head, MONKEY_KEY);
+  if (typing === null) {
+    for (const x of [4, 11]) {
+      put(cell, x, 10, MONKEY_KEY.g);
+      put(cell, x, 11, MONKEY_KEY.h);
+    }
+  } else {
+    sprite(cell, 3, 12, ["bbbbbbbbbb", "bBbBbbBbBb"], MONKEY_KEY);
+    monkeyHand(cell, 4, typing === "l");
+    monkeyHand(cell, 11, typing === "r");
+  }
+  traced(img, ox, oy, cell, MONKEY_EDGE);
+  // The strokes off the side a key was just struck on: the hand's motion marks,
+  // drawn after the outline and never outlined.
+  const marks = { l: [[1, 10], [0, 12]], r: [[14, 10], [15, 12]] }[typing ?? ""] ?? [];
+  for (const [x, y] of marks) put(img, ox + x, oy + y, HAND_MARK);
+}
+
+/** Twelve beats over 3.6s: the tail up, back and down, and one blink, late, so it lands as an accent rather than a tic. */
+const MONKEY_IDLE = [
+  { tail: "mid" },
+  { tail: "mid" },
+  { tail: "up" },
+  { tail: "up" },
+  { tail: "up" },
+  { tail: "mid" },
+  { tail: "mid" },
+  { tail: "down" },
+  { tail: "down", eye: "shut" },
+  { tail: "down" },
+  { tail: "mid" },
+  { tail: "mid" },
+];
+
+/** Six beats over 600ms: hands in turn, the head dipping on each stroke, the tail at twice the idle's pace. */
+const MONKEY_WORK = [
+  { typing: "l", tail: "mid", bob: 1 },
+  { typing: "", tail: "up", bob: 0 },
+  { typing: "r", tail: "up", bob: 1 },
+  { typing: "", tail: "mid", bob: 0 },
+  { typing: "l", tail: "down", bob: 1 },
+  { typing: "r", tail: "mid", bob: 0 },
+];
+
+function nightMonkey() {
+  const img = image(CELL * Math.max(MONKEY_IDLE.length, MONKEY_WORK.length), CELL * 2);
+  MONKEY_IDLE.forEach((pose, i) => monkeyFrame(img, i * CELL, 0, pose));
+  MONKEY_WORK.forEach((pose, i) => monkeyFrame(img, i * CELL, CELL, pose));
+  mascot(
+    {
+      id: "night-monkey",
+      name: "Night monkey",
+      description: "A night monkey (ka'i pyhare): a grey head, a cream mask and big amber eyes. Types at a keyboard while it works; sways its tail and blinks while it waits.",
+    },
+    img,
+    {
+      working: { count: MONKEY_WORK.length, cycle: 600 },
+      idle: { count: MONKEY_IDLE.length, cycle: 3600 },
+    },
+  );
+}
+
 ironclad();
 handheld();
 cobble();
@@ -1892,3 +2065,4 @@ people();
 hand();
 drinks();
 racer();
+nightMonkey();

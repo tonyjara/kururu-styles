@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "kind": "mascot",
+  "id": "woodsmoke-kaipago",
+  "name": "Kaipago monkey",
+  "version": "1.0.0",
+  "description": "woodsmoke's monkey face, recoloured to the Kaipago mark's grey fur and cream face. Munches while it works; blinks once while it waits.",
+  "author": "woodsmoke",
+  "licence": "CC0-1.0",
+  "source": "https://opengameart.org/node/114636",
+  "sheet": "sheet.png",
+  "frame": 32,
+  "trim": {
+    "x": 8,
+    "y": 8,
+    "size": 16
+  },
+  "working": {
+    "row": 1,
+    "col": 0,
+    "count": 4,
+    "cycle": 480
+  },
+  "idle": {
+    "row": 0,
+    "col": 0,
+    "count": 8,
+    "cycle": 3200
+  }
+}

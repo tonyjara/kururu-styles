@@ -1,0 +1,32 @@
+This sprite is cut from "monkey swing" by woodsmoke, published on
+OpenGameArt.org on 2020-06-09 under Creative Commons Zero (CC0 1.0):
+
+    https://opengameart.org/node/114636
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+CC0 asks for no credit, but the page asks for credit to woodsmoke by name, so
+this file and the manifest's "author" and "source" give it. Thank you,
+woodsmoke.
+
+WHAT WAS CHANGED
+
+The download (monkey_swing0_smol.png) is 2x art on an opaque green ground,
+drawn for a game called Monkey Munch. It was halved with nearest neighbour,
+which is lossless since every run in it is even, and its two greens were made
+transparent. This mascot is the grey monkey's face icon, which comes in two
+expressions, 15x19 each at 1x: mouth shut (x 21, y 1) and mouth open
+(x 22, y 187).
+
+  - The three rows of neck stub at the bottom are cut off, so the head is
+    15x16 and the trim is exactly 16: kururu draws it at the 16px badge
+    without resampling a pixel.
+  - Each face is placed in the middle of a 32px cell, at the same place in
+    every frame of both clips.
+
+  row 0   idle     (8 frames, 3200ms)  mouth shut, with one blink at frame 7;
+                                       the blink is the two eye pixels set to
+                                       the face colour, the only pixels redrawn
+  row 1   working  (4 frames, 480ms)   shut, open, shut, open: the game's munch
+
+No colour was changed. The vine, the swinging bodies and the other icons are
+left out.
