@@ -1987,6 +1987,53 @@
     },
     {
       "kind": "mascot",
+      "id": "night-monkey",
+      "name": "Night monkey",
+      "version": "1.0.0",
+      "description": "A night monkey (ka'i pyhare): a grey head, a cream mask and big amber eyes. Types at a keyboard while it works; sways its tail and blinks while it waits.",
+      "author": "kururu-styles",
+      "licence": "CC0-1.0",
+      "path": "mascots/night-monkey",
+      "manifest": "mascot.json",
+      "digest": "sha256-730b8c72d91f42ebef93678ef99853fd42440c1ca7727d3c049392277a9ef63b",
+      "files": [
+        {
+          "name": "mascot.json",
+          "size": 593,
+          "digest": "sha256-958ccf67e7d8f235368c0e7534346c9b9723d612e1d476c571031412aea1b6ba"
+        },
+        {
+          "name": "sheet.png",
+          "size": 739,
+          "digest": "sha256-3bb7903b14aeb5c31e8aa19221e78aa038222904340209e2d67ab91ac38131aa"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 16,
+        "trim": {
+          "x": 0,
+          "y": 0,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 6,
+          "cycle": 600
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 12,
+          "cycle": 3600
+        },
+        "blocked": null,
+        "done": null
+      }
+    },
+    {
+      "kind": "mascot",
       "id": "owl",
       "name": "Owl",
       "version": "1.0.0",
@@ -2544,6 +2591,112 @@
           "col": 0,
           "count": 10,
           "cycle": 2600
+        },
+        "blocked": null,
+        "done": null
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "woodsmoke-grey",
+      "name": "Grey monkey",
+      "version": "1.0.0",
+      "description": "woodsmoke's monkey face in the artist's own grey, with a dark face. Munches while it works; blinks once while it waits.",
+      "author": "woodsmoke",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/node/114636",
+      "path": "mascots/woodsmoke-grey",
+      "manifest": "mascot.json",
+      "digest": "sha256-b71267c99d529ef4deba516490e882f06fe540ac106691f20ea282fc1747220c",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1490,
+          "digest": "sha256-ac17748cfc2676cf139e4c318a145760a7c1d76d2762871dd6a58955f6e80684"
+        },
+        {
+          "name": "mascot.json",
+          "size": 606,
+          "digest": "sha256-6e928b875f2af96ce0b3f142a43f1b66be8a528bb7974075697879e0a108f274"
+        },
+        {
+          "name": "sheet.png",
+          "size": 589,
+          "digest": "sha256-b0b09c906470b688134bb1ced610ab4880e6d53f4c1542514748265fd9ba5b85"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 32,
+        "trim": {
+          "x": 8,
+          "y": 8,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 480
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 8,
+          "cycle": 3200
+        },
+        "blocked": null,
+        "done": null
+      }
+    },
+    {
+      "kind": "mascot",
+      "id": "woodsmoke-kaipago",
+      "name": "Kaipago monkey",
+      "version": "1.0.0",
+      "description": "woodsmoke's monkey face, recoloured to the Kaipago mark's grey fur and cream face. Munches while it works; blinks once while it waits.",
+      "author": "woodsmoke",
+      "licence": "CC0-1.0",
+      "source": "https://opengameart.org/node/114636",
+      "path": "mascots/woodsmoke-kaipago",
+      "manifest": "mascot.json",
+      "digest": "sha256-d3920a74557bb52e134766fa64770c8a59fa4e669c2c072e349504d05297bd39",
+      "files": [
+        {
+          "name": "LICENCE.txt",
+          "size": 1630,
+          "digest": "sha256-fcfab305b90708f6e6ba52d968cf3a017ca86d64b28dc0e63ee63eb9b3c4a853"
+        },
+        {
+          "name": "mascot.json",
+          "size": 627,
+          "digest": "sha256-71459bb75a079e1a99710edf1019aa839b96c27a3282106570069b1b1453f563"
+        },
+        {
+          "name": "sheet.png",
+          "size": 600,
+          "digest": "sha256-2d02c263c681bc192f50e6279bc7f1b4516b363f902bc2cd2b8f021125b6f3b8"
+        }
+      ],
+      "preview": {
+        "sheet": "sheet.png",
+        "frame": 32,
+        "trim": {
+          "x": 8,
+          "y": 8,
+          "size": 16
+        },
+        "working": {
+          "row": 1,
+          "col": 0,
+          "count": 4,
+          "cycle": 480
+        },
+        "idle": {
+          "row": 0,
+          "col": 0,
+          "count": 8,
+          "cycle": 3200
         },
         "blocked": null,
         "done": null
